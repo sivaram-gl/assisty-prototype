@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Assisty works — Step-by-step guide</title>
+<meta name="description" content="A ten-step walkthrough of the Assisty (V3) grading assistant: from login to rubric generation, grading, analytics and CSV export.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/great-learning-mui-design-system-708b2d18-8d08-4c2c-b976-3bf54ca85307/colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 16px; line-height: 1.6; color: #111827;
+    background: #FBFCFE;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #1F3A72; text-decoration: none; }
+  a:hover { color: #142551; }
+  img { display: block; max-width: 100%; height: auto; }
+
+  /* Layout ------------------------------------------------------------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .site-header .row {
+    max-width: 1200px; margin: 0 auto;
+    padding: 8px clamp(16px, 3vw, 24px);
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: 72px; gap: 16px;
+  }
+  .site-header a.brand { display: inline-flex; align-items: center; }
+  .site-header .nav { display: flex; align-items: center; gap: 8px; }
+  .site-header .nav a.link {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 500; font-size: 13px; padding: 9px 14px;
+    border-radius: 8px; color: #1F3A72; line-height: 1;
+    transition: background 150ms ease, color 150ms ease;
+  }
+  .site-header .nav a.link:hover { background: #F3F4F6; }
+  .site-header .nav a.link.active {
+    background: #F2FBFC; color: #0B5A64; font-weight: 600;
+  }
+  .site-header .nav .signup {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 13px; padding: 9px 18px;
+    border-radius: 8px; background: #1F3A72; color: #FFFFFF;
+    line-height: 1; border: none; cursor: pointer; font-family: inherit;
+    transition: background 150ms ease;
+  }
+  .site-header .nav .signup:hover { background: #142551; }
+
+  main { max-width: 1200px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) clamp(16px, 3vw, 24px) clamp(60px, 8vw, 100px); }
+
+  /* Hero --------------------------------------------------------------- */
+  .hero { padding: clamp(24px, 4vw, 40px) 0 clamp(28px, 4vw, 48px); }
+  .hero .eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #0B7C88;
+    background: #E6FBFD; padding: 6px 12px; border-radius: 999px;
+  }
+  .hero h1 {
+    margin: 16px 0 12px; font-weight: 700;
+    font-size: clamp(30px, 4.6vw, 46px); line-height: 1.1;
+    letter-spacing: -0.024em; color: #1F3A72; text-wrap: balance;
+  }
+  .hero p.lede {
+    max-width: 720px; margin: 0;
+    font-size: clamp(15.5px, 1.6vw, 17.5px); line-height: 1.65; color: #4B5563;
+    text-wrap: pretty;
+  }
+
+  /* Step-number rail (jump nav) ---------------------------------------- */
+  .jump-nav {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 28px 0 8px;
+  }
+  .jump-nav a {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 500; color: #374151;
+    padding: 7px 12px; border: 1px solid #E5E7EB; border-radius: 999px;
+    background: #FFFFFF; transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+  }
+  .jump-nav a:hover { border-color: #0B7C88; color: #0B7C88; background: #F2FBFC; }
+  .jump-nav a .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #EEF2FB; color: #1F3A72; font-size: 11.5px; font-weight: 700;
+  }
+
+  /* Step blocks -------------------------------------------------------- */
+  .step {
+    scroll-margin-top: 88px;
+    margin: clamp(36px, 5vw, 60px) 0;
+    background: #FFFFFF; border: 1px solid #E9EDF6; border-radius: 20px;
+    padding: clamp(22px, 3vw, 34px);
+  }
+  .step-head { display: flex; align-items: flex-start; gap: 14px; }
+  .step-head .step-num {
+    flex: 0 0 auto; width: 40px; height: 40px; border-radius: 12px;
+    background: linear-gradient(135deg, #1F3A72 0%, #0F4089 100%);
+    color: #FFFFFF; font-size: 16px; font-weight: 700;
+    display: inline-flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 18px rgba(31,58,114,0.24);
+  }
+  .step-head h2 {
+    margin: 6px 0 0;
+    font-size: clamp(22px, 2.4vw, 28px); line-height: 1.25;
+    font-weight: 700; letter-spacing: -0.02em; color: #1F3A72;
+  }
+  .step-body { margin-top: 18px; color: #374151; }
+  .step-body p { margin: 0 0 12px; font-size: 15.5px; line-height: 1.65; text-wrap: pretty; }
+  .step-body p:last-child { margin-bottom: 0; }
+
+  .note {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin: 14px 0 4px; padding: 12px 14px;
+    background: #FFF8E1; border: 1px solid #FCE9A5; border-radius: 12px;
+    font-size: 14.5px; line-height: 1.55; color: #6B4B00;
+  }
+  .note strong { color: #664200; font-weight: 700; }
+  .note svg { flex: 0 0 auto; width: 18px; height: 18px; color: #B08400; margin-top: 2px; }
+
+  .sub {
+    margin-top: 22px; font-size: 13.5px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #0B7C88;
+  }
+  .step-body ul { margin: 6px 0 12px; padding-left: 20px; }
+  .step-body ul li { margin: 4px 0; font-size: 15px; line-height: 1.6; color: #374151; }
+  .step-body ul li code {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13.5px; padding: 1px 6px; border-radius: 5px;
+    background: #F3F4F6; color: #1F3A72;
+  }
+
+  /* Screenshots grid --------------------------------------------------- */
+  .shots {
+    display: grid; gap: 14px; margin-top: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  }
+  .shot {
+    position: relative;
+    background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .shot img {
+    display: block;
+    max-width: 100%; width: auto; height: auto;
+    margin: 0 auto;
+    background: #FFFFFF;
+    transition: transform 300ms ease;
+  }
+  .shot:hover img { transform: scale(1.01); }
+  .shot .caption {
+    padding: 10px 14px 12px;
+    font-size: 13px; color: #6B7280; border-top: 1px solid #EDF0F6;
+    background: #FFFFFF;
+  }
+
+  .shots--single { grid-template-columns: 1fr; }
+
+  /* Wide screenshot (single, centered inside card, never upscaled) */
+  .shot-wide {
+    margin-top: 18px;
+    background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px;
+    overflow: hidden;
+    display: flex; flex-direction: column; align-items: stretch;
+  }
+  .shot-wide img {
+    display: block;
+    max-width: 100%; width: auto; height: auto;
+    margin: 0 auto;
+    background: #FFFFFF;
+  }
+  .shot-wide .caption {
+    padding: 10px 14px 12px;
+    font-size: 13px; color: #6B7280; border-top: 1px solid #EDF0F6;
+    background: #FFFFFF;
+  }
+
+  /* Footer ------------------------------------------------------------- */
+  footer {
+    max-width: 1200px; margin: 0 auto;
+    padding: 28px clamp(16px, 3vw, 24px) 60px;
+    border-top: 1px solid #E5E7EB;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 12px; font-size: 13.5px; color: #6B7280;
+  }
+  footer .links { display: flex; gap: 14px; }
+
+  /* Lightbox ----------------------------------------------------------- */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(10,20,40,0.82); backdrop-filter: blur(6px);
+    display: none; align-items: center; justify-content: center;
+    padding: 24px; cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 96vw; max-height: 92vh; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); background: #FFFFFF; }
+  .lightbox .lb-close {
+    position: absolute; top: 16px; right: 20px;
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.24);
+    background: rgba(15,27,54,0.6); color: #FFFFFF;
+    cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+  }
+  .lightbox .lb-close:hover { background: rgba(255,255,255,0.14); }
+
+  .shot img, .shot-wide img { cursor: zoom-in; }
+
+  @media (max-width: 640px) {
+    .step { padding: 18px 16px; }
+    .step-head { gap: 10px; }
+    .step-head .step-num { width: 34px; height: 34px; border-radius: 10px; font-size: 14px; }
+    .jump-nav a { font-size: 12px; padding: 6px 10px; }
+    .jump-nav a .num { width: 18px; height: 18px; font-size: 10.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="row">
+    <a class="brand" href="index.html" aria-label="Assisty home">
+      <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:28px; width:auto;">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="link active" href="how-it-works.html" aria-current="page">How it works</a>
+      <a class="signup" href="index.html#top">Sign up</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <span class="eyebrow">Assisty V3 — Step-by-step guide</span>
+    <h1>How Assisty works, end to end.</h1>
+    <p class="lede">A ten-step walkthrough of the Grading Assistant: from logging in and uploading assignments to generating rubrics, grading submissions, reviewing analytics and exporting results.</p>
+
+    <nav class="jump-nav" aria-label="Jump to a step">
+      <a href="#step-1"><span class="num">1</span>Access the platform</a>
+      <a href="#step-2"><span class="num">2</span>Manual upload</a>
+      <a href="#step-3"><span class="num">3</span>Assignment details</a>
+      <a href="#step-4"><span class="num">4</span>Questions &amp; marking</a>
+      <a href="#step-5"><span class="num">5</span>Review &amp; initiate</a>
+      <a href="#step-6"><span class="num">6</span>Upload submissions</a>
+      <a href="#step-7"><span class="num">7</span>Generate rubrics</a>
+      <a href="#step-8"><span class="num">8</span>Review rubric</a>
+      <a href="#step-9"><span class="num">9</span>Finalise grading</a>
+      <a href="#step-10"><span class="num">10</span>Analytics &amp; export</a>
+    </nav>
+  </section>
+
+  <!-- STEP 1 -->
+  <section id="step-1" class="step">
+    <header class="step-head">
+      <div class="step-num">1</div>
+      <h2>Access the platform</h2>
+    </header>
+    <div class="step-body">
+      <p>Begin by logging into the Grading Assistant using your assigned credentials on the Assisty login page.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/1.png" alt="Assisty login page with the &quot;Consistent, bias-free grading&quot; hero and a Login form (email, password, keep-me-logged-in).">
+        <div class="caption">Assisty login screen.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section id="step-2" class="step">
+    <header class="step-head">
+      <div class="step-num">2</div>
+      <h2>Use the Manual Upload feature</h2>
+    </header>
+    <div class="step-body">
+      <p>Open <strong>Manual Imports</strong> from the left sidebar to import assignment specifications and student submissions.</p>
+      <p class="sub">Prepare beforehand</p>
+      <ul>
+        <li>All relevant assignment data and supporting materials such as articles or case studies.</li>
+        <li>Compile learner submissions into a single <strong>ZIP archive</strong>. Individual files must be <code>.pdf</code> or <code>.docx</code>.</li>
+        <li>Follow the naming convention <code>studentid_filename.pdf</code>.</li>
+      </ul>
+      <div class="shots shots--single">
+        <div class="shot">
+          <img src="assets/how-it-works/2.png" alt="Assisty left sidebar showing Dashboard, Courses and Manual Imports, with Manual Imports selected.">
+          <div class="caption">Manual Imports lives in the left sidebar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section id="step-3" class="step">
+    <header class="step-head">
+      <div class="step-num">3</div>
+      <h2>Upload assignment details</h2>
+    </header>
+    <div class="step-body">
+      <p>From <strong>Manual Imports</strong>, click <em>+ New assignment</em> to start uploading the assignment details.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/3.png" alt="Manual Imports page with the &quot;+ New assignment&quot; button highlighted in the top-right corner.">
+        <div class="caption">Create a new assignment.</div>
+      </div>
+
+      <p class="sub">Option 1 — You already have a question file</p>
+      <p>Upload the question file in <strong>Assignment source</strong> to auto-prefill the assignment details.</p>
+      <div class="note">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><strong>Note:</strong> Assisty auto-extracts assignment details, questions and marking criteria from this file. Review the auto-generated content before finalizing — corrections may be needed.</span>
+      </div>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/4.png" alt="&quot;Assignment source&quot; panel with a Choose file button to prefill details from a question file.">
+        <div class="caption">Option 1 — prefill from a question file.</div>
+      </div>
+
+      <p class="sub">Option 2 — Enter assignment details manually</p>
+      <p>Fill in the title, total points, description (instructions + questions), and attach any supporting materials such as case studies or reference articles.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/5.png" alt="Assignment details form: title, total points, description editor, and Attach files for supporting docs.">
+        <div class="caption">Option 2 — enter details by hand.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section id="step-4" class="step">
+    <header class="step-head">
+      <div class="step-num">4</div>
+      <h2>Add questions and the marking scheme</h2>
+    </header>
+    <div class="step-body">
+      <p>Under <strong>Questions and marking</strong>, define what to grade students on. Enter each question, the points it's worth, and — if you have one — the marking scheme.</p>
+      <div class="note">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>A <strong>marking scheme</strong> is a structured grading guide that breaks down an assessment into specific <strong>categories (criteria)</strong> and assigns fixed <strong>point values</strong> to the required elements within each category.</span>
+      </div>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/6.png" alt="Questions and marking panel: question text, points, and an optional marking scheme section with an Add scheme button.">
+        <div class="caption">Add each question and the points it's worth.</div>
+      </div>
+
+      <p class="sub">Marking scheme example</p>
+      <p>An expanded marking scheme for a customer-service question with three criteria — Greeting &amp; Professionalism, Problem Identification &amp; Listening, and Resolution &amp; Action Plan — each with its own points.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/7.png" alt="Marking scheme with three criteria and their point allocations expanded on the question card.">
+        <div class="caption">A marking scheme with three criteria.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 5 -->
+  <section id="step-5" class="step">
+    <header class="step-head">
+      <div class="step-num">5</div>
+      <h2>Review assignment details and initiate grading</h2>
+    </header>
+    <div class="step-body">
+      <p>Confirm the assignment information and questions are correct on the <strong>Details</strong> tab. Use <em>Edit</em> to modify anything, then click <strong>Start Grading</strong>.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/8.png" alt="Assignment overview tabs (Details, Questions, Rubrics, Submissions) with Start Grading in the top-right and Edit next to it.">
+        <div class="caption">Verify details, then Start Grading.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 6 -->
+  <section id="step-6" class="step">
+    <header class="step-head">
+      <div class="step-num">6</div>
+      <h2>Upload learner submissions</h2>
+    </header>
+    <div class="step-body">
+      <p>Drop the submissions ZIP into the <strong>Add or Select Submissions</strong> area, or reuse a previously uploaded set. Assisty automatically zips loose files if you drop multiple PDFs, DOCX, images, notebooks or text files.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/9.png" alt="Add or Select Submissions drop zone with Drag and Drop or Choose file to upload.">
+        <div class="caption">Drop the submissions ZIP or individual files.</div>
+      </div>
+      <p>Once the ZIP is parsed, verify all learner files are listed correctly and the naming convention is followed. Then click <strong>Upload &amp; Continue</strong>.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/10.png" alt="Uploaded ZIP contents: FA_ET1_Scanned Answer sheets.zip expanded showing 20 files (PDFs) with an Upload & Continue button.">
+        <div class="caption">Verify the file list, then Upload &amp; Continue.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 7 -->
+  <section id="step-7" class="step">
+    <header class="step-head">
+      <div class="step-num">7</div>
+      <h2>Generate rubrics</h2>
+    </header>
+    <div class="step-body">
+      <p>With the submissions in place, click <strong>Generate Rubric</strong>. Assisty analyses the assignment and the sample submissions to draft a rubric aligned to your marking scheme.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/11.png" alt="File uploaded successfully card with a full-width Generate Rubric button underneath.">
+        <div class="caption">Kick off rubric generation.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 8 -->
+  <section id="step-8" class="step">
+    <header class="step-head">
+      <div class="step-num">8</div>
+      <h2>Review, modify and approve the rubric</h2>
+    </header>
+    <div class="step-body">
+      <p>Review the generated rubric criteria. Click <em>Edit</em> on any question to adjust criteria, add or delete requirements, or change point values. Once you're satisfied, click <strong>Approve &amp; Start Grading</strong>.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/12.png" alt="Review & Approve Rubric page with a question card, marks, Edit button, and Approve & Start Grading in the top-right.">
+        <div class="caption">Edit rubric criteria, then approve.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 9 -->
+  <section id="step-9" class="step">
+    <header class="step-head">
+      <div class="step-num">9</div>
+      <h2>Review and finalise grading</h2>
+    </header>
+    <div class="step-body">
+      <p>Assisty grades every submission against the approved rubric. The progress panel shows how many are graded and the estimated time to completion.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/13.png" alt="Grading in Progress panel: 2 of 10 submissions graded, time remaining ~4 minutes 6 seconds, list of graded submissions.">
+        <div class="caption">Grading in progress — you can review submissions as they finish.</div>
+      </div>
+
+      <p class="sub">Review an individual submission</p>
+      <p>Click a student to open the individual grading view. You'll see the overall feedback, awarded points, strengths, areas to improve, and a question-by-question breakdown with evidence quoted from the submission.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/14.png" alt="Individual submission review: overall feedback, awarded 18.25/20, strengths, areas to improve, question breakdown with evidence and reason for score.">
+        <div class="caption">Individual submission review with evidence-linked feedback.</div>
+      </div>
+
+      <p class="sub">Confidence flags</p>
+      <p>Each submission carries a confidence flag. High confidence lets you approve quickly; medium or low suggests ambiguity — verify point deductions and comments before approving.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/15.png" alt="Submission header with a green &quot;Confidence: High&quot; badge and callout explaining the confidence flag.">
+        <div class="caption">Confidence flag on every submission.</div>
+      </div>
+
+      <p class="sub">Grading strictness</p>
+      <p>Toggle between <strong>Lenient</strong>, <strong>Moderate</strong> and <strong>Strict</strong> to recalculate scores against the same rubric. Useful when calibrating before you commit to a final pass.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/16.png" alt="Grading dropdown open with Lenient, Moderate and Strict options over a list of submissions.">
+        <div class="caption">Lenient / Moderate / Strict re-calibrates the whole batch.</div>
+      </div>
+
+      <p class="sub">Final approval</p>
+      <p>Select individual submissions (or a whole set) and use <em>Approve</em> or <em>Disapprove</em> to finalise grading. You can also open a submission and approve it from the detail view.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/17.png" alt="Bulk selection panel with Approve/Disapprove actions and the individual submission open on the right for review.">
+        <div class="caption">Bulk-approve or review each submission before approving.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 10 -->
+  <section id="step-10" class="step">
+    <header class="step-head">
+      <div class="step-num">10</div>
+      <h2>Analytics and download results</h2>
+    </header>
+    <div class="step-body">
+      <p>When grading completes, mark it done and open the <strong>Analytics</strong> panel. It shows the highest, lowest and average scores, the score distribution, and the top and bottom five performers. A question-level view offers a per-question breakdown of performance.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/18.png" alt="Evaluation Complete banner: 10/10 graded, 10 approved, with Analytics and Download Results buttons in the top-right.">
+        <div class="caption">Evaluation complete — Analytics and Download Results become available.</div>
+      </div>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/19.png" alt="Analytics overview with highest 18.50/20, average 17.50/20, lowest 14.00/20, score distribution histogram, and top/bottom 5 performer lists.">
+        <div class="caption">Overall analytics with score distribution and top/bottom five.</div>
+      </div>
+
+      <p class="sub">Download results</p>
+      <p>Click <strong>Download Results</strong> to export a CSV grading sheet consolidating student identifiers, assignment details, qualitative feedback, and automated scores at both the question and overall levels.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/20.png" alt="Evaluation Complete banner with the Download Results button highlighted in the top-right.">
+        <div class="caption">CSV export with question-level and overall scores plus feedback.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>© Assisty — Grading Assistant.</div>
+  <div class="links">
+    <a href="index.html">Landing</a>
+    <a href="#step-1">Back to top</a>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview">
+  <button class="lb-close" id="lbClose" aria-label="Close preview">
+    <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <img id="lbImg" alt="">
+</div>
+
+<script>
+  // Click-to-zoom (simple lightbox)
+  (function() {
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lbImg');
+    var lbClose = document.getElementById('lbClose');
+    function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close() { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.removeAttribute('src'); }
+    document.querySelectorAll('.shot img, .shot-wide img').forEach(function(img) {
+      img.addEventListener('click', function() { open(img.src, img.alt); });
+    });
+    lb.addEventListener('click', function(e) { if (e.target === lb || e.target === lbImg) close(); });
+    lbClose.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
+  })();
+</script>
+
+</body>
+</html>

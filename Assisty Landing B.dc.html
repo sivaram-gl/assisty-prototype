@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/great-learning-mui-design-system-708b2d18-8d08-4c2c-b976-3bf54ca85307/colors_and_type.css">
+<script src="_ds/great-learning-mui-design-system-708b2d18-8d08-4c2c-b976-3bf54ca85307/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+  html, body { margin:0; padding:0; }
+  body { font-family:'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size:16px; line-height:1.55; color:#111827; background:#FFFFFF; -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  @keyframes assistyHalo { 0% { box-shadow:0 0 0 0 rgba(127,233,244,0.85); } 70% { box-shadow:0 0 0 12px rgba(127,233,244,0); } 100% { box-shadow:0 0 0 0 rgba(127,233,244,0); } }
+  img, svg { display:block; max-width:100%; }
+  a { color:#1F3A72; text-decoration:none; }
+  a:hover { color:#142551; }
+  h1, h2, h3, h4, p { margin:0; }
+  summary::-webkit-details-marker { display:none; }
+  details[open] summary .chev { transform:rotate(180deg); }
+  @keyframes assisty-spin { to { transform:rotate(360deg); } }
+  @keyframes assistyReveal { from { opacity:0; } to { opacity:1; } }
+  [data-reveal="0"] { opacity:0; }
+  [data-reveal="1"] { animation:assistyReveal 640ms cubic-bezier(0.22,0.61,0.36,1) both; }
+  @keyframes assistyTabBar { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+</style>
+</helmet>
+
+<div style="font-family:'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:#111827; background:#FFFFFF;">
+  <div style="{{ stageStyle }}">
+  <div style="{{ frameStyle }}">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:saturate(180%) blur(12px); -webkit-backdrop-filter:saturate(180%) blur(12px); border-bottom:1px solid #E5E7EB;">
+    <div style="max-width:1200px; margin:0 auto; padding:8px clamp(16px, 3cqi, 24px); display:flex; align-items:center; justify-content:space-between; min-height:72px; gap:16px;">
+      <a href="#top" aria-label="Assisty home" style="display:inline-flex; align-items:center;">
+        <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:28px; width:auto;">
+      </a>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:13px; padding:9px 18px; border-radius:8px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Sign up</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="top" data-screen-label="Hero" style="position:relative; overflow:hidden; padding:clamp(28px, 4cqi, 44px) 0 clamp(48px, 6cqi, 76px); background:radial-gradient(900px 480px at 92% -6%, rgba(31,58,114,0.05), transparent 62%), linear-gradient(180deg, #FFFFFF 0%, #FBFBFD 100%);">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:clamp(32px, 4cqi, 48px); align-items:center;">
+      <div>
+        <span style="display:inline-block; color:#D14A36; font-size:14px; font-weight:600; letter-spacing:0.01em;">Built for educators. Trusted on campuses.</span>
+        <h1 style="margin-top:22px; font-size:clamp(44px, 5.6cqi, 72px); line-height:1.02; letter-spacing:-0.035em; font-weight:800; color:#1F3A72;">
+          More teaching.<br>
+          Less grading.
+        </h1>
+        <div style="margin-top:14px; color:#0FA3B2; font-size:clamp(24px, 2.6cqi, 34px); font-weight:700; letter-spacing:-0.02em; line-height:1.1;">
+          Grade with <span style="position:relative; display:inline-block; padding-bottom:6px;">confidence.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; right:0; bottom:-4px; width:100%; height:10px; pointer-events:none;"><path d="M4 8 Q 50 2, 100 6 T 196 5" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round"></path></svg></span>
+        </div>
+        <p style="margin-top:18px; font-size:15px; line-height:1.6; max-width:480px; color:#4B5563;">
+          Assisty helps educators grade essays, projects and assignments faster and more consistently, so you can focus on what matters most.
+        </p>
+        <div style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:16px; padding:16px 30px; border-radius:10px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Start Free</button>
+        </div>
+      </div>
+
+      <div role="img" aria-label="Assisty grading dashboard preview" style="position:relative;">
+        <div style="position:absolute; inset:18px 40px 6px 18px; border-radius:18px; background:linear-gradient(150deg, rgba(22,198,216,0.16), rgba(31,58,114,0.10)); filter:blur(24px);"></div>
+        <div style="position:relative; border-radius:14px; overflow:hidden; background:#FFFFFF; border:1px solid #E9ECF3;">
+          <div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:#F6F7FA; border-bottom:1px solid #EDF0F6;">
+            <span style="width:11px; height:11px; border-radius:50%; display:inline-block; background:#FF5F57;"></span>
+            <span style="width:11px; height:11px; border-radius:50%; display:inline-block; background:#FEBC2E;"></span>
+            <span style="width:11px; height:11px; border-radius:50%; display:inline-block; background:#28C840;"></span>
+            <div style="flex:1; margin:0 12px; background:#FFFFFF; border:1px solid #EDF0F6; border-radius:6px; padding:5px 12px; font-size:12px; font-family:'Geist Mono', ui-monospace, monospace; color:#6B7280; text-align:center; max-width:340px;">assisty.com/dashboard</div>
+          </div>
+          <img src="assets/screenshot-1.png" alt="Assisty grading dashboard showing assignments, grades, review queue and confidence scoring" style="display:block; width:100%; height:auto;">
+        </div>
+        <div style="position:absolute; right:-16px; top:78px; display:flex; align-items:center; gap:10px; background:#1F3A72; border-radius:12px; padding:12px 16px;">
+          <span style="width:30px; height:30px; border-radius:8px; background:rgba(255,255,255,0.16); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:16px; height:16px;"><path d="M13 2L4 14h6l-1 8 10-13h-7l1-7z" fill="currentColor"></path></svg></span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#FFFFFF; line-height:1.1; letter-spacing:-0.01em;">200 submissions</div>
+            <div style="font-size:11.5px; font-weight:600; color:rgba(255,255,255,0.78); margin-top:3px;">graded in hours, not weeks</div>
+          </div>
+        </div>
+        <div style="position:absolute; right:-16px; bottom:38px; display:flex; align-items:center; gap:10px; background:#0B7C88; border-radius:12px; padding:12px 16px;">
+          <span style="width:30px; height:30px; border-radius:8px; background:rgba(255,255,255,0.22); color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:16px; height:16px;"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M12 9v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><circle cx="12" cy="16.5" r="1.1" fill="currentColor"></circle></svg></span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#FFFFFF; line-height:1.1; letter-spacing:-0.01em;">Unsure grades flagged</div>
+            <div style="font-size:11.5px; font-weight:600; color:rgba(255,255,255,0.82); margin-top:3px;">you review the doubtful few</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width:1200px; margin:clamp(56px, 8cqi, 96px) auto 0; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="max-width:640px; margin:0 0 28px;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#1F3A72; background:#EEF2FB; padding:6px 12px; border-radius:999px;">What it handles</span>
+        <h2 style="margin-top:16px; font-size:clamp(26px, 3cqi, 36px); line-height:1.16; font-weight:700; letter-spacing:-0.025em; color:#1F3A72;">Whatever your students submit, however you mark it.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); grid-auto-rows:{{ cardRows }}; gap:18px;">
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; overflow:hidden; display:grid; grid-template-columns:{{ cardCols }}; align-items:stretch; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="{{ panelPeach }}">
+            <img src="assets/handwritten-sample.png" alt="Handwritten mathematics midterm exam script with worked solutions" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;">
+          </div>
+          <div style="padding:14px 16px; display:flex; flex-direction:column; justify-content:center; gap:6px; min-width:0;">
+            <div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:4px 9px; border-radius:999px;">Handwritten OCR</span></div>
+            <div style="font-size:17.5px; font-weight:700; color:#111827; letter-spacing:-0.018em;">Handwritten notes</div>
+            <p style="font-size:13.5px; color:#4B5563; line-height:1.55; text-wrap:pretty;">Scanned scripts and photographed answer sheets are read through OCR, then marked against the same rubric as typed work.</p>
+          </div>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; overflow:hidden; display:grid; grid-template-columns:{{ cardCols }}; align-items:stretch; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="{{ panelBlue }}">
+            <img src="assets/upload-formats.png" alt="Assisty upload screen with a drag and drop area and a supported file formats panel" style="width:100%; height:100%; object-fit:cover; object-position:right center; display:block;">
+          </div>
+          <div style="padding:14px 16px; display:flex; flex-direction:column; justify-content:center; gap:6px; min-width:0;">
+            <div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">PDF</span><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">DOCX</span><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">PPTX</span><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">TXT</span><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">ZIP</span></div>
+            <div style="font-size:17.5px; font-weight:700; color:#111827; letter-spacing:-0.018em;">Any format</div>
+            <p style="font-size:13.5px; color:#4B5563; line-height:1.55; text-wrap:pretty;">Drop the batch in exactly as it arrives. No retyping, no converting, no separate workflow per file type.</p>
+          </div>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; overflow:hidden; display:grid; grid-template-columns:{{ cardCols }}; align-items:stretch; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="{{ panelIndigo }}">
+            <div style="height:100%; padding:12px; display:flex; flex-direction:column; gap:7px; font-family:'Geist Mono', ui-monospace, monospace;">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; font-size:8.5px; font-weight:600; letter-spacing:0.05em; color:#4338CA; text-transform:uppercase;"><span style="width:5px; height:5px; border-radius:50%; background:#4F46E5;"></span>solution.ipynb</span>
+                <span style="font-size:11px; font-weight:800; color:#4338CA; letter-spacing:-0.02em;">4 / 5</span>
+              </div>
+              <div style="flex:1; background:#FFFFFF; border:1px solid #D8DCF5; border-radius:8px; padding:8px; display:flex; flex-direction:column; gap:3px; font-size:9px; line-height:1.4; color:#312E81; overflow:hidden;">
+                <div style="color:#9CA3AF;">In [3]:</div>
+                <div><span style="color:#4F46E5; font-weight:700;">def</span> fit(df, k=<span style="color:#4338CA;">3</span>):</div>
+                <div style="padding-left:7px;">X = scale(df.drop(<span style="color:#0E7490;">"y"</span>, axis=<span style="color:#4338CA;">1</span>))</div>
+                <div style="padding-left:7px;">km = KMeans(k).fit(X)</div>
+                <div style="padding-left:7px; background:#DDE1FB; border-left:2px solid #4F46E5; border-radius:3px;">return silhouette(X, km.labels_)</div>
+                <div style="padding-left:7px;">acc = evaluate(fit(train), test)</div>
+                <div style="padding-left:7px;">plot_clusters(X, km.labels_)</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:14px 16px; display:flex; flex-direction:column; justify-content:center; gap:6px; min-width:0;">
+            <div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">Python</span><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">Java</span><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">JavaScript</span><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">R</span><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">SQL</span><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">C++</span></div>
+            <div style="font-size:17.5px; font-weight:700; color:#111827; letter-spacing:-0.018em;">Grades code too</div>
+            <p style="font-size:13.5px; color:#4B5563; line-height:1.55; text-wrap:pretty;">Notebooks and source files are graded on logic, structure and output together, with each mark citing the exact lines it came from.</p>
+          </div>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; overflow:hidden; display:grid; grid-template-columns:{{ cardCols }}; align-items:stretch; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="{{ panelGrey }}">
+            <img src="assets/grading-levels.png" alt="Grading strictness dropdown showing Lenient, Moderate and Strict options over a list of graded submissions" style="width:100%; height:100%; object-fit:cover; object-position:top left; display:block;">
+          </div>
+          <div style="padding:14px 16px; display:flex; flex-direction:column; justify-content:center; gap:6px; min-width:0;">
+            <div style="display:flex; flex-wrap:wrap; gap:6px;"><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">Three levels of grading</span></div>
+            <div style="font-size:17.5px; font-weight:700; color:#111827; letter-spacing:-0.018em;">Lenient, moderate or strict. Your call.</div>
+            <p style="font-size:13.5px; color:#4B5563; line-height:1.55; text-wrap:pretty;">Re-run the same batch at a different calibration and compare the curve before you release marks.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <sc-if value="{{ showUniversityStrip }}" hint-placeholder-val="{{ true }}">
+    <div data-screen-label="Trust strip" style="max-width:1200px; margin:36px auto 0; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:36px; align-items:center; background:#FFFFFF; border:1px solid #EDF0F6; border-radius:16px; padding:22px 28px;">
+        <div>
+          <div style="font-size:12px; color:#6B7280; font-weight:500; margin-bottom:12px;">Trusted by educators at</div>
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:22px 34px;">
+            <span style="font-family:Georgia, serif; font-style:italic; font-weight:700; font-size:20px; letter-spacing:-0.01em; color:#2C3E50; opacity:0.82;">UCLA</span>
+            <span style="font-family:Georgia, serif; font-weight:400; font-size:18px; letter-spacing:0.05em; color:#4B5563; opacity:0.82;">Berkeley</span>
+            <span style="color:#4B5563; font-weight:700; font-size:16px; opacity:0.82;"><span style="color:#7A2AE8; margin-right:4px;">◆</span>NYU</span>
+            <span style="color:#4B5563; font-weight:700; font-size:16px; opacity:0.82;">Georgia Tech</span>
+            <span style="font-family:Georgia, serif; font-style:italic; font-weight:400; font-size:20px; color:#4B5563; opacity:0.82;">Duke</span>
+            <span style="color:#4B5563; font-weight:700; font-size:16px; opacity:0.82;"><span style="color:#F97360; margin-right:4px;">✱</span>UT Austin</span>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(96px, auto)); gap:28px;">
+          <div>
+            <div style="font-size:15px; font-weight:700; color:#1F3A72; line-height:1.1; display:flex; align-items:center; gap:4px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px; height:12px; color:#0B7C88;"><path d="M12 4l-8 8h5v8h6v-8h5z"></path></svg>90%</div>
+            <div style="font-size:11px; color:#6B7280; margin-top:2px;">Less grading time</div>
+          </div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:#1F3A72; line-height:1.1; display:flex; align-items:center; gap:4px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px; height:12px; color:#0B7C88;"><path d="M12 4l-8 8h5v8h6v-8h5z"></path></svg>95%</div>
+            <div style="font-size:11px; color:#6B7280; margin-top:2px;">Instructor agreement</div>
+          </div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:#1F3A72; line-height:1.1; display:flex; align-items:center; gap:4px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px; height:12px; color:#0B7C88;"><path d="M12 4l-8 8h5v8h6v-8h5z"></path></svg>5 min</div>
+            <div style="font-size:11px; color:#6B7280; margin-top:2px;">Average setup</div>
+          </div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:#E15A48; line-height:1.1; display:flex; align-items:center; gap:4px;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px; height:12px; color:#D14A36;"><path d="M12 4l-8 8h5v8h6v-8h5z"></path></svg>100%</div>
+            <div style="font-size:11px; color:#6B7280; margin-top:2px;">Instructor approval</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+  </section>
+
+  <section id="how" data-screen-label="How it works" style="padding:clamp(52px, 7cqi, 88px) 0 clamp(56px, 8cqi, 96px);">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="position:relative; overflow:hidden; border-radius:26px; background:#1F3A72; padding:clamp(28px, 4cqi, 52px) clamp(22px, 3.4cqi, 44px);">
+        <div style="position:absolute; inset:0; pointer-events:none; background:radial-gradient(620px 320px at 88% -10%, rgba(22,198,216,0.20), transparent 62%), radial-gradient(520px 280px at 6% 108%, rgba(249,115,96,0.12), transparent 62%);"></div>
+        <div style="position:relative; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 40px;">
+          <div style="flex:1 1 460px; min-width:0;">
+            <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#7FE9F4; background:rgba(127,233,244,0.14); padding:6px 12px; border-radius:999px;">How it works</span>
+            <h2 style="margin-top:20px; font-size:clamp(28px, 3.4cqi, 42px); line-height:1.14; font-weight:800; letter-spacing:-0.03em; color:#FFFFFF;">From hours of grading to <span style="color:#7FE9F4;">minutes that matter.</span></h2>
+            <p style="margin-top:14px; font-size:16.5px; line-height:1.6; color:rgba(255,255,255,0.74); max-width:520px;">Assisty simplifies your grading workflow in four simple steps.</p>
+          </div>
+          <button onClick="{{ openVideo }}" style="flex:0 0 auto; display:inline-flex; align-items:center; gap:12px; border:none; cursor:pointer; font-family:inherit; background:#FFFFFF; color:#1F3A72; font-size:15px; font-weight:700; padding:14px 26px; border-radius:999px;" style-hover="background:#E6FBFD;">
+            <span style="width:24px; height:24px; border-radius:50%; background:#0B7C88; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; animation:assistyHalo 1.8s ease-out infinite;"><svg viewBox="0 0 24 24" fill="currentColor" style="width:12px; height:12px; margin-left:2px;"><path d="M8 5v14l11-7z"></path></svg></span>
+            See how it works
+          </button>
+        </div>
+        <div style="position:relative; margin-top:clamp(34px, 4.4cqi, 56px); padding-top:clamp(28px, 3.4cqi, 40px); border-top:1px solid rgba(255,255,255,0.12); display:grid; grid-template-columns:{{ stepCols }}; gap:clamp(24px, 2.8cqi, 38px);">
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">01</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M6 3h9l4 4v14H6V3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M14 3v5h5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Create</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Upload the assignment prompt or source files to auto-prefill, or enter questions manually and attach case studies and reference docs.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">02</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M12 16V8m0 0l-3 3m3-3l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 18a4.5 4.5 0 0 1-.5-8.97A6 6 0 0 1 17.7 9.2 3.9 3.9 0 0 1 18 18h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Auto-generate &amp; calibrate rubric</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Input a one-line marking scheme; Assisty drafts a 5-level behavioural rubric calibrated against actual student answer samples.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">03</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Automated pass</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Import from your LMS or upload learner submissions. Assisty runs 3-pass consensus grading.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">04</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Review, adjust &amp; release</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Edit feedback, adjust rubric points, toggle strictness levels, and push citation-backed marks to your LMS.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects" data-screen-label="Popular subjects" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FBFCFE;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="max-width:760px; margin:0 0 32px;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88; background:#E6FBFD; padding:6px 12px; border-radius:999px;">Every subject</span>
+        <h2 style="margin-top:14px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">Assisty grades every subject.</h2>
+        <p style="margin-top:10px; font-size:16.5px; line-height:1.6; color:#4B5563; text-wrap:pretty;">There is no supported-subjects list to check against. The list below is simply what educators reach for most.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:{{ subjCols }}; gap:clamp(18px, 2.5cqi, 30px); align-items:start; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:20px; padding:clamp(16px, 2.2cqi, 22px);">
+        <div style="display:flex; flex-direction:column; gap:2px; min-width:0;">
+          <div style="display:flex; align-items:center; gap:8px; padding:2px 12px 12px; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88;">Popular right now<span style="flex:1 1 auto; height:1px; background:#EDF0F6;"></span></div>
+          <sc-for list="{{ subjects }}" as="s" hint-placeholder-count="12">
+            <button onClick="{{ s.pick }}" style="{{ s.btnStyle }}">
+              <span style="{{ s.tileStyle }}">{{ s.initial }}</span>
+              {{ s.name }}
+            </button>
+          </sc-for>
+        </div>
+        <div style="min-width:0;">
+          <sc-for list="{{ subjects }}" as="s" hint-placeholder-count="1">
+            <div style="{{ s.paneStyle }}">
+              <div style="position:relative; border-radius:14px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6; aspect-ratio:16 / 10; min-height:220px;">
+                <sc-for list="{{ s.imgs }}" as="im" hint-placeholder-count="0"><img src="{{ im.src }}" alt="{{ im.alt }}" style="width:100%; height:100%; object-fit:cover; object-position:top left;"></sc-for>
+                <sc-if value="{{ s.noImg }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ s.slot }}" placeholder="{{ s.placeholder }}" style="width:100%; height:100%;"></image-slot></sc-if>
+              </div>
+              <div style="margin-top:16px;">
+                <div style="font-size:19px; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">{{ s.name }}</div>
+                <p style="margin-top:7px; font-size:15px; line-height:1.65; color:#4B5563; text-wrap:pretty;">{{ s.blurb }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:14.5px; color:#6B7280; line-height:1.6;">Your subject is covered whether or not it appears here. Assisty is not built around a subject list &mdash; if the work can be written, drawn, calculated or coded, it can be graded against your rubric.</p>
+    </div>
+  </section>
+
+  <sc-if value="{{ videoOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeVideo }}" style="position:fixed; inset:0; z-index:9999; background:rgba(10,20,40,0.74); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:40px;">
+      <div onClick="{{ stopClick }}" style="position:relative; width:min(980px, 100%); border-radius:18px; overflow:hidden; background:#0F1B36; box-shadow:0 40px 100px rgba(0,0,0,0.5);">
+        <button onClick="{{ closeVideo }}" aria-label="Close video" style="position:absolute; top:14px; right:14px; z-index:2; width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.24); background:rgba(15,27,54,0.6); color:#FFFFFF; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;" style-hover="background:rgba(255,255,255,0.16);"><svg viewBox="0 0 24 24" fill="none" style="width:16px; height:16px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+        <div style="position:relative; aspect-ratio:16 / 9; background:#000000;">
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.6); font-size:13px; gap:10px;">
+            <span style="width:22px; height:22px; border-radius:50%; border:2px solid rgba(255,255,255,0.25); border-top-color:#16C6D8; animation:assisty-spin 0.8s linear infinite;"></span>
+            Loading video…
+          </div>
+          <video src="assets/how-it-works.mp4" controls="{{ true }}" autoPlay="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" onClick="{{ stopClick }}" style="position:relative; width:100%; height:100%; display:block; object-fit:contain;"></video>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <section data-screen-label="Why Assisty" style="padding:clamp(56px, 8cqi, 96px) 0 clamp(60px, 8cqi, 100px); background:#FFFFFF;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:clamp(36px, 5cqi, 56px) clamp(40px, 6cqi, 80px); align-items:start;">
+
+        <div>
+          <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">Why Assisty</span>
+          <h2 style="margin-top:20px; font-size:clamp(32px, 3.6cqi, 46px); line-height:1.08; font-weight:800; letter-spacing:-0.035em; color:#1F3A72;">Built for how educators actually grade.</h2>
+          <p style="margin-top:16px; font-size:16px; line-height:1.6; color:#4B5563; max-width:360px;">All components of the grading workflow are designed for verifiability. Three principles are central to the product design.</p>
+
+          <figure style="margin:36px 0 0; border-left:3px solid #0FA3B2; padding:2px 0 2px 20px;">
+            <blockquote style="margin:0; font-size:17px; line-height:1.5; color:#111827; letter-spacing:-0.012em;">We reduced our grading time from two weeks to three days while improving feedback quality for every student.</blockquote>
+            <figcaption style="margin-top:14px; display:flex; align-items:center; gap:12px;">
+              <span style="width:40px; height:40px; border-radius:50%; background:#EEF2FB; color:#1F3A72; flex:0 0 40px; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">SB</span>
+              <span style="font-size:13px; color:#6B7280;">Professor, School of Business</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+          <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:22px 22px 20px; display:flex; gap:18px; align-items:flex-start; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+            <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <div style="min-width:0;">
+              <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; margin-top:0; line-height:1.25;">Provenance</h3>
+              <p style="font-size:15px; color:#4B5563; margin-top:7px; line-height:1.6;">Every claim, remark and point assignment can be traced back to specific sections of the student submission. The interface makes this verification process clear, intuitive and transparent.</p>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;"><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">No evidence = zero score</span><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">Appeals in &lt; 2 min</span></div>
+            </div>
+          </article>
+          <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:22px 22px 20px; display:flex; gap:18px; align-items:flex-start; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+            <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><rect x="4" y="10.5" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="2"></rect><path d="M8 10.5V7.5a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+            <div style="min-width:0;">
+              <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; margin-top:0; line-height:1.25;">Scope determinism</h3>
+              <p style="font-size:15px; color:#4B5563; margin-top:7px; line-height:1.6;">All context used for grading comes exclusively from user-provided inputs. The system does not rely on hidden or external data sources.</p>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;"><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">Your inputs only</span><span style="font-size:12px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:4px 9px; border-radius:999px;">No external sources</span></div>
+            </div>
+          </article>
+          <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:22px 22px 20px; display:flex; gap:18px; align-items:flex-start; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+            <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M3 13l9 5 9-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <div style="min-width:0;">
+              <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; margin-top:0; line-height:1.25;">Progressive disclosure</h3>
+              <p style="font-size:15px; color:#4B5563; margin-top:7px; line-height:1.6;">Results are presented in layers. You see the most important information at a glance, while detailed supporting information stays available for each submission whenever deeper review is required.</p>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;"><span style="font-size:12px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:4px 9px; border-radius:999px;">Summary first</span><span style="font-size:12px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:4px 9px; border-radius:999px;">Detail on demand</span></div>
+            </div>
+          </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roles" data-screen-label="For your role" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FFFFFF;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="position:relative; overflow:hidden; border-radius:26px; background:linear-gradient(160deg, #F7FAFF 0%, #FFFFFF 55%); border:1px solid #EDF0F6; padding:clamp(28px, 4cqi, 44px);">
+        <div style="{{ campusStyle }}">
+          <img src="assets/campus.png" alt="University campus quad with students walking" style="width:100%; height:100%; object-fit:cover; object-position:{{ campusFit }}; display:block;">
+        </div>
+        <div style="position:relative; max-width:560px;">
+          <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88; background:#E6FBFD; padding:6px 12px; border-radius:999px;">For every role</span>
+          <h2 style="margin-top:18px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:800; letter-spacing:-0.03em; color:#111827;">What it changes,<br>depending on where you sit.</h2>
+          <p style="margin-top:14px; font-size:15.5px; line-height:1.6; color:#4B5563; max-width:420px;">The same platform. Different impact. Built for the way educators actually work.</p>
+        </div>
+        <div style="position:relative; margin-top:clamp(36px, 5cqi, 60px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap:20px;">
+        <article style="background:#FFFFFF; border:1px solid #EDF0F6; border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:16px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="display:flex; align-items:flex-start; gap:14px;">
+            <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="9.5" cy="7" r="3.5" stroke="currentColor" stroke-width="1.9"></circle><path d="M22 20v-2a4 4 0 0 0-3-3.87M16.5 3.6a4 4 0 0 1 0 6.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg></span>
+            <div style="display:flex; flex-direction:column; gap:4px; min-width:0;">
+              <div style="font-size:16px; font-weight:700; color:#1F3A72; letter-spacing:-0.018em;">Course Coordinators</div>
+              <p style="font-size:14.5px; line-height:1.5; color:#4B5563; margin:0; text-wrap:pretty;">Eliminate TA grading drift across multi-section cohorts.</p>
+            </div>
+          </div>
+          <div style="height:1px; background:#EDF0F6;"></div>
+          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Identical behavioural criteria applied to 300+ students</span></li>
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>One rubric of record across every section</span></li>
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Disagreement surfaced instead of buried</span></li>
+          </ul>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #EDF0F6; border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:16px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="display:flex; align-items:flex-start; gap:14px;">
+            <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M2 8.5L12 4l10 4.5-10 4.5L2 8.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M6 10.6V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-5.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            <div style="display:flex; flex-direction:column; gap:4px; min-width:0;">
+              <div style="font-size:16px; font-weight:700; color:#0B7C88; letter-spacing:-0.018em;">Professors &amp; Instructors</div>
+              <p style="font-size:14.5px; line-height:1.5; color:#4B5563; margin:0; text-wrap:pretty;">Grade a batch of submissions in an afternoon.</p>
+            </div>
+          </div>
+          <div style="height:1px; background:#EDF0F6;"></div>
+          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Bulk grading with citation-backed feedback</span></li>
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Question-level analytics diagnose class-wide concept gaps</span></li>
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Edit and override before anything is released</span></li>
+          </ul>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #EDF0F6; border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:16px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="display:flex; align-items:flex-start; gap:14px;">
+            <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M3 10.5L12 4l9 6.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.5 10.5V19M10 10.5V19M14 10.5V19M18.5 10.5V19M3 19.5h18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg></span>
+            <div style="display:flex; flex-direction:column; gap:4px; min-width:0;">
+              <div style="font-size:16px; font-weight:700; color:#E15A48; letter-spacing:-0.018em;">Department Heads &amp; Program Directors</div>
+              <p style="font-size:14.5px; line-height:1.5; color:#4B5563; margin:0; text-wrap:pretty;">Prove the standard before you roll it out.</p>
+            </div>
+          </div>
+          <div style="height:1px; background:#EDF0F6;"></div>
+          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Benchmark automated marks against historical TA scores</span></li>
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Test grade curves with lenient, moderate and strict toggles</span></li>
+            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Audit logs for every action taken on a script</span></li>
+          </ul>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" data-screen-label="Features" style="padding:clamp(56px, 8cqi, 96px) 0;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="max-width:720px; margin:0 0 30px;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">Everything you need</span>
+        <h2 style="margin-top:14px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">A complete workspace for educators.</h2>
+        <p style="margin-top:8px; font-size:17px; line-height:1.6; color:#4B5563;">Grade better, with less effort.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:{{ featCols }}; align-items:stretch; background:#FFFFFF; border:1px solid #E5E7EB; border-radius:18px; overflow:hidden;">
+        <div role="tablist" style="{{ railStyle }}">
+          <button onClick="{{ pickTab0 }}" style="{{ tab0Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab0Active }}" hint-placeholder-val="{{ true }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab0IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><rect x="4" y="4" width="7" height="16" stroke="currentColor" stroke-width="2"></rect><rect x="13" y="4" width="7" height="7" stroke="currentColor" stroke-width="2"></rect><rect x="13" y="13" width="7" height="7" stroke="currentColor" stroke-width="2"></rect></svg></span>
+            Rubric Builder
+          </button>
+          <button onClick="{{ pickTab1 }}" style="{{ tab1Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab1Active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab1IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M4 8v12h9" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+            Bulk Grading
+          </button>
+          <button onClick="{{ pickTab2 }}" style="{{ tab2Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab2Active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab2IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M4 5h16v10H8l-4 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+            Custom Feedback
+          </button>
+          <button onClick="{{ pickTab3 }}" style="{{ tab3Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab3Active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab3IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M4 12a8 8 0 0 1 14-5l3-3v8h-8l3-3a5 5 0 1 0 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            Strictness Levels
+          </button>
+          <button onClick="{{ pickTab4 }}" style="{{ tab4Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab4Active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab4IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M14 3v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+            Handwritten &amp; Code
+          </button>
+          <button onClick="{{ pickTab5 }}" style="{{ tab5Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab5Active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab5IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M12 3v13m0 0l-4-4m4 4l4-4M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            Gradebook Export
+          </button>
+          <button onClick="{{ pickTab6 }}" style="{{ tab6Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab6Active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab6IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M21 12c0 4-4 7-9 7-1.4 0-2.7-.2-3.9-.6L3 20l1.4-4.2C3.5 14.7 3 13.4 3 12c0-4 4-7 9-7s9 3 9 7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+            Comment Library
+          </button>
+          <button onClick="{{ pickTab7 }}" style="{{ tab7Style }}" style-hover="background:#F4FAFB; color:#0B5A64;">
+            <sc-if value="{{ tab7Active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute; left:0; top:0; height:3px; width:100%; background:#0B7C88; transform-origin:left; animation:assistyTabBar 10000ms linear forwards;"></span></sc-if>
+            <span style="{{ tab7IconStyle }}"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+            Activity Log
+          </button>
+        </div>
+        <div style="min-width:0; display:flex; flex-direction:column;">
+          <sc-if value="{{ tab0Active }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Rubric Builder</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Write criteria and performance levels by hand, import a rubric you already use, or let Assisty draft a five-level rubric from a one-line marking scheme. Everything stays editable before a single script is touched.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; display:grid; grid-template-columns:{{ rubricCols }}; gap:12px;">
+              <div style="position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><img src="assets/feature-rubric-generating.png" alt="Assisty generating a rubric: parsing submissions, then building rubric criteria" style="width:100%; height:100%; object-fit:cover; object-position:top left;"></div>
+              <div style="position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><img src="assets/feature-rubric-builder.png" alt="Assisty rubric builder showing a question, its marking schema and five behavioural levels" style="width:100%; height:100%; object-fit:cover; object-position:top left;"></div>
+            </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ tab1Active }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Bulk Grading</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Point Assisty at the whole batch. Hundreds of submissions are marked against the same rubric in one pass, each carrying a confidence score so you know exactly where to look first.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><img src="assets/feature-bulk-grading.png" alt="Grading in progress: 1 of 21 submissions graded, with approved and disapproved counts" style="width:100%; height:100%; object-fit:cover; object-position:top left;"></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ tab2Active }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Custom Feedback</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Every submission comes back with written feedback at your level of detail, quoting the student’s own words. Edit any comment, or accept the batch as it stands.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><img src="assets/feature-custom-feedback.png" alt="Assisty feedback editor with overall feedback and a per-question list of strengths" style="width:100%; height:100%; object-fit:cover; object-position:top left;"></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ tab3Active }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Strictness Levels</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Run the same batch at lenient, moderate or strict calibration and compare the resulting grade curves side by side before you commit to one.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><img src="assets/feature-strictness.png" alt="Grading strictness dropdown open over a completed evaluation showing awarded and moderate scores" style="width:100%; height:100%; object-fit:cover; object-position:top left;"></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ tab4Active }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Handwritten &amp; Code</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Scanned scripts go through OCR and notebooks are read as code. Both are marked against the same rubric as typed work, so mixed-format batches stay in one queue.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><img src="assets/feature-handwritten.png" alt="Assisty verify-submission panel showing a handwritten maths script beside the parsed grading view" style="width:100%; height:100%; object-fit:cover; object-position:top right;"></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ tab5Active }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Gradebook Export</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Push marks straight back to your LMS, or export a CSV and a per-student report pack for your own records.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><image-slot id="feat-export" placeholder="Gradebook Export screenshot" style="width:100%; height:100%;"></image-slot></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ tab6Active }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Comment Library</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Save the comments you write most often and reuse them across cohorts and semesters. The library grows as you grade.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><image-slot id="feat-library" placeholder="Comment Library screenshot" style="width:100%; height:100%;"></image-slot></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ tab7Active }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:16px; padding:clamp(18px, 2.2cqi, 26px);">
+              <div>
+                <h3 style="font-size:clamp(19px, 2cqi, 23px); font-weight:700; letter-spacing:-0.022em; color:#1F3A72; line-height:1.2;">Activity Log</h3>
+                <p style="margin-top:8px; font-size:15px; line-height:1.6; color:#4B5563; max-width:780px; text-wrap:pretty;">Every action on every script is recorded: who ran what, what changed and when. Enough detail to answer an audit or a grade appeal.</p>
+              </div>
+            <div style="flex:0 0 auto; height:260px; position:relative; border-radius:12px; overflow:hidden; background:#F4F6FA; border:1px solid #E9EDF6;"><image-slot id="feat-log" placeholder="Activity Log screenshot" style="width:100%; height:100%;"></image-slot></div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="difference" data-screen-label="Before and after" style="padding:clamp(56px, 8cqi, 96px) 0 clamp(60px, 8cqi, 100px); background:#FFFFFF;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="max-width:760px; margin:0 0 52px;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88; background:#E6FBFD; padding:6px 12px; border-radius:999px;">Before &amp; after</span>
+        <h2 style="margin-top:14px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">What actually changes.</h2>
+        <p style="margin-top:10px; font-size:16.5px; line-height:1.6; color:#4B5563; text-wrap:pretty;">The same cohort, the same rubric, the same faculty. Only the grading pass is different.</p>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; align-items:center;">
+        <div style="flex:1 1 340px; min-width:0; position:relative; background:#FFFFFF; border:1px solid #F3E6E3; border-radius:20px; padding:26px clamp(18px, 3cqi, 24px) 20px;">
+          <span style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:#FEEDE9; color:#DC2626; border:1px solid #F7D7D0; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:6px 16px; border-radius:999px; white-space:nowrap;">Before Assisty</span>
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div style="position:relative; aspect-ratio:16 / 9; border-radius:12px; overflow:hidden; background:#F3F4F6;">
+              <img src="assets/how-before.jpg" alt="Instructor holding stacks of handwritten exam papers and books" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <ul style="list-style:none; margin:0; padding:0;">
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0; border-bottom:1px dashed #F6DCD7;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#FDE7E4; color:#DC2626; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">Severe TA grading drift</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">Multi-TA sections mark the same rubric differently, driving grade disputes.</span></span></li>
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0; border-bottom:1px dashed #F6DCD7;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#FDE7E4; color:#DC2626; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">The fatigue penalty</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">Thorough feedback on submission #1 becomes single-word notes by submission #200.</span></span></li>
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0; border-bottom:1px dashed #F6DCD7;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#FDE7E4; color:#DC2626; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">Defensive grade disputes</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">Hours re-reading submissions to justify point deductions without clear text citations.</span></span></li>
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#FDE7E4; color:#DC2626; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">Lost research &amp; mentorship hours</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">Senior faculty spend nights and weekends on administrative triage work.</span></span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="flex:0 0 84px; position:relative; display:flex; align-items:center; justify-content:center; padding:20px 0; margin:0 auto;">
+          <sc-if value="{{ wideSteps }}" hint-placeholder-val="{{ true }}">
+          <svg viewBox="0 0 176 260" aria-hidden="true" style="position:absolute; left:-46px; top:50%; transform:translateY(-50%); width:176px; max-width:none; height:260px; pointer-events:none;">
+            <path d="M0 18 C 52 18, 88 62, 88 130" fill="none" stroke="#C7CEDD" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"></path>
+            <path d="M0 242 C 52 242, 88 198, 88 130" fill="none" stroke="#C7CEDD" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"></path>
+            <path d="M176 18 C 124 18, 88 62, 88 130" fill="none" stroke="#C7CEDD" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"></path>
+            <path d="M176 242 C 124 242, 88 198, 88 130" fill="none" stroke="#C7CEDD" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"></path>
+          </svg>
+          </sc-if>
+          <span style="position:relative; width:54px; height:54px; border-radius:50%; background:#0B7C88; border:1px solid #0B7C88; display:inline-flex; align-items:center; justify-content:center; color:#FFFFFF; transform:{{ arrowRotate }};"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M4 12h15m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </div>
+
+        <div style="flex:1 1 340px; min-width:0; position:relative; background:#FFFFFF; border:1px solid #DFF0F3; border-radius:20px; padding:26px clamp(18px, 3cqi, 24px) 20px;">
+          <span style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:#E6FBFD; color:#0B7C88; border:1px solid #C7EEF3; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:6px 16px; border-radius:999px; white-space:nowrap;">With Assisty</span>
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div style="position:relative; aspect-ratio:16 / 9; border-radius:12px; overflow:hidden; background:#F3F4F6;">
+              <img src="assets/how-after.png" alt="Assisty submissions dashboard with auto-graded scores and confidence levels" style="width:100%; height:100%; object-fit:cover; object-position:left top;">
+            </div>
+            <ul style="list-style:none; margin:0; padding:0;">
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0; border-bottom:1px dashed #D6EEF2;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">One standard, every section</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">The same calibrated rubric is applied identically across 300+ students and every TA.</span></span></li>
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0; border-bottom:1px dashed #D6EEF2;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">Student #200 = student #1</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">Depth of feedback does not decay through the batch.</span></span></li>
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0; border-bottom:1px dashed #D6EEF2;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">Appeals closed in 2 minutes</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">Every point awarded cites the exact student text it came from.</span></span></li>
+                <li style="display:flex; align-items:flex-start; gap:12px; padding:13px 0;"><span style="width:24px; height:24px; flex:0 0 24px;"><span style="width:24px; height:24px; border-radius:50%; flex:0 0 24px; margin-top:2px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span><span><span style="display:block; font-size:15px; font-weight:700; color:#111827; letter-spacing:-0.01em;">Nights and weekends back</span><span style="display:block; font-size:13.5px; color:#4B5563; line-height:1.55; margin-top:3px;">Faculty time returns to research, teaching and mentorship.</span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="faq" data-screen-label="FAQ" style="padding:clamp(56px, 8cqi, 96px) 0;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="max-width:820px; margin:0 auto 32px;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">FAQ</span>
+        <h2 style="margin-top:12px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">Frequently asked questions</h2>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; max-width:820px; margin:0 auto;">
+        <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Does Assisty replace my judgment as an examiner?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">No. Assisty is an assistant, not an autopilot. You retain 100% authority to review low-confidence cases, edit feedback, override points, and sign off before grades are released.</div>
+        </details>
+        <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">How does it grade subjective answers with no single right answer?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">It evaluates against 5-level behavioural rubrics calibrated on actual student response variations, assessing open-ended reasoning rather than exact string-matching.</div>
+        </details>
+        <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">How do I know the system isn&rsquo;t miscalculating or hallucinating marks?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Assisty mandates exact text citations for every point awarded (no evidence = zero score) and runs 3-pass consensus verification on every script.</div>
+        </details>
+        <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Is student data secure?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Yes. Data is encrypted in transit and at rest within institutional infrastructure and is never used to train public algorithms or shared externally.</div>
+        </details>
+        <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Which file formats are supported?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Handwritten scans via OCR, Python notebooks (.ipynb), HTML, PDF, DOCX, TXT, PPTX and ZIP archives.</div>
+        </details>
+        <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Can I control how strictly work is marked?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Yes. Every batch can be run at lenient, moderate or strict calibration, and re-run to compare grade curves before you release marks.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" data-screen-label="Final CTA" style="padding:clamp(36px, 5cqi, 56px) 0;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="position:relative; overflow:hidden; border:1px solid #DCE4F5; border-radius:24px; padding:clamp(24px, 4cqi, 40px) clamp(22px, 4cqi, 44px); display:flex; flex-wrap:wrap; gap:32px 40px; align-items:center; background:radial-gradient(600px 300px at 12% 20%, rgba(22,198,216,0.18), transparent 60%), radial-gradient(500px 260px at 88% 90%, rgba(31,58,114,0.12), transparent 60%), linear-gradient(135deg, #E6FBFD 0%, #EEF2FB 100%);">
+        <div style="position:absolute; right:-80px; top:-80px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle, rgba(22,198,216,0.16), transparent 65%);"></div>
+        <div style="position:absolute; right:24px; bottom:20px; width:90px; height:60px; opacity:0.35; background-image:radial-gradient(circle 2px, #16C6D8 100%, transparent 101%); background-size:12px 12px;"></div>
+        <div style="flex:0 1 200px; min-width:150px; position:relative; z-index:1;">
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%; height:auto; filter:drop-shadow(0 8px 20px rgba(31,58,114,0.12));">
+            <path d="M40 34l24-12 24 12-24 12-24-12z" fill="#1F3A72"></path>
+            <path d="M52 40v10c0 3 6 6 12 6s12-3 12-6V40" stroke="#1F3A72" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+            <line x1="88" y1="34" x2="88" y2="50" stroke="#1F3A72" stroke-width="2" stroke-linecap="round"></line>
+            <circle cx="88" cy="53" r="2.5" fill="#16C6D8"></circle>
+            <rect x="22" y="130" width="90" height="12" rx="2" fill="#0FA3B2"></rect>
+            <rect x="28" y="118" width="80" height="12" rx="2" fill="#16C6D8"></rect>
+            <rect x="22" y="106" width="90" height="12" rx="2" fill="#1F3A72"></rect>
+            <rect x="80" y="60" width="100" height="60" rx="6" fill="#fff" stroke="#DCE4F5" stroke-width="1.5"></rect>
+            <rect x="85" y="65" width="90" height="42" rx="2" fill="#E6FBFD"></rect>
+            <rect x="90" y="72" width="24" height="5" rx="1" fill="#1F3A72"></rect>
+            <rect x="90" y="82" width="60" height="4" rx="1" fill="#16C6D8"></rect>
+            <rect x="90" y="90" width="46" height="4" rx="1" fill="#DCE4F5"></rect>
+            <rect x="90" y="98" width="36" height="4" rx="1" fill="#0FA3B2"></rect>
+            <rect x="75" y="120" width="110" height="4" rx="2" fill="#DCE4F5"></rect>
+            <circle cx="18" cy="22" r="3" fill="#16C6D8"></circle>
+            <circle cx="188" cy="14" r="3" fill="#1F3A72"></circle>
+            <circle cx="196" cy="70" r="3" fill="#16C6D8"></circle>
+            <circle cx="8" cy="80" r="2" fill="#0FA3B2"></circle>
+            <circle cx="192" cy="140" r="2.5" fill="#F97360"></circle>
+          </svg>
+        </div>
+        <div style="flex:1 1 260px; position:relative; z-index:1;">
+          <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px; margin-bottom:12px;">Get started</span>
+          <h2 style="color:#1F3A72; font-size:clamp(22px, 2.4cqi, 28px); margin:0; line-height:1.2; font-weight:700; letter-spacing:-0.02em;">Ready to transform the way you grade?</h2>
+          <p style="color:#4B5563; font-size:14.5px; margin-top:8px; max-width:460px;">Join educators who save hours every week and focus more on teaching.</p>
+        </div>
+        <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:14px; align-items:flex-start; position:relative; z-index:1;">
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:15px; padding:14px 24px; border-radius:8px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Start Free</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:32px 0; border-top:1px solid #E5E7EB;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); display:flex; flex-wrap:wrap; gap:20px 24px; align-items:center; justify-content:space-between;">
+      <a href="#top" aria-label="Assisty home" style="display:inline-flex; align-items:center;">
+        <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:26px; width:auto;">
+      </a>
+      <nav style="display:flex; gap:24px; justify-content:center; color:#4B5563; font-size:13px;">
+        <a href="#" style="color:#4B5563;" style-hover="color:#1F3A72;">Privacy Policy</a>
+        <a href="#" style="color:#4B5563;" style-hover="color:#1F3A72;">Terms of Service</a>
+        <a href="#" style="color:#4B5563;" style-hover="color:#1F3A72;">Contact Us</a>
+      </nav>
+      <div style="color:#6B7280; font-size:13px; text-align:right;">© 2026 Assisty Inc. All rights reserved.</div>
+    </div>
+  </footer>
+
+  </div>
+  </div>
+
+  <sc-if value="{{ authOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeAuth }}" style="position:fixed; inset:0; z-index:9000; background:rgba(10,20,40,0.58); backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px); display:flex; align-items:flex-start; justify-content:center; padding:24px; overflow:auto;">
+      <div onClick="{{ stopClick }}" role="dialog" aria-modal="true" style="margin:auto; width:min(440px, 100%); background:#FFFFFF; border-radius:16px; box-shadow:0 30px 80px rgba(15,27,54,0.35); padding:26px 26px 22px; position:relative; font-family:'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;">
+        <button onClick="{{ closeAuth }}" aria-label="Close" style="position:absolute; top:14px; right:14px; width:32px; height:32px; border-radius:50%; border:none; background:transparent; color:#6B7280; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;" style-hover="background:#F1F4FA; color:#111827;"><svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+
+        <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:24px; width:auto;">
+
+        <h3 style="margin-top:20px; font-size:22px; font-weight:800; letter-spacing:-0.025em; color:#1F3A72; line-height:1.2;">{{ modalTitle }}</h3>
+        <p style="margin-top:6px; font-size:13.5px; color:#4B5563; line-height:1.5;">{{ modalSub }}</p>
+
+        <sc-if value="{{ stepChoose }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+          <button onClick="{{ chooseGoogle }}" style="display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:13px 16px; border-radius:10px; border:1px solid #DCE4F5; background:#FFFFFF; color:#111827; font-family:inherit; font-size:14.5px; font-weight:600; cursor:pointer;" style-hover="background:#F7F8FB; border-color:#C3D0EA;">
+            <svg viewBox="0 0 48 48" aria-hidden="true" style="width:18px; height:18px; flex:0 0 18px;"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24s.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
+            Continue with Google
+          </button>
+          <button onClick="{{ chooseMicrosoft }}" style="display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:13px 16px; border-radius:10px; border:1px solid #DCE4F5; background:#FFFFFF; color:#111827; font-family:inherit; font-size:14.5px; font-weight:600; cursor:pointer;" style-hover="background:#F7F8FB; border-color:#C3D0EA;">
+            <span style="display:inline-grid; grid-template-columns:9px 9px; gap:2px;"><span style="width:9px; height:9px; background:#F25022;"></span><span style="width:9px; height:9px; background:#7FBA00;"></span><span style="width:9px; height:9px; background:#00A4EF;"></span><span style="width:9px; height:9px; background:#FFB900;"></span></span>
+            Continue with Microsoft
+          </button>
+          <div style="display:flex; align-items:center; gap:12px; margin:6px 0 2px; color:#9CA3AF; font-size:12px;"><span style="flex:1; height:1px; background:#E5E7EB;"></span>or<span style="flex:1; height:1px; background:#E5E7EB;"></span></div>
+          <label style="font-size:12.5px; font-weight:600; color:#4B5563;">Work or school email</label>
+          <input type="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="you@university.edu" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          <button onClick="{{ submitEmail }}" disabled="{{ emailDisabled }}" style="{{ emailBtnStyle }}">Continue</button>
+          <p style="margin:2px 0 0; font-size:11.5px; color:#9CA3AF; text-align:center; line-height:1.5;">Existing accounts sign in directly. New ones take one short setup step.<br>Demo existing account: jane.mensah@gmail.com</p>
+        </div>
+        </sc-if>
+
+
+        <sc-if value="{{ stepConnecting }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; align-items:center; gap:12px; margin-top:26px; padding:18px; border:1px solid #E5E7EB; border-radius:12px; color:#4B5563; font-size:14px;">
+          <span style="width:20px; height:20px; border-radius:50%; border:2px solid #E5E7EB; border-top-color:#0B7C88; animation:assisty-spin 0.8s linear infinite;"></span>
+          {{ connectingLabel }}
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ stepDetails }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 14px; border-radius:10px; background:#F7F8FB; font-size:13px; color:#111827;">
+            <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ email }}</span>
+            <button onClick="{{ backStep }}" style="border:none; background:transparent; color:#1F3A72; font-family:inherit; font-size:12.5px; font-weight:600; cursor:pointer; padding:0;">Change</button>
+          </div>
+          <sc-if value="{{ showProviderNote }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; background:#E6FBFD; color:#0B7C88; font-size:12.5px; font-weight:600;">
+              <svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              {{ providerNote }}
+            </div>
+          </sc-if>
+          <label style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Full name</label>
+          <input type="text" value="{{ fullName }}" onChange="{{ setFullName }}" placeholder="Jane Mensah" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          <label style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Mobile number</label>
+          <div style="display:flex; gap:8px;">
+            <select value="{{ dialCode }}" onChange="{{ setDialCode }}" aria-label="Country code" style="flex:0 0 96px; padding:13px 8px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14px; color:#111827; background:#FFFFFF; outline:none;">
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+234">🇳🇬 +234</option>
+              <option value="+27">🇿🇦 +27</option>
+            </select>
+            <input type="tel" value="{{ mobile }}" onChange="{{ setMobile }}" placeholder="98765 43210" style="flex:1 1 auto; min-width:0; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          </div>
+          <sc-if value="{{ needsPassword }}" hint-placeholder-val="{{ true }}">
+          <label style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Create a password</label>
+          <input type="password" value="{{ password }}" onChange="{{ setPassword }}" placeholder="At least 8 characters" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          <div style="display:flex; gap:5px; margin-top:2px;">
+            <span style="{{ bar1Style }}"></span>
+            <span style="{{ bar2Style }}"></span>
+            <span style="{{ bar3Style }}"></span>
+            <span style="{{ bar4Style }}"></span>
+          </div>
+          <div style="font-size:11.5px; font-weight:600; color:{{ strengthColor }};">{{ strengthLabel }}</div>
+          <ul style="list-style:none; margin:8px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:6px 12px;">
+            <li style="{{ reqLenStyle }}">8+ characters</li>
+            <li style="{{ reqCaseStyle }}">Upper &amp; lowercase</li>
+            <li style="{{ reqNumStyle }}">A number</li>
+            <li style="{{ reqSymStyle }}">A symbol</li>
+          </ul>
+          <label style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:8px;">Confirm password</label>
+          <input type="password" value="{{ confirmPw }}" onChange="{{ setConfirmPw }}" placeholder="Re-enter password" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          </sc-if>
+          <button onClick="{{ submitDetails }}" style="width:100%; margin-top:12px; padding:14px 16px; border-radius:10px; border:none; background:#1F3A72; color:#FFFFFF; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer;" style-hover="background:#142551;">Create account</button>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:12px; font-size:12.5px; color:#DC2626; font-weight:600;">{{ errorMsg }}</div>
+        </sc-if>
+
+        <p style="margin-top:16px; font-size:11.5px; color:#9CA3AF; line-height:1.5; text-align:center;">By continuing you agree to Assisty's Terms of Service and Privacy Policy.</p>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ stepAccount }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:9500; background:rgba(10,20,40,0.35); display:flex; align-items:flex-start; justify-content:center; padding:24px; overflow:auto;">
+      <div style="{{ popupStyle }}">
+        <div style="display:flex; align-items:center; gap:10px; padding:0 12px; height:38px; background:#F1F3F4; border-bottom:1px solid #DADCE0; flex:0 0 auto;">
+          <button onClick="{{ backStep }}" aria-label="Close" style="width:22px; height:22px; border:none; border-radius:50%; background:#FF5F57; cursor:pointer; flex:0 0 22px; padding:0;"></button>
+          <span style="display:flex; align-items:center; gap:6px; margin:0 auto; padding:3px 12px; border-radius:999px; background:#FFFFFF; border:1px solid #DADCE0; font-size:12px; color:#5F6368;">
+            <svg viewBox="0 0 24 24" fill="none" style="width:11px; height:11px;"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M8 11V8a4 4 0 018 0v3" stroke="currentColor" stroke-width="2"></path></svg>
+            {{ popupHost }}
+          </span>
+        </div>
+
+        <sc-if value="{{ isGoogle }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:36px 40px 28px; text-align:center;">
+            <svg viewBox="0 0 48 48" aria-hidden="true" style="width:26px; height:26px;"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24s.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
+            <h4 style="margin:16px 0 0; font-size:22px; font-weight:400; color:#202124; letter-spacing:0;">Choose an account</h4>
+            <p style="margin:8px 0 0; font-size:14px; color:#5F6368;">to continue to Assisty</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isMicrosoft }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:32px 40px 20px;">
+            <div style="display:inline-flex; align-items:center; gap:8px;">
+              <span style="display:inline-grid; grid-template-columns:9px 9px; gap:2px;"><span style="width:9px; height:9px; background:#F25022;"></span><span style="width:9px; height:9px; background:#7FBA00;"></span><span style="width:9px; height:9px; background:#00A4EF;"></span><span style="width:9px; height:9px; background:#FFB900;"></span></span>
+              <span style="font-size:15px; color:#5E5E5E; font-weight:600;">Microsoft</span>
+            </div>
+            <h4 style="margin:22px 0 0; font-size:24px; font-weight:600; color:#1B1B1B;">Pick an account</h4>
+          </div>
+        </sc-if>
+
+        <div style="{{ popupListStyle }}">
+          <sc-for list="{{ pickerAccounts }}" as="acct" hint-placeholder-count="2">
+            <button onClick="{{ acct.pick }}" style="{{ popupRowStyle }}" style-hover="background:#F5F6F7;">
+              <span style="{{ acct.avatarStyle }}">{{ acct.initials }}</span>
+              <span style="display:flex; flex-direction:column; gap:2px; min-width:0; flex:1; text-align:left;">
+                <span style="font-size:14px; font-weight:500; color:#202124;">{{ acct.name }}</span>
+                <span style="font-size:13px; color:#5F6368; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ acct.email }}</span>
+              </span>
+              <span style="{{ acct.tagStyle }}">{{ acct.tag }}</span>
+            </button>
+          </sc-for>
+          <button onClick="{{ useAnother }}" style="{{ popupRowStyle }}" style-hover="background:#F5F6F7;">
+            <span style="flex:0 0 32px; width:32px; height:32px; border-radius:50%; background:#F1F3F4; color:#5F6368; display:inline-flex; align-items:center; justify-content:center;">
+              <svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+            </span>
+            <span style="font-size:14px; color:#202124; text-align:left; flex:1;">Use another account</span>
+          </button>
+        </div>
+
+        <div style="padding:24px 40px 28px; font-size:12px; color:#5F6368; line-height:1.6;">
+          To continue, {{ popupBrand }} will share your name, email address and profile picture with Assisty.
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ signedIn }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:8000; background:#FFFFFF; display:flex; font-family:'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;">
+      <aside style="flex:0 0 72px; border-right:1px solid #ECEEF2; display:flex; flex-direction:column; align-items:center; padding:18px 0 20px; gap:8px;">
+        <img src="assets/assisty-mark.svg" alt="Assisty" style="width:36px; height:36px; border-radius:9px; display:block;">
+        <div style="height:14px;"></div>
+        <button aria-label="Dashboard" style="width:44px; height:44px; border-radius:10px; border:none; background:#F2F4F7; color:#111827; display:inline-flex; align-items:center; justify-content:center; cursor:pointer;">
+          <svg viewBox="0 0 24 24" fill="none" style="width:20px; height:20px;"><path d="M5 20V11M12 20V4M19 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+        <button aria-label="Courses" style="width:44px; height:44px; border-radius:10px; border:none; background:transparent; color:#6B7280; display:inline-flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F7F8FB; color:#111827;">
+          <svg viewBox="0 0 24 24" fill="none" style="width:20px; height:20px;"><rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M12 5v14" stroke="currentColor" stroke-width="2"></path></svg>
+        </button>
+        <button aria-label="Assignments" style="width:44px; height:44px; border-radius:10px; border:none; background:transparent; color:#6B7280; display:inline-flex; align-items:center; justify-content:center; cursor:pointer;" style-hover="background:#F7F8FB; color:#111827;">
+          <svg viewBox="0 0 24 24" fill="none" style="width:20px; height:20px;"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </button>
+        <div style="flex:1 1 auto;"></div>
+        <button onClick="{{ signOut }}" aria-label="Sign out" style="width:44px; height:44px; border-radius:50%; border:none; background:#1F3A72; color:#FFFFFF; font-family:inherit; font-size:14px; font-weight:700; cursor:pointer; position:relative;" title="Sign out">
+          {{ userInitials }}
+          <span style="position:absolute; right:2px; bottom:2px; width:10px; height:10px; border-radius:50%; background:#22C55E; border:2px solid #FFFFFF;"></span>
+        </button>
+      </aside>
+
+      <div style="flex:1 1 auto; min-width:0; display:flex; flex-direction:column; overflow:auto;">
+        <sc-if value="{{ returningUser }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; align-items:center; gap:10px; padding:20px 28px; border-bottom:1px solid #ECEEF2; font-size:14px; color:#6B7280;">
+          <button aria-label="Expand sidebar" style="flex:0 0 28px; width:28px; height:28px; border-radius:50%; border:1px solid #E5E7EB; background:#FFFFFF; color:#6B7280; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; padding:0; margin-right:4px;" style-hover="background:#F2F4F7;">
+            <svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <span>Assisty</span>
+          <svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          <span style="color:#111827; font-weight:600;">Dashboard</span>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ newAccount }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1 1 auto; background:#FAFBFC; padding:34px 28px 64px;">
+          <div style="max-width:1080px; margin:0 auto;">
+            <h1 style="font-size:36px; font-weight:800; letter-spacing:-0.035em; color:#111827; line-height:1.12;">Good to have you, {{ firstName }}.</h1>
+            <p style="margin-top:8px; font-size:16.5px; color:#425067; line-height:1.55; max-width:560px; text-wrap:pretty;">Grading starts with one assignment. Bring it in and you will have scores and feedback back in about ten minutes.</p>
+
+            <div style="margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:22px;">
+              <div style="background:#FFFFFF; border:1px solid #DCE4F5; border-radius:14px; padding:28px 26px; display:flex; flex-direction:column; gap:10px; transition:border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;" style-hover="border-color:#1F3A72; background:#FAFCFF; box-shadow:0 10px 26px rgba(31,58,114,0.12);">
+                <span style="width:56px; height:56px; border-radius:14px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;">
+                  <svg viewBox="0 0 24 24" fill="none" style="width:28px; height:28px;"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="2.4"></rect><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path></svg>
+                </span>
+                <h3 style="margin-top:4px; font-size:18px; font-weight:700; color:#111827; letter-spacing:-0.015em;">Add a manual assignment</h3>
+                <p style="font-size:14.5px; color:#4B5563; line-height:1.55;">Upload submissions as a CSV or PDF set. No LMS required.</p>
+                <button style="margin-top:10px; align-self:flex-start; padding:12px 22px; border-radius:10px; border:none; background:#1F3A72; color:#FFFFFF; font-family:inherit; font-size:14.5px; font-weight:700; cursor:pointer;" style-hover="background:#142551;">Grade your first assignment</button>
+              </div>
+              <div style="background:#FFFFFF; border:1px solid #DCE4F5; border-radius:14px; padding:28px 26px; display:flex; flex-direction:column; gap:10px; transition:border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;" style-hover="border-color:#0B7C88; background:#F8FEFF; box-shadow:0 10px 26px rgba(11,124,136,0.14);">
+                <span style="width:56px; height:56px; border-radius:14px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;">
+                  <svg viewBox="0 0 24 24" fill="none" style="width:28px; height:28px;"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2.4"></rect><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.4"></path></svg>
+                </span>
+                <h3 style="margin-top:4px; font-size:18px; font-weight:700; color:#111827; letter-spacing:-0.015em;">Connect Canvas</h3>
+                <p style="font-size:14.5px; color:#4B5563; line-height:1.55;">Import courses and assignments. Grades sync back automatically.</p>
+                <button style="margin-top:10px; align-self:flex-start; padding:12px 22px; border-radius:10px; border:1.5px solid #0B7C88; background:#FFFFFF; color:#0B7C88; font-family:inherit; font-size:14.5px; font-weight:700; cursor:pointer;" style-hover="background:#E6FBFD;">Connect Canvas</button>
+              </div>
+            </div>
+
+            <div style="margin-top:26px; background:#FFFFFF; border:1px solid #ECEEF2; border-radius:14px; padding:26px 26px 28px;">
+              <div style="font-size:11.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#0B7C88;">How it works</div>
+              <div style="margin-top:20px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:28px; align-items:start;">
+                <div style="display:flex; flex-direction:column; gap:18px;">
+                  <sc-for list="{{ howSteps }}" as="s" hint-placeholder-count="4">
+                    <div style="display:flex; gap:14px; align-items:flex-start;">
+                      <span style="flex:0 0 30px; width:30px; height:30px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">{{ s.n }}</span>
+                      <span style="display:flex; flex-direction:column; gap:3px;">
+                        <span style="font-size:14.5px; font-weight:700; color:#111827;">{{ s.title }}</span>
+                        <span style="font-size:13.5px; color:#4B5563; line-height:1.5;">{{ s.body }}</span>
+                      </span>
+                    </div>
+                  </sc-for>
+                </div>
+                <button onClick="{{ openVideo }}" aria-label="Play walkthrough" style="position:relative; padding:0; border:none; border-radius:12px; overflow:hidden; cursor:pointer; aspect-ratio:16/9; background:linear-gradient(140deg, #1F3A72 0%, #16305F 55%, #0B7C88 100%); display:flex; align-items:center; justify-content:center;">
+                  <span style="width:70px; height:70px; border-radius:50%; background:rgba(255,255,255,0.94); color:#1F3A72; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(8,18,40,0.35);">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:26px; height:26px; margin-left:4px;"><path d="M8 5.5v13l11-6.5z"></path></svg>
+                  </span>
+                  <span style="position:absolute; left:16px; bottom:14px; display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border-radius:999px; background:rgba(9,18,38,0.5); color:#FFFFFF; font-size:12px; font-weight:600;">Watch the walkthrough</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ returningUser }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1 1 auto; background:#FAFBFC; padding:28px;">
+          <h1 style="font-size:22px; font-weight:700; letter-spacing:-0.02em; color:#111827;">Dashboard</h1>
+          <div style="margin-top:22px; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+            <sc-for list="{{ statCards }}" as="c" hint-placeholder-count="3">
+              <div style="position:relative; overflow:hidden; background:#FFFFFF; border:1px solid #ECEEF2; border-radius:12px; padding:24px 26px;">
+                <div style="display:flex; align-items:center; gap:5px; font-size:12px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#6B7280;">
+                  {{ c.label }}
+                  <sc-if value="{{ c.linked }}" hint-placeholder-val="{{ false }}">
+                    <svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px;"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </sc-if>
+                </div>
+                <div style="margin-top:10px; font-size:44px; font-weight:800; letter-spacing:-0.03em; color:#111827; line-height:1;">{{ c.value }}</div>
+                <span style="{{ c.blobStyle }}"></span>
+                <span style="{{ c.iconStyle }}">{{ c.icon }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="margin-top:22px; max-width:640px; background:#FFFFFF; border:1px solid #ECEEF2; border-radius:12px; padding:24px 26px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#6B7280;">Last assessment</div>
+              <span style="padding:5px 12px; border-radius:6px; background:#DCFCE7; color:#166534; font-size:12.5px; font-weight:700;">Completed</span>
+            </div>
+            <div style="margin-top:20px; display:flex; align-items:flex-start; gap:16px;">
+              <span style="flex:0 0 44px; width:44px; height:44px; border-radius:10px; background:#EDE9FE; color:#6D28D9; display:inline-flex; align-items:center; justify-content:center;">
+                <svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+              </span>
+              <span style="display:flex; flex-direction:column; gap:3px; min-width:0;">
+                <span style="font-size:17px; font-weight:700; color:#111827; letter-spacing:-0.015em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">End-Term Examination - Financial Accounting (…</span>
+                <span style="font-size:14.5px; color:#4B5563;">Manual Import</span>
+              </span>
+            </div>
+            <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:10px;">
+              <span style="padding:7px 13px; border-radius:7px; background:#EDE9FE; color:#4C1D95; font-size:13.5px; font-weight:600;">Manual</span>
+              <span style="padding:7px 13px; border-radius:7px; background:#F2F4F7; color:#374151; font-size:13.5px; font-weight:600;">4 Questions</span>
+              <span style="padding:7px 13px; border-radius:7px; background:#F2F4F7; color:#374151; font-size:13.5px; font-weight:600;">Rubric approved</span>
+              <span style="padding:7px 13px; border-radius:7px; background:#F2F4F7; color:#374151; font-size:13.5px; font-weight:600;">21 / 21 Submissions</span>
+            </div>
+            <button style="margin-top:24px; display:inline-flex; align-items:center; gap:10px; padding:11px 18px; border-radius:8px; border:1px solid #C7D9F5; background:#FFFFFF; color:#1666D6; font-family:inherit; font-size:14.5px; font-weight:700; cursor:pointer;" style-hover="background:#F2F7FE;">
+              View Submissions
+              <svg viewBox="0 0 24 24" fill="none" style="width:16px; height:16px;"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position:fixed; right:20px; bottom:20px; z-index:400; display:flex; gap:4px; background:#FFFFFF; border:1px solid #DCE4F5; border-radius:999px; padding:4px; box-shadow:0 10px 30px rgba(15,27,54,0.16);">
+    <button onClick="{{ showDesktop }}" style="{{ desktopBtnStyle }}" aria-label="Desktop view">
+      <svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M9 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      Desktop
+    </button>
+    <button onClick="{{ showMobile }}" style="{{ mobileBtnStyle }}" aria-label="Mobile view">
+      <svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><rect x="7" y="3" width="10" height="18" rx="2.5" stroke="currentColor" stroke-width="2"></rect><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+      Mobile
+    </button>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showUniversityStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = { videoOpen: false, device: 'desktop', navOpen: false, tab: 0, subject: 0, winWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    level: 'moderate',
+    authOpen: false, step: 'choose', method: 'email', provider: 'google', email: '', password: '', confirmPw: '',
+    fullName: '', dialCode: '+91', mobile: '', error: '', signedIn: false, newAccount: false };
+
+  pw() {
+    const p = this.state.password;
+    return {
+      len: p.length >= 8,
+      cases: /[a-z]/.test(p) && /[A-Z]/.test(p),
+      num: /[0-9]/.test(p),
+      sym: /[^A-Za-z0-9]/.test(p)
+    };
+  }
+  pwScore() { const c = this.pw(); return [c.len, c.cases, c.num, c.sym].filter(Boolean).length; }
+  reqStyle(ok) {
+    return { display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11.5px', fontWeight: 600,
+      color: ok ? '#0B7C88' : '#9CA3AF' };
+  }
+  barStyle(i) {
+    const s = this.pwScore();
+    const colors = ['#E5E7EB', '#DC2626', '#F59E0B', '#0FA3B2', '#0B7C88'];
+    return { flex: 1, height: '4px', borderRadius: '999px', background: i <= s ? colors[s] : '#E5E7EB' };
+  }
+  tabBtn(active, last) {
+    return { position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', gap: '11px',
+      width: '100%', flex: '0 0 auto', textAlign: 'left', padding: '14px 16px', border: 'none',
+      borderBottom: last ? 'none' : '1px solid #EDF0F6',
+      background: active ? '#F2FBFC' : 'transparent', color: active ? '#0B5A64' : '#4B5563',
+      fontFamily: 'inherit', fontSize: '14.5px', fontWeight: active ? 700 : 500, letterSpacing: '-0.008em', cursor: 'pointer',
+      transition: 'background 160ms ease, color 160ms ease' };
+  }
+  startTabs() {
+    clearInterval(this._tabTimer);
+    this._tabTimer = setInterval(() => this.setState(s => ({ tab: ((s.tab || 0) + 1) % 8 })), 10000);
+  }
+  pickTab(i) { this.setState({ tab: i }); this.startTabs(); }
+  subjectList() {
+    return [
+      ['Accounting', 'Ledgers, reconciliations and statement preparation, checked line by line against the schedule.', 'assets/subject-accounting.png'],
+      ['Computer Science', 'Notebooks and source files graded on logic, structure and output, each mark citing the exact lines.', 'assets/subject-computerscience.png'],
+      ['Data Science', 'Model write-ups, exploratory analysis and interpretation of results read against the brief you set.', 'assets/subject-computerscience.png'],
+      ['Economics', 'Graphical analysis, derivations and policy essays, with partial credit for correct intermediate steps.'],
+      ['Engineering', 'Worked calculations, design justifications and lab reports, including scanned working.'],
+      ['Finance', 'Valuation working, DCF models and case memos, marked on method as much as the final number.'],
+      ['Healthcare', 'Clinical reasoning, care plans and evidence appraisal assessed against your own criteria.'],
+      ['History', 'Source analysis and argumentative essays judged on use of evidence, not on keywords.'],
+      ['Marketing', 'Campaign plans, segmentation briefs and positioning arguments, assessed on reasoning.', 'assets/subject-accounting.png'],
+      ['Mathematics', 'Handwritten proofs and multi-step solutions read through OCR, with credit for correct method.'],
+      ['Philosophy', 'Argument reconstruction, objections and replies weighed on structure and clarity.', 'assets/subject-accounting.png'],
+      ['Physics', 'Derivations, numerical problems and lab write-ups, marked on approach as well as answer.'],
+      ['Statistics', 'Test selection, stated assumptions and interpretation checked as carefully as the arithmetic.', 'assets/subject-computerscience.png']
+    ];
+  }
+  subjBtn(active) {
+    return { display: 'flex', alignItems: 'center', gap: '11px', width: '100%', textAlign: 'left',
+      padding: '10px 12px', borderRadius: '9px', border: 'none', cursor: 'pointer', fontFamily: 'inherit',
+      fontSize: '14.5px', fontWeight: active ? 700 : 500, letterSpacing: '-0.008em',
+      background: active ? '#F2FBFC' : 'transparent', color: active ? '#0B5A64' : '#374151',
+      transition: 'background 150ms ease, color 150ms ease' };
+  }
+  go(step) { this.setState({ step, error: '' }); }
+  known() {
+    return {
+      'jane.mensah@gmail.com': { name: 'Jane Mensah', dial: '+91', mobile: '98765 43210' },
+      'j.mensah@university.edu': { name: 'Jane Mensah', dial: '+44', mobile: '7700 900318' },
+      'dr.rao@university.edu': { name: 'Ananya Rao', dial: '+91', mobile: '98111 20455' }
+    };
+  }
+  validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((v || '').trim()); }
+  accounts(p) {
+    return p === 'microsoft'
+      ? [{ name: 'Jane Mensah', email: 'j.mensah@university.edu', existing: true },
+         { name: 'Daniel Okoro', email: 'd.okoro@university.edu', existing: false }]
+      : [{ name: 'Jane Mensah', email: 'jane.mensah@gmail.com', existing: true },
+         { name: 'Priya Nair', email: 'priya.nair@gmail.com', existing: false }];
+  }
+  signIn(email, method) {
+    const u = this.known()[email.toLowerCase()];
+    this.setState({ method, email, step: 'connecting', error: '' });
+    setTimeout(() => this.setState({
+      authOpen: false, signedIn: true, step: 'choose', newAccount: false,
+      fullName: u ? u.name : this.state.fullName || 'Jane Mensah',
+      dialCode: u ? u.dial : this.state.dialCode,
+      mobile: u ? u.mobile : this.state.mobile
+    }), 1000);
+  }
+  newUser(email, method, name) {
+    this.setState({ method, email, fullName: name || '', step: 'details', error: '' });
+  }
+  levelStyle(active) {
+    return { border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '12.5px', fontWeight: 700,
+      padding: '9px 12px', borderRadius: '7px', letterSpacing: '-0.01em', whiteSpace: 'nowrap', textAlign: 'left', width: '100%',
+      background: active ? '#1F3A72' : 'transparent', color: active ? '#FFFFFF' : '#4B5563',
+      boxShadow: active ? '0 2px 6px rgba(31,58,114,0.24)' : 'none', transition: 'background 150ms ease, color 150ms ease' };
+  }
+  openPicker(provider) { this.setState({ provider, step: 'account', error: '' }); }
+  componentDidMount() {
+    this._onResize = () => this.setState({ winWidth: window.innerWidth });
+    window.addEventListener('resize', this._onResize);
+    this.startTabs();
+    if (typeof window === 'undefined' || !window.IntersectionObserver) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const SEL = 'section[data-screen-label] > div, section[data-screen-label] article, footer > div';
+    const show = (el) => { el.dataset.reveal = '1'; };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.style.animationDelay = (i * 70) + 'ms';
+        show(e.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
+    this._io = io;
+    this._scan = () => {
+      document.querySelectorAll(SEL).forEach(n => {
+        if (n.dataset.reveal) return;
+        n.dataset.reveal = '0';
+        io.observe(n);
+      });
+    };
+    this._scan();
+    this._mo = new MutationObserver(() => this._scan());
+    this._mo.observe(document.body, { childList: true, subtree: true });
+    // fail-open: nothing stays hidden, whatever happens to the observer
+    this._failOpen = setInterval(() => {
+      document.querySelectorAll('[data-reveal="0"]').forEach(n => {
+        const r = n.getBoundingClientRect();
+        if (r.top < window.innerHeight * 1.2) { io.unobserve(n); show(n); }
+      });
+    }, 900);
+    setTimeout(() => { clearInterval(this._failOpen); document.querySelectorAll('[data-reveal="0"]').forEach(show); }, 20000);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    clearInterval(this._tabTimer);
+    if (this._io) this._io.disconnect();
+    if (this._mo) this._mo.disconnect();
+    if (this._failOpen) clearInterval(this._failOpen);
+  }
+  btn(active) {
+    return {
+      display: 'inline-flex', alignItems: 'center', gap: '7px', border: 'none', cursor: 'pointer',
+      fontFamily: 'inherit', fontSize: '13px', fontWeight: 600, padding: '9px 16px', borderRadius: '999px',
+      background: active ? '#1F3A72' : 'transparent', color: active ? '#FFFFFF' : '#4B5563'
+    };
+  }
+  renderVals() {
+    const mobile = this.state.device === 'mobile';
+    const compact = mobile || this.state.winWidth < 900;
+    const score = this.pwScore();
+    const checks = this.pw();
+    const emailOk = this.validEmail(this.state.email);
+    const prov = this.state.provider === 'microsoft' ? 'Microsoft' : 'Google';
+    const titles = {
+      choose: 'Welcome to Assisty',
+      account: 'Choose a ' + prov + ' account',
+      connecting: 'One moment',
+      details: 'Finish setting up'
+    };
+    const subs = {
+      choose: 'Get started in under a minute.',
+      account: 'Pick the account you want to use.',
+      connecting: 'Signing you in.',
+      details: 'A few details and you are in.'
+    };
+    const title = titles[this.state.step];
+    const sub = subs[this.state.step];
+    const lvl = this.state.level || 'moderate';
+    const levels = {
+      lenient: { avg: '82%', flagged: '6', note: 'Partial credit is awarded wherever the direction of reasoning is sound, even when the supporting detail is thin.' },
+      moderate: { avg: '78%', flagged: '14', note: 'The rubric is applied exactly as written; each level needs the evidence that level describes.' },
+      strict: { avg: '69%', flagged: '31', note: 'Every point requires an explicit, citable statement in the submission. Implied understanding scores zero.' }
+    };
+    const at = this.state.tab || 0;
+    const tabVals = {};
+    for (let i = 0; i < 8; i++) {
+      tabVals['tab' + i + 'Style'] = this.tabBtn(at === i, i === 7);
+      tabVals['tab' + i + 'Active'] = at === i;
+      tabVals['tab' + i + 'IconStyle'] = { flex: '0 0 30px', width: '30px', height: '30px', borderRadius: '8px',
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+        background: at === i ? '#0B7C88' : ['#EEF2FB', '#E6FBFD', '#FEEDE9'][i % 3],
+        color: at === i ? '#FFFFFF' : ['#1F3A72', '#0B7C88', '#C2402C'][i % 3], flexShrink: 0,
+        transition: 'background 160ms ease, color 160ms ease' };
+      tabVals['pickTab' + i] = () => this.pickTab(i);
+    }
+    const si = this.state.subject || 0;
+    const subjects = this.subjectList().map(([name, blurb, img], i) => ({
+      name, blurb,
+      initial: name[0],
+      slot: 'subject-' + name.toLowerCase().replace(/[^a-z]+/g, '-'),
+      placeholder: name + ' submission screenshot',
+      imgs: img ? [{ src: img, alt: name + ' submission graded in Assisty' }] : [],
+      noImg: !img,
+      btnStyle: this.subjBtn(si === i),
+      tileStyle: { flex: '0 0 26px', width: '26px', height: '26px', borderRadius: '7px',
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: 700,
+        background: si === i ? '#0B7C88' : '#EEF2FB', color: si === i ? '#FFFFFF' : '#1F3A72' },
+      paneStyle: { display: si === i ? 'block' : 'none' },
+      pick: () => this.setState({ subject: i })
+    }));
+    return {
+      ...tabVals,
+      subjects,
+      featCols: compact ? '1fr' : '268px minmax(0, 1fr)',
+      rubricCols: compact ? '1fr' : 'minmax(0, 0.85fr) minmax(0, 1.15fr)',
+      panelCols: compact ? '1fr' : 'minmax(0, 1fr) minmax(0, 48%)',
+      railStyle: { display: 'flex', flexDirection: 'column', minWidth: 0, background: '#FFFFFF',
+        borderRight: compact ? 'none' : '1px solid #EDF0F6', borderBottom: compact ? '1px solid #EDF0F6' : 'none' },
+      textOrder: compact ? 2 : 1,
+      shotOrder: compact ? 1 : 2,
+      subjCols: compact ? '1fr' : 'minmax(0, 250px) minmax(0, 1fr)',
+      compareCols: compact ? '1fr' : '1fr 1fr',
+      compactNav: compact,
+      wideSteps: !compact,
+      stepCols: compact ? '1fr' : 'repeat(4, minmax(0, 1fr))',
+      cardCols: compact ? '1fr' : 'minmax(0, 190px) minmax(0, 1fr)',
+      cardRows: compact ? 'auto' : '220px',
+      panelPeach: { background: '#FEEDE9', height: compact ? '220px' : '100%', minHeight: 0, overflow: 'hidden' },
+      panelBlue: { background: '#EEF2FB', height: compact ? '220px' : '100%', minHeight: 0, overflow: 'hidden' },
+      panelIndigo: { background: '#EEF0FB', height: compact ? '220px' : '100%', minHeight: 0, overflow: 'hidden' },
+      panelGrey: { background: '#F7F8FB', height: compact ? '220px' : '100%', minHeight: 0, overflow: 'hidden' },
+      campusStyle: compact
+        ? { position: 'relative', width: '100%', height: '170px', marginBottom: '26px', borderRadius: '16px', overflow: 'hidden' }
+        : { position: 'absolute', top: 0, right: 0, width: 'min(58%, 700px)', height: 'min(58%, 380px)',
+            WebkitMaskImage: 'linear-gradient(to left, #000 45%, transparent 100%), linear-gradient(to top, transparent 0%, #000 42%)',
+            maskImage: 'linear-gradient(to left, #000 45%, transparent 100%), linear-gradient(to top, transparent 0%, #000 42%)',
+            WebkitMaskComposite: 'source-in', maskComposite: 'intersect' },
+      campusFit: compact ? 'center' : 'right top',
+      arrowRotate: compact ? 'rotate(90deg)' : 'none',
+      fullNav: !compact,
+      navOpen: compact && this.state.navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false }),
+      stageStyle: mobile
+        ? { background: '#EEF1F6', padding: '32px 0 48px' }
+        : {},
+      frameStyle: mobile
+        ? { width: '390px', margin: '0 auto', background: '#FFFFFF', border: '1px solid #DCE4F5', borderRadius: '20px', containerType: 'inline-size' }
+        : { containerType: 'inline-size' },
+      showDesktop: () => this.setState({ device: 'desktop' }),
+      showMobile: () => this.setState({ device: 'mobile' }),
+      desktopBtnStyle: this.btn(!mobile),
+      mobileBtnStyle: this.btn(mobile),
+      showUniversityStrip: this.props.showUniversityStrip ?? false,
+      videoOpen: this.state.videoOpen,
+      openVideo: () => this.setState({ videoOpen: true }),
+      closeVideo: () => this.setState({ videoOpen: false }),
+      stopClick: (e) => e.stopPropagation(),
+
+      lenientStyle: this.levelStyle(lvl === 'lenient'),
+      moderateStyle: this.levelStyle(lvl === 'moderate'),
+      strictStyle: this.levelStyle(lvl === 'strict'),
+      setLenient: () => this.setState({ level: 'lenient' }),
+      setModerate: () => this.setState({ level: 'moderate' }),
+      setStrict: () => this.setState({ level: 'strict' }),
+      strictAvg: levels[lvl].avg,
+      strictFlagged: levels[lvl].flagged,
+      strictNote: levels[lvl].note,
+
+      authOpen: this.state.authOpen,
+      openLogin: () => this.setState({ authOpen: true, step: 'choose', mode: 'login', email: 'jane.mensah@gmail.com', error: '' }),
+      openAuth: () => this.setState({ authOpen: true, mode: 'signup', step: 'choose', error: '' }),
+      closeAuth: () => this.setState({ authOpen: false }),
+      stepChoose: this.state.step === 'choose',
+      stepAccount: this.state.step === 'account',
+      stepConnecting: this.state.step === 'connecting',
+      stepDetails: this.state.step === 'details',
+      modalTitle: title, modalSub: sub,
+      connectingLabel: this.state.method === 'google' ? 'Signing in with Google…' : this.state.method === 'microsoft' ? 'Signing in with Microsoft…' : 'Signing you in…',
+      needsPassword: this.state.method === 'email',
+      emailDisabled: !emailOk,
+      emailBtnStyle: { width: '100%', marginTop: '4px', padding: '14px 16px', borderRadius: '10px', border: 'none',
+        background: emailOk ? '#1F3A72' : '#DCE4F5', color: emailOk ? '#FFFFFF' : '#9CA3AF',
+        fontFamily: 'inherit', fontSize: '15px', fontWeight: 700, cursor: emailOk ? 'pointer' : 'not-allowed',
+        boxShadow: emailOk ? '0 8px 20px rgba(31,58,114,0.24)' : 'none', transition: 'background 150ms ease, color 150ms ease' },
+      isGoogle: this.state.provider !== 'microsoft',
+      isMicrosoft: this.state.provider === 'microsoft',
+      popupHost: this.state.provider === 'microsoft' ? 'login.microsoftonline.com' : 'accounts.google.com',
+      popupBrand: this.state.provider === 'microsoft' ? 'Microsoft' : 'Google',
+      popupStyle: { width: 'min(440px, 100%)', margin: 'auto', background: '#FFFFFF', borderRadius: '12px',
+        overflow: 'hidden', boxShadow: '0 30px 80px rgba(15,27,54,0.45)', display: 'flex', flexDirection: 'column',
+        fontFamily: this.state.provider === 'microsoft'
+          ? '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif'
+          : 'Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif' },
+      popupListStyle: { display: 'flex', flexDirection: 'column', borderTop: '1px solid #E8EAED' },
+      popupRowStyle: { display: 'flex', alignItems: 'center', gap: '14px', width: '100%', padding: '14px 40px',
+        border: 'none', borderBottom: '1px solid #E8EAED', background: '#FFFFFF', cursor: 'pointer',
+        fontFamily: 'inherit', textAlign: 'left' },
+      pickerAccounts: this.accounts(this.state.provider).map(a => ({
+        name: a.name, email: a.email,
+        initials: a.name.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(),
+        tag: a.existing ? 'Signed up' : 'New',
+        tagStyle: { flex: '0 0 auto', fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
+          padding: '4px 8px', borderRadius: '999px',
+          background: a.existing ? '#E6F4EA' : '#F1F3F4', color: a.existing ? '#137333' : '#5F6368' },
+        avatarStyle: { flex: '0 0 32px', width: '32px', height: '32px', borderRadius: '50%',
+          background: a.existing ? '#1A73E8' : '#8430CE', color: '#FFFFFF',
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', fontWeight: 500 },
+        pick: () => a.existing ? this.signIn(a.email, this.state.provider) : this.newUser(a.email, this.state.provider, a.name)
+      })),
+      useAnother: () => this.setState({ step: 'choose', method: 'email', email: '', fullName: '', error: '' }),
+
+      email: this.state.email,
+      setEmail: (e) => this.setState({ email: e.target.value, error: '' }),
+      password: this.state.password,
+      setPassword: (e) => this.setState({ password: e.target.value, error: '' }),
+      confirmPw: this.state.confirmPw,
+      setConfirmPw: (e) => this.setState({ confirmPw: e.target.value, error: '' }),
+      fullName: this.state.fullName,
+      setFullName: (e) => this.setState({ fullName: e.target.value, error: '' }),
+      dialCode: this.state.dialCode,
+      setDialCode: (e) => this.setState({ dialCode: e.target.value }),
+      mobile: this.state.mobile,
+      setMobile: (e) => this.setState({ mobile: e.target.value, error: '' }),
+
+      chooseGoogle: () => this.openPicker('google'),
+      chooseMicrosoft: () => this.openPicker('microsoft'),
+      submitEmail: () => {
+        if (!emailOk) return this.setState({ error: 'Enter a valid email address.' });
+        const e = this.state.email.trim().toLowerCase();
+        if (this.known()[e]) this.signIn(e, 'email');
+        else this.newUser(e, 'email', '');
+      },
+      submitDetails: () => {
+        if (this.state.fullName.trim().length < 2)
+          return this.setState({ error: 'Enter your full name.' });
+        if (this.state.mobile.replace(/\D/g, '').length < 7)
+          return this.setState({ error: 'Enter a valid mobile number.' });
+        if (this.state.method === 'email') {
+          if (this.pwScore() < 4)
+            return this.setState({ error: 'Password must meet all four requirements.' });
+          if (this.state.password !== this.state.confirmPw)
+            return this.setState({ error: 'Passwords do not match.' });
+        }
+        this.setState({ authOpen: false, signedIn: true, step: 'choose', newAccount: true, error: '' });
+      },
+      backStep: () => this.go('choose'),
+
+      bar1Style: this.barStyle(1), bar2Style: this.barStyle(2), bar3Style: this.barStyle(3), bar4Style: this.barStyle(4),
+      strengthLabel: ['', 'Weak', 'Fair', 'Good', 'Strong'][score] || '',
+      strengthColor: ['#9CA3AF', '#DC2626', '#F59E0B', '#0FA3B2', '#0B7C88'][score],
+      reqLenStyle: this.reqStyle(checks.len), reqCaseStyle: this.reqStyle(checks.cases),
+      reqNumStyle: this.reqStyle(checks.num), reqSymStyle: this.reqStyle(checks.sym),
+
+      showProviderNote: this.state.method !== 'email',
+      providerNote: this.state.method === 'google' ? 'Google account connected' : 'Microsoft account connected',
+      hasError: !!this.state.error,
+      errorMsg: this.state.error,
+
+      signedIn: this.state.signedIn,
+      newAccount: this.state.newAccount,
+      returningUser: !this.state.newAccount,
+      skipOnboarding: () => this.setState({ newAccount: false }),
+      howSteps: [
+        { n: '1', title: 'Add an assignment', body: 'Upload submissions manually or import a course from Canvas.' },
+        { n: '2', title: 'Set the rubric', body: 'Write your own criteria or start from a template. Assisty grades against it.' },
+        { n: '3', title: 'Review the pass', body: 'Every submission gets a score and written feedback. Adjust anything before release.' },
+        { n: '4', title: 'Release grades', body: 'Publish to students, or sync straight back to Canvas.' }
+      ],
+      statCards: (() => {
+        const blob = bg => ({ position: 'absolute', right: '26px', top: '52px', width: '68px', height: '68px', borderRadius: '50%', background: bg });
+        const icon = { position: 'absolute', right: '48px', top: '26px', width: '52px', height: '52px', color: '#D8DCE3', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' };
+        const svg = (...children) => React.createElement('svg', { viewBox: '0 0 24 24', fill: 'none', style: { width: '100%', height: '100%' } }, ...children);
+        const p = (d, i) => React.createElement('path', { key: 'p' + i, d, stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round' });
+        const r = (x, y, w, h, rd, i) => React.createElement('rect', { key: 'r' + i, x, y, width: w, height: h, rx: rd, stroke: 'currentColor', strokeWidth: 1.6 });
+        return [
+          { label: 'Manual Assignments', value: '104', linked: true, blobStyle: blob('#D9F7E3'), iconStyle: icon,
+            icon: svg(r(4, 3, 16, 18, 2, 1), p('M8 8h8', 1), p('M8 12h8', 2), p('M8 16h5', 3)) },
+          { label: 'Rubrics Created', value: '92', linked: false, blobStyle: blob('#E4E1FB'), iconStyle: icon,
+            icon: svg(r(3, 5, 18, 14, 2, 1), r(7, 9, 10, 6, 1, 2)) },
+          { label: 'Evaluations Done', value: '4908', linked: false, blobStyle: blob('#FBE1E6'), iconStyle: icon,
+            icon: svg(p('M3 9l3.5 3.5L13 6', 1), p('M15 6l5 5M20 6l-5 5', 2), p('M10 13v6.5l2-1.6 1.4 2.6 1.8-1-1.4-2.6 2.4-.4z', 3)) }
+        ];
+      })(),
+      signOut: () => this.setState({ signedIn: false, newAccount: false, step: 'choose', email: '', password: '', confirmPw: '', fullName: '', mobile: '', method: 'email' }),
+      firstName: (this.state.fullName || '').trim().split(/\s+/)[0] || 'there',
+      userInitials: (this.state.fullName || 'A').trim().split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(),
+      fullMobile: this.state.dialCode + ' ' + this.state.mobile,
+      methodLabel: this.state.method === 'google' ? 'Google' : this.state.method === 'microsoft' ? 'Microsoft' : 'Email & password'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* ============================================================
+ * Great Learning — MUI "Olympus" Design System
+ * Color + Type tokens (CSS custom properties)
+ * ------------------------------------------------------------
+ * Source of truth: @sachinsinha1/olympus-theme (MUI theme).
+ * Values mirror olympusTheme.ts 1:1.
+ * ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ── Brand ───────────────────────────────────────────────── */
+  --gl-brand-bright: #1974D2;
+  --gl-brand-darker: #0E39A9;
+
+  /* ── Primary (action / brand blue) ───────────────────────── */
+  --primary-main: #196AE5;
+  --primary-dark: #0F4089;
+  --primary-light: #4788EA;
+  --primary-contrast: #FFFFFF;
+  --primary-hover: rgba(25, 106, 229, 0.04);
+  --primary-select: rgba(25, 106, 229, 0.08);
+  --primary-12p: rgba(25, 106, 229, 0.12);
+  --primary-30p: rgba(25, 106, 229, 0.30);
+  --primary-50p: rgba(25, 106, 229, 0.50);
+
+  /* ── Semantic ─────────────────────────────────────────────── */
+  --error-main: #FF3333;
+  --error-dark: #D10B25;
+  --error-light: #F9494F;
+  --error-bg: #FFEBEB;
+
+  --warning-main: #FF9800;
+  --warning-dark: #EF6C00;
+  --warning-light: #FFB74D;
+  --warning-bg: #FFF5E5;
+
+  --success-main: #22BB34;
+  --success-dark: #00880F;
+  --success-light: #74D176;
+  --success-bg: #E9F8EB;
+
+  --info-main: #196AE5;
+  --info-dark: #0F4089;
+  --info-light: #4788EA;
+  --info-bg: #E8F0FC;
+
+  /* ── Text ─────────────────────────────────────────────────── */
+  --text-primary: rgba(33, 33, 33, 0.92);
+  --text-secondary: rgba(33, 33, 33, 0.72);
+  --text-disabled: rgba(33, 33, 33, 0.24);
+
+  /* ── Action ───────────────────────────────────────────────── */
+  --action-active: rgba(33, 33, 33, 0.64);
+  --action-hover: rgba(33, 33, 33, 0.04);
+  --action-selected: rgba(33, 33, 33, 0.08);
+  --action-disabled: rgba(33, 33, 33, 0.30);
+  --action-disabled-bg: rgba(33, 33, 33, 0.12);
+  --action-focus: rgba(33, 33, 33, 0.12);
+
+  /* ── Background / Surface ─────────────────────────────────── */
+  --bg-default: #FAFAFA;
+  --bg-paper: #FFFFFF;
+  --divider: rgba(33, 33, 33, 0.06);
+  --outlined-border: rgba(33, 33, 33, 0.23);
+  --backdrop-overlay: rgba(33, 33, 33, 0.50);
+  --filled-input-bg: rgba(33, 33, 33, 0.06);
+  --standard-input-line: rgba(33, 33, 33, 0.42);
+  --snackbar-bg: #212121;
+  --rating-active: #FFB400;
+
+  /* ── Grey ─────────────────────────────────────────────────── */
+  --grey-50:  #FAFAFA;
+  --grey-100: #F5F5F5;
+  --grey-200: #EEEEEE;
+  --grey-300: #E0E0E0;
+  --grey-400: #BDBDBD;
+  --grey-500: #9E9E9E;
+  --grey-600: #757575;
+  --grey-700: #616161;
+  --grey-800: #424242;
+  --grey-900: #212121;
+
+  /* ── Common ───────────────────────────────────────────────── */
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* ── Elevation (MUI shadows — key steps) ──────────────────── */
+  --shadow-0: none;
+  --shadow-1: 0px 1px 3px rgba(0,0,0,0.06), 0px 1px 1px rgba(0,0,0,0.07), 0px 2px 1px -1px rgba(0,0,0,0.10);
+  --shadow-2: 0px 1px 5px rgba(0,0,0,0.06), 0px 2px 2px rgba(0,0,0,0.07), 0px 3px 1px -2px rgba(0,0,0,0.10);
+  --shadow-4: 0px 1px 10px rgba(0,0,0,0.06), 0px 4px 5px rgba(0,0,0,0.07), 0px 2px 4px -1px rgba(0,0,0,0.10);
+  --shadow-8: 0px 3px 14px 2px rgba(0,0,0,0.06), 0px 8px 10px 1px rgba(0,0,0,0.07), 0px 5px 5px -3px rgba(0,0,0,0.10);
+  --shadow-16: 0px 6px 30px 5px rgba(0,0,0,0.06), 0px 16px 24px 2px rgba(0,0,0,0.07), 0px 8px 10px -5px rgba(0,0,0,0.10);
+  --shadow-24: 0px 9px 46px 8px rgba(0,0,0,0.06), 0px 24px 38px 3px rgba(0,0,0,0.07), 0px 11px 15px -7px rgba(0,0,0,0.10);
+
+  /* ── Radius ───────────────────────────────────────────────── */
+  --radius-base: 4px;
+  --radius-card: 4px;
+  --radius-pill: 9999px;
+
+  /* ── Spacing scale (non-linear 4px base) ──────────────────── */
+  --sp-0: 0px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 32px;
+  --sp-6: 40px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* ── Typography — families ────────────────────────────────── */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ── Typography — semantic sizes (px) ─────────────────────── */
+  --size-h1: 32px;   --lh-h1: 1.167;   --ls-h1: -0.4px;
+  --size-h2: 28px;   --lh-h2: 1.2;     --ls-h2: -0.4px;
+  --size-h3: 24px;   --lh-h3: 1.167;   --ls-h3: -0.4px;
+  --size-h4: 20px;   --lh-h4: 1.235;   --ls-h4: -0.4px;
+  --size-h5: 18px;   --lh-h5: 1.334;   --ls-h5: -0.4px;
+  --size-h6: 18px;   --lh-h6: 1.334;   --ls-h6: -0.4px;
+  --size-subtitle1: 16px; --lh-subtitle1: 1.75;
+  --size-subtitle2: 14px; --lh-subtitle2: 1.57;
+  --size-body1: 16px;     --lh-body1: 1.5;
+  --size-body2: 14px;     --lh-body2: 1.43;
+  --size-caption: 12px;   --lh-caption: 1.66;  --ls-caption: 0.4px;
+  --size-overline: 10px;  --lh-overline: 1.66; --ls-overline: 1.25px;
+  --size-button: 14px;    --lh-button: 1.43;   --ls-button: 0.4px;
+
+  /* ── Weights ──────────────────────────────────────────────── */
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+}
+
+/* ──────────────────────────────────────────────────────────────
+ * Semantic element defaults — use plain HTML and get the look.
+ * ────────────────────────────────────────────────────────────── */
+html, body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--bg-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 { font: var(--w-semibold) var(--size-h1)/var(--lh-h1) var(--font-sans); letter-spacing: var(--ls-h1); margin: 0; }
+h2 { font: var(--w-semibold) var(--size-h2)/var(--lh-h2) var(--font-sans); letter-spacing: var(--ls-h2); margin: 0; }
+h3 { font: var(--w-semibold) var(--size-h3)/var(--lh-h3) var(--font-sans); letter-spacing: var(--ls-h3); margin: 0; }
+h4 { font: var(--w-semibold) var(--size-h4)/var(--lh-h4) var(--font-sans); letter-spacing: var(--ls-h4); margin: 0; }
+h5, h6 { font: var(--w-semibold) var(--size-h5)/var(--lh-h5) var(--font-sans); letter-spacing: var(--ls-h5); margin: 0; }
+p  { font: var(--w-regular) var(--size-body1)/var(--lh-body1) var(--font-sans); margin: 0; }
+small { font: var(--w-regular) var(--size-caption)/var(--lh-caption) var(--font-sans); letter-spacing: var(--ls-caption); }
+code, kbd, pre { font-family: var(--font-mono); font-size: var(--size-body2); }
+
+/* Utility classes that mirror MUI <Typography variant="..."> */
+.t-h1 { font: var(--w-semibold) var(--size-h1)/var(--lh-h1) var(--font-sans); letter-spacing: var(--ls-h1); }
+.t-h2 { font: var(--w-semibold) var(--size-h2)/var(--lh-h2) var(--font-sans); letter-spacing: var(--ls-h2); }
+.t-h3 { font: var(--w-semibold) var(--size-h3)/var(--lh-h3) var(--font-sans); letter-spacing: var(--ls-h3); }
+.t-h4 { font: var(--w-semibold) var(--size-h4)/var(--lh-h4) var(--font-sans); letter-spacing: var(--ls-h4); }
+.t-h5 { font: var(--w-semibold) var(--size-h5)/var(--lh-h5) var(--font-sans); letter-spacing: var(--ls-h5); }
+.t-subtitle1 { font: var(--w-medium) var(--size-subtitle1)/var(--lh-subtitle1) var(--font-sans); }
+.t-subtitle2 { font: var(--w-medium) var(--size-subtitle2)/var(--lh-subtitle2) var(--font-sans); }
+.t-body1 { font: var(--w-regular) var(--size-body1)/var(--lh-body1) var(--font-sans); }
+.t-body2 { font: var(--w-regular) var(--size-body2)/var(--lh-body2) var(--font-sans); }
+.t-caption { font: var(--w-regular) var(--size-caption)/var(--lh-caption) var(--font-sans); letter-spacing: var(--ls-caption); }
+.t-overline { font: var(--w-semibold) var(--size-overline)/var(--lh-overline) var(--font-sans); letter-spacing: var(--ls-overline); text-transform: uppercase; }
+.t-button { font: var(--w-medium) var(--size-button)/var(--lh-button) var(--font-sans); letter-spacing: var(--ls-button); text-transform: uppercase; }
+
+/* ── Dark theme ───────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --primary-main: #66BBFF;
+  --primary-dark: #3A9AE8;
+  --primary-light: #E8F0FC;
+  --primary-hover: rgba(102,187,255,0.08);
+  --primary-select: rgba(102,187,255,0.16);
+
+  --error-main: #F44336;
+  --warning-main: #FFCC80;
+  --success-main: #66BB6A;
+  --info-main: #29B6F6;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255,255,255,0.70);
+  --text-disabled: rgba(255,255,255,0.50);
+
+  --action-active: rgba(255,255,255,0.56);
+  --action-hover: rgba(255,255,255,0.08);
+  --action-selected: rgba(255,255,255,0.16);
+
+  --bg-default: #121212;
+  --bg-paper: #121212;
+  --divider: rgba(255,255,255,0.12);
+  --outlined-border: rgba(255,255,255,0.23);
+  --filled-input-bg: rgba(255,255,255,0.09);
+  --snackbar-bg: #323232;
+
+  --gl-brand-bright: #FFFFFF;
+  --gl-brand-darker: #FFFFFF;
+}
