@@ -45,6 +45,14 @@
   .hero-media { position:absolute; top:0; right:0; bottom:0; width:60%; min-width:560px; overflow:hidden; background:#F4F6FA url('assets/hero-img.jpg') 68% center / cover no-repeat; }
   .hero-media::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, #FFFFFF 0%, rgba(255,255,255,0) 20%); pointer-events:none; }
   .hero-text-col { max-width:560px; position:relative; z-index:2; }
+  @container (max-width: 899px) {
+    .hero-shell { min-height:0; padding-bottom:24px !important; flex-direction:column; align-items:stretch; }
+    .hero-media { position:static; order:2; width:100%; min-width:0; height:280px; margin-top:24px; }
+    .hero-media::before { display:none; }
+    .hero-media [data-float] { display:none !important; }
+    .hero-text-wrap { order:1; }
+    .hero-text-col { max-width:100%; }
+  }
   @media (max-width: 899px) {
     .hero-shell { min-height:0; padding-bottom:24px !important; flex-direction:column; align-items:stretch; }
     .hero-media { position:static; order:2; width:100%; min-width:0; height:280px; margin-top:24px; }
@@ -65,10 +73,6 @@
       <a href="#top" aria-label="Assisty home" style="display:inline-flex; align-items:center;">
         <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:28px; width:auto;">
       </a>
-      <nav aria-label="Primary" style="display:flex; align-items:center; gap:4px;">
-        <a href="#features" style="display:inline-flex; align-items:center; justify-content:center; font-weight:500; font-size:13px; padding:9px 14px; border-radius:8px; color:#1F3A72; line-height:1; font-family:inherit;" style-hover="background:#F3F4F6;">Features</a>
-        <a href="how-it-works.html" style="display:inline-flex; align-items:center; justify-content:center; font-weight:500; font-size:13px; padding:9px 14px; border-radius:8px; color:#1F3A72; line-height:1; font-family:inherit;" style-hover="background:#F3F4F6;">How it Works</a>
-      </nav>
       <div style="display:flex; align-items:center; gap:8px;">
         <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; font-weight:500; font-size:13px; padding:9px 14px; border-radius:8px; background:transparent; color:#1F3A72; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#F3F4F6;">Log in</button>
         <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:13px; padding:9px 18px; border-radius:8px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Start Free</button>
@@ -99,10 +103,6 @@
           <div style="font-size:11px; font-weight:600; color:#6B7280; margin-top:3px;">Strong thesis &middot; Clear argument</div>
         </div>
       </div>
-      <div data-float style="position:absolute; left:50%; bottom:36px; transform:translateX(-50%); display:flex; align-items:center; gap:6px; background:#0B7C88; border-radius:999px; padding:8px 16px; box-shadow:0 14px 30px rgba(11,124,136,0.28); animation:assistyFloatSoft 5.8s ease-in-out 0.4s infinite; z-index:2;">
-        <svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px; color:#FFFFFF;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        <span style="font-size:12px; font-weight:700; color:#FFFFFF; letter-spacing:-0.01em;">Grading complete</span>
-      </div>
     </div>
 
     <div class="hero-text-wrap" style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); position:relative; z-index:2; width:100%;">
@@ -125,7 +125,7 @@
             Watch how it works
           </button>
         </div>
-        <div data-hseq="6" style="margin-top:20px; display:flex; align-items:center; flex-wrap:wrap; gap:18px 22px; color:#6B7280; font-size:12.5px; font-weight:500;">
+        <div data-hseq="6" style="margin-top:20px; display:flex; align-items:center; flex-wrap:wrap; gap:18px 22px; color:#374151; font-size:13px; font-weight:600;">
           <span style="display:inline-flex; align-items:center; gap:6px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px; flex:0 0 14px;"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>Secure &amp; Private</span>
           <span style="display:inline-flex; align-items:center; gap:6px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px; flex:0 0 14px;"><rect x="4" y="10.5" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 10.5V7.5a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>FERPA Compliant</span>
           <span style="display:inline-flex; align-items:center; gap:6px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px; flex:0 0 14px;"><path d="M3 10.5L12 4l9 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.5 10.5V19M10 10.5V19M14 10.5V19M18.5 10.5V19M3 19.5h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>Loved by Educators</span>
@@ -178,23 +178,16 @@
         <div style="position:relative; border-radius:20px; overflow:hidden; border:1px solid #E9ECF3; aspect-ratio:4 / 3; background:#F4F6FA;">
           <image-slot id="problem-educator" src="assets/how-before.jpg" placeholder="Educator buried in papers, late at night" style="width:100%; height:100%;"></image-slot>
         </div>
-        <div style="position:absolute; left:18px; bottom:-16px; display:flex; align-items:center; gap:10px; background:#FFFFFF; border:1px solid #F3E6E3; border-radius:12px; padding:11px 16px; box-shadow:0 16px 36px rgba(31,58,114,0.12);">
-          <span style="width:28px; height:28px; border-radius:8px; background:#FEEDE9; color:#DC2626; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
-          <div>
-            <div style="font-size:13.5px; font-weight:700; color:#111827; line-height:1.1;">11:40 PM, Sunday</div>
-            <div style="font-size:11px; font-weight:600; color:#6B7280; margin-top:3px;">still 63 scripts to go</div>
-          </div>
-        </div>
       </div>
       <div>
         <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">The part nobody signed up for</span>
-        <h2 style="margin-top:18px; font-size:clamp(30px, 3.6cqi, 44px); line-height:1.1; font-weight:800; letter-spacing:-0.03em; color:#1F3A72;">You became an educator to teach.<br>Not to spend nights grading.</h2>
+        <h2 style="margin-top:18px; font-size:clamp(30px, 3.6cqi, 44px); line-height:1.1; font-weight:800; letter-spacing:-0.03em; color:#1F3A72;">You became an educator to teach. Not to spend nights grading.</h2>
         <p style="margin-top:16px; font-size:16.5px; line-height:1.65; color:#4B5563; max-width:480px;">Every batch of submissions costs the same things: evenings, consistency and the energy you would rather spend on students.<br>Assisty takes that cost back, whatever the students hand in.</p>
-        <ul style="list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:14px; max-width:480px;">
-          <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#374151; line-height:1.55;"><span style="width:22px; height:22px; flex:0 0 22px; margin-top:2px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:12px; height:12px;"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Handwritten notes, graded straight off the scan.</span></li>
-          <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#374151; line-height:1.55;"><span style="width:22px; height:22px; flex:0 0 22px; margin-top:2px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:12px; height:12px;"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Code grading, marked line by line against your criteria.</span></li>
-          <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#374151; line-height:1.55;"><span style="width:22px; height:22px; flex:0 0 22px; margin-top:2px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:12px; height:12px;"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Supports all formats of submissions, one mixed queue.</span></li>
-          <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#374151; line-height:1.55;"><span style="width:22px; height:22px; flex:0 0 22px; margin-top:2px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:12px; height:12px;"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Lenient, moderate or strict &mdash; your call, not ours.</span></li>
+        <ul style="list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:16px; max-width:480px;">
+          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#0B7C88; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(11,124,136,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M11.5 12.5l5-5 1.5 1.5-5 5H11v-1.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path></svg></span><span>Handwritten notes, graded straight off the scan.</span></li>
+          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#1F3A72; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(31,58,114,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Code grading, marked line by line against your criteria.</span></li>
+          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#E15A48; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(225,90,72,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M3 13l9 5 9-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Supports all formats of submissions, one mixed queue.</span></li>
+          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#6D5BD0; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(109,91,208,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M4 12a8 8 0 0 1 14-5l3-3v8h-8l3-3a5 5 0 1 0 1 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Lenient, moderate or strict. Your call, not ours.</span></li>
         </ul>
       </div>
     </div>
@@ -262,35 +255,21 @@
       <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88; background:#E6FBFD; padding:6px 12px; border-radius:999px;">Any subject, any format</span>
       <h2 style="margin-top:16px; font-size:clamp(26px, 3cqi, 38px); line-height:1.2; font-weight:700; letter-spacing:-0.025em; color:#1F3A72;">If your students can submit it,<br>Assisty can grade it against your rubric.</h2>
       <p style="margin-top:14px; font-size:16px; line-height:1.65; color:#4B5563; max-width:620px; margin-left:auto; margin-right:auto;">Essays, handwritten scripts, code notebooks, case analyses, lab reports. There is no supported-subjects list to check against.</p>
-      <div data-reveal-stagger style="margin-top:32px; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap:16px; text-align:left;">
-        <div style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:16px; padding:22px 20px; display:flex; flex-direction:column; gap:12px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M11.5 12.5l5-5 1.5 1.5-5 5H11v-1.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path></svg></span>
-          <div>
-            <div style="font-size:16px; font-weight:700; color:#111827; letter-spacing:-0.015em;">Handwritten notes</div>
-            <p style="margin-top:6px; font-size:14px; color:#4B5563; line-height:1.55;">Scanned scripts go through OCR and grade against the same rubric as typed work.</p>
-          </div>
-        </div>
-        <div style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:16px; padding:22px 20px; display:flex; flex-direction:column; gap:12px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-          <div>
-            <div style="font-size:16px; font-weight:700; color:#111827; letter-spacing:-0.015em;">Code grading</div>
-            <p style="margin-top:6px; font-size:14px; color:#4B5563; line-height:1.55;">Notebooks are read as code and marked line by line against your criteria.</p>
-          </div>
-        </div>
-        <div style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:16px; padding:22px 20px; display:flex; flex-direction:column; gap:12px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M3 13l9 5 9-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-          <div>
-            <div style="font-size:16px; font-weight:700; color:#111827; letter-spacing:-0.015em;">Supports all formats</div>
-            <p style="margin-top:6px; font-size:14px; color:#4B5563; line-height:1.55;">Essays, case analyses, lab reports and more, all in one mixed-format queue.</p>
-          </div>
-        </div>
-        <div style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:16px; padding:22px 20px; display:flex; flex-direction:column; gap:12px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M4 12a8 8 0 0 1 14-5l3-3v8h-8l3-3a5 5 0 1 0 1 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-          <div>
-            <div style="font-size:16px; font-weight:700; color:#111827; letter-spacing:-0.015em;">Lenient, moderate or strict</div>
-            <p style="margin-top:6px; font-size:14px; color:#4B5563; line-height:1.55;">Your call. Set the calibration and compare grade curves before you commit.</p>
-          </div>
-        </div>
+      <div data-reveal-stagger style="margin-top:22px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px; max-width:720px; margin-left:auto; margin-right:auto;">
+        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Accounting</span>
+        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">Computer Science</span>
+        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Data Science</span>
+        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Economics</span>
+        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">Engineering</span>
+        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Finance</span>
+        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Healthcare</span>
+        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">History</span>
+        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Marketing</span>
+        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Mathematics</span>
+        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">Philosophy</span>
+        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Physics</span>
+        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Statistics</span>
+        <span style="font-size:13px; font-weight:600; color:#6B7280; background:#F3F4F6; padding:7px 14px; border-radius:999px;">&hellip;and yours</span>
       </div>
     </div>
   </section>
@@ -318,14 +297,6 @@
           <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">Why Assisty</span>
           <h2 style="margin-top:20px; font-size:clamp(32px, 3.6cqi, 46px); line-height:1.08; font-weight:800; letter-spacing:-0.035em; color:#1F3A72;">Built for how educators actually grade.</h2>
           <p style="margin-top:16px; font-size:16px; line-height:1.6; color:#4B5563; max-width:360px;">Assisty is not a shortcut around your judgment. It is built on three promises to the educator holding the red pen.</p>
-
-          <figure style="margin:36px 0 0; border-left:3px solid #0FA3B2; padding:2px 0 2px 20px;">
-            <blockquote style="margin:0; font-size:17px; line-height:1.5; color:#111827; letter-spacing:-0.012em;">We reduced our grading time from two weeks to three days while improving feedback quality for every student.</blockquote>
-            <figcaption style="margin-top:14px; display:flex; align-items:center; gap:12px;">
-              <span style="width:40px; height:40px; border-radius:50%; background:#EEF2FB; color:#1F3A72; flex:0 0 40px; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">SB</span>
-              <span style="font-size:13px; color:#6B7280;">Professor, School of Business</span>
-            </figcaption>
-          </figure>
         </div>
 
         <div>
@@ -422,77 +393,118 @@
     </div>
   </section>
 
-  <section id="features" data-screen-label="Features" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FBFCFE;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+  <section id="features" data-screen-label="Features" style="position:relative; overflow:hidden; padding:clamp(56px, 8cqi, 96px) 0; background:radial-gradient(620px 360px at 6% -8%, rgba(109,91,208,0.10), transparent 60%), radial-gradient(520px 320px at 96% 104%, rgba(11,124,136,0.08), transparent 60%), #FBFCFE;">
+    <div style="position:absolute; right:6%; top:14%; width:110px; height:110px; opacity:0.5; background-image:radial-gradient(circle 2.5px, #C7BFF0 100%, transparent 101%); background-size:18px 18px; pointer-events:none;"></div>
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); position:relative;">
       <div style="max-width:720px; margin:0 0 clamp(30px, 4cqi, 40px);">
-        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">Everything you need</span>
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#6D5BD0; background:#EEEBFC; padding:6px 12px; border-radius:999px;">Everything you need</span>
         <h2 style="margin-top:14px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">A complete workspace for educators.</h2>
         <p style="margin-top:8px; font-size:17px; line-height:1.6; color:#4B5563;">Grade better, with less effort.</p>
       </div>
       <div data-reveal-stagger style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap:16px;">
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><rect x="4" y="4" width="7" height="16" stroke="currentColor" stroke-width="2"></rect><rect x="13" y="4" width="7" height="7" stroke="currentColor" stroke-width="2"></rect><rect x="13" y="13" width="7" height="7" stroke="currentColor" stroke-width="2"></rect></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#EEEBFC; position:relative; padding:14px; overflow:hidden;">
+            <div style="height:8px; width:80%; border-radius:4px; background:#D6CFF3;"></div>
+            <div style="height:8px; width:58%; border-radius:4px; background:#D6CFF3; margin-top:9px;"></div>
+            <div style="height:8px; width:38%; border-radius:4px; background:#D6CFF3; margin-top:9px;"></div>
+            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#6D5BD0; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Rubric Builder</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Write criteria and performance levels by hand, import a rubric you already use, or let Assisty draft a five-level rubric from a one-line marking scheme. Everything stays editable before a single script is touched.</p>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Write criteria and performance levels by hand, import a rubric you already use, or let Assisty draft a five-level rubric from a one-line marking scheme.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M4 8v12h9" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#E6FBFD; position:relative; padding:14px; overflow:hidden; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:center; gap:8px;"><span style="width:16px; height:16px; border-radius:50%; background:#0B7C88; color:#fff; display:inline-flex; align-items:center; justify-content:center; flex:0 0 16px;"><svg viewBox="0 0 24 24" fill="none" style="width:9px; height:9px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><div style="height:7px; width:70%; border-radius:4px; background:#A9E8EF;"></div></div>
+            <div style="display:flex; align-items:center; gap:8px;"><span style="width:16px; height:16px; border-radius:50%; background:#0B7C88; color:#fff; display:inline-flex; align-items:center; justify-content:center; flex:0 0 16px;"><svg viewBox="0 0 24 24" fill="none" style="width:9px; height:9px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><div style="height:7px; width:52%; border-radius:4px; background:#A9E8EF;"></div></div>
+            <div style="display:flex; align-items:center; gap:8px;"><span style="width:16px; height:16px; border-radius:50%; background:#0B7C88; color:#fff; display:inline-flex; align-items:center; justify-content:center; flex:0 0 16px;"><svg viewBox="0 0 24 24" fill="none" style="width:9px; height:9px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><div style="height:7px; width:62%; border-radius:4px; background:#A9E8EF;"></div></div>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Bulk Grading</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Point Assisty at the whole batch. Hundreds of submissions are marked against the same rubric in one pass, each carrying a confidence score so you know exactly where to look first.</p>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Point Assisty at the whole batch. Hundreds of submissions are marked in one pass, each carrying a confidence score so you know where to look first.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M4 5h16v10H8l-4 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#FEEDE9; position:relative; padding:14px 14px 0; overflow:hidden;">
+            <div style="background:#FFFFFF; border-radius:10px 10px 10px 2px; padding:10px 12px; width:82%; box-shadow:0 4px 10px rgba(220,90,70,0.08);">
+              <div style="height:7px; width:88%; border-radius:4px; background:#F6D0C6;"></div>
+              <div style="height:7px; width:60%; border-radius:4px; background:#F6D0C6; margin-top:7px;"></div>
+            </div>
+            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#E15A48; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M4 5h16v10H8l-4 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Custom Feedback</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Every submission comes back with written feedback at your level of detail, quoting the student&rsquo;s own words. Edit any comment, or accept the batch as it stands.</p>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Every submission comes back with written feedback at your level of detail, quoting the student&rsquo;s own words.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M4 12a8 8 0 0 1 14-5l3-3v8h-8l3-3a5 5 0 1 0 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#EEEBFC; position:relative; padding:14px; overflow:hidden; display:flex; align-items:flex-end; gap:8px;">
+            <div style="width:16px; height:28px; border-radius:4px; background:#D6CFF3;"></div>
+            <div style="width:16px; height:52px; border-radius:4px; background:#B4A5EA;"></div>
+            <div style="width:16px; height:38px; border-radius:4px; background:#D6CFF3;"></div>
+            <div style="width:16px; height:20px; border-radius:4px; background:#D6CFF3;"></div>
+            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#6D5BD0; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M4 12a8 8 0 0 1 14-5l3-3v8h-8l3-3a5 5 0 1 0 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Strictness Levels</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Run the same batch at lenient, moderate or strict calibration and compare the resulting grade curves side by side before you commit to one.</p>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Run the same batch at lenient, moderate or strict calibration and compare the resulting grade curves before you commit to one.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M14 3v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#E6FBFD; position:relative; padding:14px; overflow:hidden;">
+            <svg viewBox="0 0 100 40" style="width:80%; height:auto; overflow:visible;"><path d="M2 30 Q 18 8, 34 26 T 66 22 T 98 12" stroke="#0FA3B2" stroke-width="3" fill="none" stroke-linecap="round"></path></svg>
+            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#0B7C88; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-family:'Geist Mono', monospace; font-size:11px; font-weight:700;">&lt;/&gt;</span>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Handwritten &amp; Code</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Scanned scripts go through OCR and notebooks are read as code. Both are marked against the same rubric as typed work, so mixed-format batches stay in one queue.</p>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Scanned scripts go through OCR and notebooks are read as code, so mixed-format batches stay in one queue.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M12 3v13m0 0l-4-4m4 4l4-4M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#E7F8ED; position:relative; padding:14px; overflow:hidden;">
+            <div style="background:#FFFFFF; border-radius:8px; padding:9px 10px; width:74%; box-shadow:0 4px 10px rgba(22,163,74,0.10);">
+              <div style="height:6px; width:70%; border-radius:3px; background:#BEEBCC;"></div>
+              <div style="height:6px; width:46%; border-radius:3px; background:#BEEBCC; margin-top:6px;"></div>
+            </div>
+            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#16A34A; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M12 3v13m0 0l-4-4m4 4l4-4M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Gradebook Export</h3>
             <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Push marks straight back to your LMS, or export a CSV and a per-student report pack for your own records.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M21 12c0 4-4 7-9 7-1.4 0-2.7-.2-3.9-.6L3 20l1.4-4.2C3.5 14.7 3 13.4 3 12c0-4 4-7 9-7s9 3 9 7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#FEEDE9; position:relative; padding:14px; overflow:hidden;">
+            <span style="font-family:Georgia, serif; font-size:40px; font-weight:700; color:#F0B3A6; line-height:1; position:absolute; left:10px; top:2px;">&ldquo;</span>
+            <div style="height:8px; width:56%; border-radius:4px; background:#F6D0C6; margin-top:34px; margin-left:8px;"></div>
+            <div style="height:8px; width:70%; border-radius:4px; background:#F6D0C6; margin-top:9px; margin-left:8px;"></div>
+            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#E15A48; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M21 12c0 4-4 7-9 7-1.4 0-2.7-.2-3.9-.6L3 20l1.4-4.2C3.5 14.7 3 13.4 3 12c0-4 4-7 9-7s9 3 9 7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Comment Library</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Save the comments you write most often and reuse them across cohorts and semesters. The library grows as you grade.</p>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Save the comments you write most often and reuse them across cohorts and semesters.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+          <div style="height:92px; border-radius:12px; background:#EEEBFC; position:relative; padding:14px; overflow:hidden; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:9px; height:9px; border-radius:50%; background:#6D5BD0; flex:0 0 9px;"></span><div style="height:7px; width:60%; border-radius:4px; background:#D6CFF3;"></div></div>
+            <div style="display:flex; align-items:center; gap:9px; margin-left:4px;"><span style="width:7px; height:7px; border-radius:50%; background:#B4A5EA; flex:0 0 7px;"></span><div style="height:7px; width:44%; border-radius:4px; background:#D6CFF3;"></div></div>
+            <div style="display:flex; align-items:center; gap:9px;"><span style="width:9px; height:9px; border-radius:50%; background:#6D5BD0; flex:0 0 9px;"></span><div style="height:7px; width:52%; border-radius:4px; background:#D6CFF3;"></div></div>
+            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#6D5BD0; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle></svg></span>
+          </div>
           <div>
             <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Activity Log</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Every action on every script is recorded: who ran what, what changed and when. Enough detail to answer an audit or a grade appeal.</p>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Every action on every script is recorded: who ran what, what changed and when.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <span style="width:46px; height:46px; flex:0 0 46px; border-radius:12px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-          <div>
-            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">LMS Import</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Import a course, its roster and its submissions straight from Canvas or your LMS, with no re-uploading and no renaming files. Grades flow back the same way when you release.</p>
-          </div>
-        </article>
+      </div>
+      <div data-reveal-item style="margin-top:16px; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:20px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-2px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
+        <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#EEEBFC; color:#6D5BD0; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div style="flex:1 1 260px; min-width:0;">
+          <h3 style="font-size:17px; font-weight:700; color:#111827; letter-spacing:-0.015em;">LMS Import</h3>
+          <p style="margin-top:3px; font-size:14.5px; color:#4B5563; line-height:1.5;">Import courses, rosters and submissions straight from Canvas or your LMS. Grades flow back the same way when you release.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -530,14 +542,7 @@
         </div>
         <div style="position:relative;">
           <div style="position:relative; border-radius:20px; overflow:hidden; border:1px solid #E9ECF3; aspect-ratio:4 / 3; background:#F4F6FA;">
-            <image-slot id="transformation-educator" src="assets/stock-transformation.jpg" placeholder="The same educator, now in a calm teaching moment with students" style="width:100%; height:100%;"></image-slot>
-          </div>
-          <div data-float style="position:absolute; left:-10px; bottom:-14px; display:flex; align-items:center; gap:10px; background:#FFFFFF; border:1px solid #DFF0F3; border-radius:12px; padding:11px 16px; box-shadow:0 16px 36px rgba(31,58,114,0.14); animation:assistyFloat 5.6s ease-in-out infinite;">
-            <span style="width:28px; height:28px; border-radius:8px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-            <div>
-              <div style="font-size:13.5px; font-weight:700; color:#111827; line-height:1.1;">Grades released</div>
-              <div style="font-size:11px; font-weight:600; color:#6B7280; margin-top:3px;">Tuesday, 4:00 PM &middot; not Sunday midnight</div>
-            </div>
+            <image-slot id="transformation-educator" src="assets/how-after.png" placeholder="Dashboard view of a graded assignment batch with confidence scores" style="width:100%; height:100%;"></image-slot>
           </div>
         </div>
       </div>
@@ -612,10 +617,28 @@
       <div style="position:relative; overflow:hidden; border:1px solid #DCE4F5; border-radius:24px; padding:clamp(24px, 4cqi, 40px) clamp(22px, 4cqi, 44px); display:flex; flex-wrap:wrap; gap:32px 40px; align-items:center; background:radial-gradient(600px 300px at 12% 20%, rgba(22,198,216,0.18), transparent 60%), radial-gradient(500px 260px at 88% 90%, rgba(31,58,114,0.12), transparent 60%), linear-gradient(135deg, #E6FBFD 0%, #EEF2FB 100%);">
         <div style="position:absolute; right:-80px; top:-80px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle, rgba(22,198,216,0.16), transparent 65%);"></div>
         <div style="position:absolute; right:24px; bottom:20px; width:90px; height:60px; opacity:0.35; background-image:radial-gradient(circle 2px, #16C6D8 100%, transparent 101%); background-size:12px 12px;"></div>
-        <div style="flex:0 1 240px; min-width:180px; position:relative; z-index:1;">
-          <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #DCE4F5; aspect-ratio:4 / 3; background:#FFFFFF; box-shadow:0 16px 40px rgba(31,58,114,0.14); transform:rotate(-2deg);">
-            <image-slot id="cta-classroom" src="assets/stock-cta-classroom.jpg" placeholder="Educator with students, mid-lesson" style="width:100%; height:100%;"></image-slot>
-          </div>
+        <div style="flex:0 1 200px; min-width:150px; position:relative; z-index:1;">
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%; height:auto; filter:drop-shadow(0 8px 20px rgba(31,58,114,0.12));">
+            <path d="M40 34l24-12 24 12-24 12-24-12z" fill="#1F3A72"></path>
+            <path d="M52 40v10c0 3 6 6 12 6s12-3 12-6V40" stroke="#1F3A72" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+            <line x1="88" y1="34" x2="88" y2="50" stroke="#1F3A72" stroke-width="2" stroke-linecap="round"></line>
+            <circle cx="88" cy="53" r="2.5" fill="#16C6D8"></circle>
+            <rect x="22" y="130" width="90" height="12" rx="2" fill="#0FA3B2"></rect>
+            <rect x="28" y="118" width="80" height="12" rx="2" fill="#16C6D8"></rect>
+            <rect x="22" y="106" width="90" height="12" rx="2" fill="#1F3A72"></rect>
+            <rect x="80" y="60" width="100" height="60" rx="6" fill="#fff" stroke="#DCE4F5" stroke-width="1.5"></rect>
+            <rect x="85" y="65" width="90" height="42" rx="2" fill="#E6FBFD"></rect>
+            <rect x="90" y="72" width="24" height="5" rx="1" fill="#1F3A72"></rect>
+            <rect x="90" y="82" width="60" height="4" rx="1" fill="#16C6D8"></rect>
+            <rect x="90" y="90" width="46" height="4" rx="1" fill="#DCE4F5"></rect>
+            <rect x="90" y="98" width="36" height="4" rx="1" fill="#0FA3B2"></rect>
+            <rect x="75" y="120" width="110" height="4" rx="2" fill="#DCE4F5"></rect>
+            <circle cx="18" cy="22" r="3" fill="#16C6D8"></circle>
+            <circle cx="188" cy="14" r="3" fill="#1F3A72"></circle>
+            <circle cx="196" cy="70" r="3" fill="#16C6D8"></circle>
+            <circle cx="8" cy="80" r="2" fill="#0FA3B2"></circle>
+            <circle cx="192" cy="140" r="2.5" fill="#F97360"></circle>
+          </svg>
         </div>
         <div style="flex:1 1 260px; position:relative; z-index:1;">
           <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px; margin-bottom:12px;">Get started</span>
