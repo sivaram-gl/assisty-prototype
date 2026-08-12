@@ -74,8 +74,8 @@
         <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:28px; width:auto;">
       </a>
       <div style="display:flex; align-items:center; gap:8px;">
-        <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; font-weight:500; font-size:13px; padding:9px 14px; border-radius:8px; background:transparent; color:#1F3A72; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#F3F4F6;">Log in</button>
-        <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:13px; padding:9px 18px; border-radius:8px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Start Free</button>
+        <button onClick="{{ openLogin }}" style="display:inline-flex; align-items:center; justify-content:center; font-weight:500; font-size:13px; padding:9px 14px; border-radius:8px; background:transparent; color:#1F3A72; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#F3F4F6;">Log in</button>
+        <button onClick="{{ openRequestAccess }}" style="display:inline-flex; align-items:center; justify-content:center; font-weight:600; font-size:13px; padding:9px 18px; border-radius:8px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Request Access</button>
       </div>
     </div>
   </header>
@@ -107,8 +107,7 @@
 
     <div class="hero-text-wrap" style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); position:relative; z-index:2; width:100%;">
       <div class="hero-text-col">
-        <span data-hseq="1" style="display:inline-block; color:#D14A36; font-size:14px; font-weight:600; letter-spacing:0.01em;">Built for educators. Trusted on campuses.</span>
-        <h1 data-hseq="2" style="margin-top:22px; font-size:clamp(48px, 6.4cqi, 80px); line-height:1.02; letter-spacing:-0.035em; font-weight:800; color:#1F3A72;">
+        <h1 data-hseq="2" style="margin-top:0; font-size:clamp(48px, 6.4cqi, 80px); line-height:1.02; letter-spacing:-0.035em; font-weight:800; color:#1F3A72;">
           More teaching.<br>
           Less grading.
         </h1>
@@ -116,10 +115,10 @@
           Grade with <span style="position:relative; display:inline-block; padding-bottom:6px;">confidence.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; right:0; bottom:-4px; width:100%; height:10px; pointer-events:none;"><path d="M4 8 Q 50 2, 100 6 T 196 5" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round"></path></svg></span>
         </div>
         <p data-hseq="4" style="margin-top:18px; font-size:17px; line-height:1.6; max-width:540px; color:#4B5563;">
-          Assisty helps educators grade essays, projects and assignments faster and more consistently, so you can focus on what matters most.
+          Assisty helps educators grade essays, case analyses and exam scripts faster and more consistently, so you can focus on what matters most.
         </p>
         <div data-hseq="5" style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:16px; padding:16px 30px; border-radius:10px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Start Free</button>
+          <button onClick="{{ openRequestAccess }}" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:16px; padding:16px 30px; border-radius:10px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Request Access</button>
           <button onClick="{{ openVideo }}" style="display:inline-flex; align-items:center; justify-content:center; gap:9px; font-weight:600; font-size:16px; padding:16px 26px; border-radius:10px; background:#FFFFFF; color:#1F3A72; line-height:1; border:1px solid #DCE4F5; cursor:pointer; font-family:inherit;" style-hover="background:#F7F8FB; border-color:#C3D0EA;">
             <span style="width:20px; height:20px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center; flex:0 0 20px;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px; margin-left:1px;"><polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polygon></svg></span>
             Watch how it works
@@ -127,7 +126,6 @@
         </div>
         <div data-hseq="6" style="margin-top:20px; display:flex; align-items:center; flex-wrap:wrap; gap:18px 22px; color:#374151; font-size:13px; font-weight:600;">
           <span style="display:inline-flex; align-items:center; gap:6px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px; flex:0 0 14px;"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>Secure &amp; Private</span>
-          <span style="display:inline-flex; align-items:center; gap:6px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px; flex:0 0 14px;"><rect x="4" y="10.5" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"></rect><path d="M8 10.5V7.5a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>FERPA Compliant</span>
           <span style="display:inline-flex; align-items:center; gap:6px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px; flex:0 0 14px;"><path d="M3 10.5L12 4l9 6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.5 10.5V19M10 10.5V19M14 10.5V19M18.5 10.5V19M3 19.5h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>Loved by Educators</span>
         </div>
       </div>
@@ -172,23 +170,31 @@
   </section>
   </sc-if>
 
-  <section id="problem" data-screen-label="The problem" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FFFFFF;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:clamp(32px, 5cqi, 64px); align-items:center;">
-      <div style="position:relative;">
-        <div style="position:relative; border-radius:20px; overflow:hidden; border:1px solid #E9ECF3; aspect-ratio:4 / 3; background:#F4F6FA;">
-          <image-slot id="problem-educator" src="assets/how-before.jpg" placeholder="Educator buried in papers, late at night" style="width:100%; height:100%;"></image-slot>
-        </div>
+  <section id="verifiability" data-screen-label="Designed for verifiability" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FFFFFF;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
+      <div style="max-width:720px; margin:0 auto 40px; text-align:center;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">Designed For Verifiability</span>
+        <h2 style="margin-top:18px; font-size:clamp(30px, 3.6cqi, 44px); line-height:1.1; font-weight:800; letter-spacing:-0.03em; color:#1F3A72;">Three principles are central to the product design.</h2>
       </div>
-      <div>
-        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">The part nobody signed up for</span>
-        <h2 style="margin-top:18px; font-size:clamp(30px, 3.6cqi, 44px); line-height:1.1; font-weight:800; letter-spacing:-0.03em; color:#1F3A72;">You became an educator to teach. Not to spend nights grading.</h2>
-        <p style="margin-top:16px; font-size:16.5px; line-height:1.65; color:#4B5563; max-width:480px;">Every batch of submissions costs the same things: evenings, consistency and the energy you would rather spend on students.<br>Assisty takes that cost back, whatever the students hand in.</p>
-        <ul style="list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:16px; max-width:480px;">
-          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#0B7C88; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(11,124,136,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M11.5 12.5l5-5 1.5 1.5-5 5H11v-1.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path></svg></span><span>Handwritten notes, graded straight off the scan.</span></li>
-          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#1F3A72; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(31,58,114,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M9 18l-5-6 5-6M15 6l5 6-5 6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Code grading, marked line by line against your criteria.</span></li>
-          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#E15A48; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(225,90,72,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M3 13l9 5 9-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Supports all formats of submissions, one mixed queue.</span></li>
-          <li style="display:flex; align-items:center; gap:14px; font-size:15px; font-weight:600; color:#1F2937; line-height:1.4;"><span style="width:34px; height:34px; flex:0 0 34px; border-radius:10px; background:#6D5BD0; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(109,91,208,0.28);"><svg viewBox="0 0 24 24" fill="none" style="width:17px; height:17px;"><path d="M4 12a8 8 0 0 1 14-5l3-3v8h-8l3-3a5 5 0 1 0 1 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Lenient, moderate or strict. Your call, not ours.</span></li>
-        </ul>
+      <div data-reveal-stagger style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:20px;">
+        <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:12px;">
+          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M11.5 12.5l5-5 1.5 1.5-5 5H11v-1.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path></svg></span>
+          <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; line-height:1.25;">Provenance</h3>
+          <p style="font-size:14.5px; font-weight:600; color:#1F3A72; margin:0;">Trace any mark back to the line that earned it.</p>
+          <p style="font-size:15px; color:#4B5563; margin:0; line-height:1.6;">Every claim, remark, and point assignment can be traced back to specific sections of the student submission. The interface makes this verification process clear, intuitive, and transparent.</p>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:12px;">
+          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><rect x="4" y="10.5" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="2"></rect><path d="M8 10.5V7.5a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+          <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; line-height:1.25;">Scope determinism</h3>
+          <p style="font-size:14.5px; font-weight:600; color:#0B7C88; margin:0;">Grading uses only what you provide.</p>
+          <p style="font-size:15px; color:#4B5563; margin:0; line-height:1.6;">All context used for grading comes exclusively from user-provided inputs. The system does not rely on hidden or external data sources.</p>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:12px;">
+          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M3 13l9 5 9-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; line-height:1.25;">Progressive disclosure</h3>
+          <p style="font-size:14.5px; font-weight:600; color:#E15A48; margin:0;">Headline first, detail on demand.</p>
+          <p style="font-size:15px; color:#4B5563; margin:0; line-height:1.6;">Results are presented in layers. Users can see the most important information at a glance, while detailed supporting information remains available for each submission whenever deeper review is required.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -199,8 +205,7 @@
         <div style="position:absolute; inset:0; pointer-events:none; background:radial-gradient(620px 320px at 88% -10%, rgba(22,198,216,0.20), transparent 62%), radial-gradient(520px 280px at 6% 108%, rgba(249,115,96,0.12), transparent 62%);"></div>
         <div style="position:relative; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 40px;">
           <div style="flex:1 1 460px; min-width:0;">
-            <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#7FE9F4; background:rgba(127,233,244,0.14); padding:6px 12px; border-radius:999px;">How it works</span>
-            <h2 style="margin-top:20px; font-size:clamp(28px, 3.4cqi, 42px); line-height:1.14; font-weight:800; letter-spacing:-0.03em; color:#FFFFFF;">From hours of grading to <span style="color:#7FE9F4;">minutes that matter.</span></h2>
+            <h2 style="margin-top:0; font-size:clamp(28px, 3.4cqi, 42px); line-height:1.14; font-weight:800; letter-spacing:-0.03em; color:#FFFFFF;">How it works</h2>
             <p style="margin-top:14px; font-size:16.5px; line-height:1.6; color:rgba(255,255,255,0.74); max-width:520px;">Assisty simplifies your grading workflow in four simple steps.</p>
           </div>
           <button onClick="{{ openVideo }}" style="flex:0 0 auto; display:inline-flex; align-items:center; gap:12px; border:none; cursor:pointer; font-family:inherit; background:#FFFFFF; color:#1F3A72; font-size:15px; font-weight:700; padding:14px 26px; border-radius:999px;" style-hover="background:#E6FBFD;">
@@ -215,8 +220,8 @@
               <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
               <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M6 3h9l4 4v14H6V3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M14 3v5h5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
             </div>
-            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Create</div>
-            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Upload the assignment prompt or source files to auto-prefill, or enter questions manually and attach case studies and reference docs.</p>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Add Your Assessment</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Connect your LMS or upload the assessment, submissions, and supporting materials.</p>
           </div>
           <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
             <div style="display:flex; align-items:center; gap:14px;">
@@ -224,8 +229,8 @@
               <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
               <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M12 16V8m0 0l-3 3m3-3l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 18a4.5 4.5 0 0 1-.5-8.97A6 6 0 0 1 17.7 9.2 3.9 3.9 0 0 1 18 18h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
             </div>
-            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Auto-generate &amp; calibrate rubric</div>
-            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Input a one-line marking scheme; Assisty drafts a 5-level behavioural rubric calibrated against actual student answer samples.</p>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Define the Rubric</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Share your marking criteria and Assisty builds a structured rubric for grading.</p>
           </div>
           <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
             <div style="display:flex; align-items:center; gap:14px;">
@@ -233,8 +238,8 @@
               <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
               <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
             </div>
-            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Automated pass</div>
-            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Import from your LMS or upload learner submissions. Assisty runs 3-pass consensus grading.</p>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Grade Automatically</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Assisty grades your submissions consistently against your rubric and generates scores and feedback.</p>
           </div>
           <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
             <div style="display:flex; align-items:center; gap:14px;">
@@ -242,34 +247,10 @@
               <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
               <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
             </div>
-            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Review, adjust &amp; release</div>
-            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Edit feedback, adjust rubric points, toggle strictness levels, and push citation-backed marks to your LMS.</p>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Review &amp; Publish</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Edit scores and feedback if required, approve the results, and send grades to your LMS or export them.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="subjects" data-screen-label="Any subject" style="padding:clamp(48px, 6cqi, 76px) 0; background:#FBFCFE;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); text-align:center;">
-      <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88; background:#E6FBFD; padding:6px 12px; border-radius:999px;">Any subject, any format</span>
-      <h2 style="margin-top:16px; font-size:clamp(26px, 3cqi, 38px); line-height:1.2; font-weight:700; letter-spacing:-0.025em; color:#1F3A72;">If your students can submit it,<br>Assisty can grade it against your rubric.</h2>
-      <p style="margin-top:14px; font-size:16px; line-height:1.65; color:#4B5563; max-width:620px; margin-left:auto; margin-right:auto;">Essays, handwritten scripts, code notebooks, case analyses, lab reports. There is no supported-subjects list to check against.</p>
-      <div data-reveal-stagger style="margin-top:22px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px; max-width:720px; margin-left:auto; margin-right:auto;">
-        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Accounting</span>
-        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">Computer Science</span>
-        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Data Science</span>
-        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Economics</span>
-        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">Engineering</span>
-        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Finance</span>
-        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Healthcare</span>
-        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">History</span>
-        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Marketing</span>
-        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Mathematics</span>
-        <span style="font-size:13px; font-weight:600; color:#0B7C88; background:#E6FBFD; padding:7px 14px; border-radius:999px;">Philosophy</span>
-        <span style="font-size:13px; font-weight:600; color:#E15A48; background:#FEEDE9; padding:7px 14px; border-radius:999px;">Physics</span>
-        <span style="font-size:13px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:7px 14px; border-radius:999px;">Statistics</span>
-        <span style="font-size:13px; font-weight:600; color:#6B7280; background:#F3F4F6; padding:7px 14px; border-radius:999px;">&hellip;and yours</span>
       </div>
     </div>
   </section>
@@ -306,7 +287,7 @@
             <div style="min-width:0;">
               <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; margin-top:0; line-height:1.25;">Every mark shows its work</h3>
               <p style="font-size:15px; color:#4B5563; margin-top:7px; line-height:1.6;">Each point awarded quotes the exact lines of the student&rsquo;s submission it came from. If there is no evidence, there is no score, and defending a grade takes minutes, not evenings.</p>
-              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;"><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">No evidence = zero score</span><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">Appeals in &lt; 2 min</span></div>
+              <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;"><span style="font-size:12px; font-weight:600; color:#1F3A72; background:#EEF2FB; padding:4px 9px; border-radius:999px;">No evidence = zero score</span></div>
             </div>
           </article>
           <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:22px 22px 20px; display:flex; gap:18px; align-items:flex-start; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
@@ -326,68 +307,6 @@
             </div>
           </article>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="roles" data-screen-label="For your role" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FFFFFF;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
-      <div style="position:relative; overflow:hidden; border-radius:26px; background:linear-gradient(160deg, #F7FAFF 0%, #FFFFFF 55%); border:1px solid #EDF0F6; padding:clamp(28px, 4cqi, 44px);">
-        <div style="{{ campusStyle }}">
-          <img src="assets/campus.png" alt="University campus quad with students walking" style="width:100%; height:100%; object-fit:cover; object-position:{{ campusFit }}; display:block;">
-        </div>
-        <div style="position:relative; max-width:560px;">
-          <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88; background:#E6FBFD; padding:6px 12px; border-radius:999px;">For every role</span>
-          <h2 style="margin-top:18px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:800; letter-spacing:-0.03em; color:#111827;">What it changes,<br>depending on where you sit.</h2>
-          <p style="margin-top:14px; font-size:15.5px; line-height:1.6; color:#4B5563; max-width:420px;">The same platform. Different impact. Built for the way educators actually work.</p>
-        </div>
-        <div data-reveal-stagger style="position:relative; margin-top:clamp(36px, 5cqi, 60px); display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap:20px;">
-        <article style="background:#FFFFFF; border:1px solid #EDF0F6; border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:16px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <div style="display:flex; align-items:flex-start; gap:14px;">
-            <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="9.5" cy="7" r="3.5" stroke="currentColor" stroke-width="1.9"></circle><path d="M22 20v-2a4 4 0 0 0-3-3.87M16.5 3.6a4 4 0 0 1 0 6.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg></span>
-            <div style="display:flex; flex-direction:column; gap:4px; min-width:0;">
-              <div style="font-size:16px; font-weight:700; color:#1F3A72; letter-spacing:-0.018em;">Course Coordinators</div>
-              <p style="font-size:14.5px; line-height:1.5; color:#4B5563; margin:0; text-wrap:pretty;">Eliminate TA grading drift across multi-section cohorts.</p>
-            </div>
-          </div>
-          <div style="height:1px; background:#EDF0F6;"></div>
-          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Identical behavioural criteria applied to 300+ students</span></li>
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>One rubric of record across every section</span></li>
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Disagreement surfaced instead of buried</span></li>
-          </ul>
-        </article>
-        <article style="background:#FFFFFF; border:1px solid #EDF0F6; border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:16px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <div style="display:flex; align-items:flex-start; gap:14px;">
-            <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M2 8.5L12 4l10 4.5-10 4.5L2 8.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M6 10.6V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-5.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-            <div style="display:flex; flex-direction:column; gap:4px; min-width:0;">
-              <div style="font-size:16px; font-weight:700; color:#0B7C88; letter-spacing:-0.018em;">Professors &amp; Instructors</div>
-              <p style="font-size:14.5px; line-height:1.5; color:#4B5563; margin:0; text-wrap:pretty;">Grade a batch of submissions in an afternoon.</p>
-            </div>
-          </div>
-          <div style="height:1px; background:#EDF0F6;"></div>
-          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Bulk grading with citation-backed feedback</span></li>
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Question-level analytics diagnose class-wide concept gaps</span></li>
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Edit and override before anything is released</span></li>
-          </ul>
-        </article>
-        <article style="background:#FFFFFF; border:1px solid #EDF0F6; border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:16px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <div style="display:flex; align-items:flex-start; gap:14px;">
-            <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M3 10.5L12 4l9 6.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.5 10.5V19M10 10.5V19M14 10.5V19M18.5 10.5V19M3 19.5h18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg></span>
-            <div style="display:flex; flex-direction:column; gap:4px; min-width:0;">
-              <div style="font-size:16px; font-weight:700; color:#E15A48; letter-spacing:-0.018em;">Department Heads &amp; Program Directors</div>
-              <p style="font-size:14.5px; line-height:1.5; color:#4B5563; margin:0; text-wrap:pretty;">Prove the standard before you roll it out.</p>
-            </div>
-          </div>
-          <div style="height:1px; background:#EDF0F6;"></div>
-          <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;">
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Benchmark automated marks against historical TA scores</span></li>
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Test grade curves with lenient, moderate and strict toggles</span></li>
-            <li style="display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#374151; line-height:1.55;"><span style="width:19px; height:19px; flex:0 0 19px; margin-top:1px; border-radius:50%; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span>Audit logs for every action taken on a script</span></li>
-          </ul>
-        </article>
         </div>
       </div>
     </div>
@@ -434,21 +353,8 @@
             <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#E15A48; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M4 5h16v10H8l-4 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
           </div>
           <div>
-            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Custom Feedback</h3>
+            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Personalized Feedback</h3>
             <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Every submission comes back with written feedback at your level of detail, quoting the student&rsquo;s own words.</p>
-          </div>
-        </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <div style="height:92px; border-radius:12px; background:#EEEBFC; position:relative; padding:14px; overflow:hidden; display:flex; align-items:flex-end; gap:8px;">
-            <div style="width:16px; height:28px; border-radius:4px; background:#D6CFF3;"></div>
-            <div style="width:16px; height:52px; border-radius:4px; background:#B4A5EA;"></div>
-            <div style="width:16px; height:38px; border-radius:4px; background:#D6CFF3;"></div>
-            <div style="width:16px; height:20px; border-radius:4px; background:#D6CFF3;"></div>
-            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#6D5BD0; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M4 12a8 8 0 0 1 14-5l3-3v8h-8l3-3a5 5 0 1 0 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-          </div>
-          <div>
-            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Strictness Levels</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Run the same batch at lenient, moderate or strict calibration and compare the resulting grade curves before you commit to one.</p>
           </div>
         </article>
         <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
@@ -457,126 +363,10 @@
             <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#0B7C88; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; font-family:'Geist Mono', monospace; font-size:11px; font-weight:700;">&lt;/&gt;</span>
           </div>
           <div>
-            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Handwritten &amp; Code</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Scanned scripts go through OCR and notebooks are read as code, so mixed-format batches stay in one queue.</p>
+            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Mixed Format Support</h3>
+            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">PDF, DOC, DOCX, PPT, PPTX, HTML, IPYNB, TXT and scanned handwriting all stay in one mixed-format queue.</p>
           </div>
         </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <div style="height:92px; border-radius:12px; background:#E7F8ED; position:relative; padding:14px; overflow:hidden;">
-            <div style="background:#FFFFFF; border-radius:8px; padding:9px 10px; width:74%; box-shadow:0 4px 10px rgba(22,163,74,0.10);">
-              <div style="height:6px; width:70%; border-radius:3px; background:#BEEBCC;"></div>
-              <div style="height:6px; width:46%; border-radius:3px; background:#BEEBCC; margin-top:6px;"></div>
-            </div>
-            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#16A34A; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M12 3v13m0 0l-4-4m4 4l4-4M4 17v3h16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-          </div>
-          <div>
-            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Gradebook Export</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Push marks straight back to your LMS, or export a CSV and a per-student report pack for your own records.</p>
-          </div>
-        </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <div style="height:92px; border-radius:12px; background:#FEEDE9; position:relative; padding:14px; overflow:hidden;">
-            <span style="font-family:Georgia, serif; font-size:40px; font-weight:700; color:#F0B3A6; line-height:1; position:absolute; left:10px; top:2px;">&ldquo;</span>
-            <div style="height:8px; width:56%; border-radius:4px; background:#F6D0C6; margin-top:34px; margin-left:8px;"></div>
-            <div style="height:8px; width:70%; border-radius:4px; background:#F6D0C6; margin-top:9px; margin-left:8px;"></div>
-            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#E15A48; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M21 12c0 4-4 7-9 7-1.4 0-2.7-.2-3.9-.6L3 20l1.4-4.2C3.5 14.7 3 13.4 3 12c0-4 4-7 9-7s9 3 9 7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
-          </div>
-          <div>
-            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Comment Library</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Save the comments you write most often and reuse them across cohorts and semesters.</p>
-          </div>
-        </article>
-        <article style="background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:16px; display:flex; flex-direction:column; gap:14px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-          <div style="height:92px; border-radius:12px; background:#EEEBFC; position:relative; padding:14px; overflow:hidden; display:flex; flex-direction:column; gap:10px;">
-            <div style="display:flex; align-items:center; gap:9px;"><span style="width:9px; height:9px; border-radius:50%; background:#6D5BD0; flex:0 0 9px;"></span><div style="height:7px; width:60%; border-radius:4px; background:#D6CFF3;"></div></div>
-            <div style="display:flex; align-items:center; gap:9px; margin-left:4px;"><span style="width:7px; height:7px; border-radius:50%; background:#B4A5EA; flex:0 0 7px;"></span><div style="height:7px; width:44%; border-radius:4px; background:#D6CFF3;"></div></div>
-            <div style="display:flex; align-items:center; gap:9px;"><span style="width:9px; height:9px; border-radius:50%; background:#6D5BD0; flex:0 0 9px;"></span><div style="height:7px; width:52%; border-radius:4px; background:#D6CFF3;"></div></div>
-            <span style="position:absolute; right:10px; top:10px; width:26px; height:26px; border-radius:8px; background:#6D5BD0; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle></svg></span>
-          </div>
-          <div>
-            <h3 style="font-size:18px; font-weight:700; letter-spacing:-0.018em; color:#111827; line-height:1.25;">Activity Log</h3>
-            <p style="margin-top:8px; font-size:14.5px; color:#4B5563; line-height:1.6; text-wrap:pretty;">Every action on every script is recorded: who ran what, what changed and when.</p>
-          </div>
-        </article>
-      </div>
-      <div data-reveal-item style="margin-top:16px; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:20px 24px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-2px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-        <span style="width:44px; height:44px; flex:0 0 44px; border-radius:12px; background:#EEEBFC; color:#6D5BD0; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:22px; height:22px;"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-        <div style="flex:1 1 260px; min-width:0;">
-          <h3 style="font-size:17px; font-weight:700; color:#111827; letter-spacing:-0.015em;">LMS Import</h3>
-          <p style="margin-top:3px; font-size:14.5px; color:#4B5563; line-height:1.5;">Import courses, rosters and submissions straight from Canvas or your LMS. Grades flow back the same way when you release.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="difference" data-screen-label="Before and after" style="padding:clamp(56px, 8cqi, 96px) 0 clamp(60px, 8cqi, 100px); background:#FFFFFF;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
-      <div style="max-width:760px; margin:0 0 44px;">
-        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#0B7C88; background:#E6FBFD; padding:6px 12px; border-radius:999px;">Before &amp; after</span>
-        <h2 style="margin-top:14px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">What actually changes.</h2>
-        <p style="margin-top:10px; font-size:16.5px; line-height:1.6; color:#4B5563; text-wrap:pretty;">The same cohort, the same rubric, the same faculty. Only the grading pass is different.</p>
-      </div>
-      <div data-reveal-stagger style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:clamp(32px, 5cqi, 64px); align-items:start;">
-        <div style="display:flex; flex-direction:column; gap:14px;">
-          <div style="display:flex; align-items:center; gap:18px; background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:20px 22px; min-height:112px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-2px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-            <span data-countup="90" data-suffix="%" style="flex:0 0 96px; font-family:'Geist Mono', ui-monospace, monospace; font-size:32px; font-weight:700; letter-spacing:-0.04em; color:#0B7C88;">90%</span>
-            <div style="min-width:0;">
-              <div style="font-size:15.5px; font-weight:700; color:#111827; letter-spacing:-0.012em;">Less time spent grading</div>
-              <div style="font-size:13.5px; color:#4B5563; line-height:1.5; margin-top:3px;">A weekend-long batch becomes a focused review session.</div>
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; gap:18px; background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:20px 22px; min-height:112px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-2px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-            <span style="flex:0 0 96px; font-family:'Geist Mono', ui-monospace, monospace; font-size:32px; font-weight:700; letter-spacing:-0.04em; color:#1F3A72;">#200</span>
-            <div style="min-width:0;">
-              <div style="font-size:15.5px; font-weight:700; color:#111827; letter-spacing:-0.012em;">Gets the same care as script #1</div>
-              <div style="font-size:13.5px; color:#4B5563; line-height:1.5; margin-top:3px;">Feedback depth never decays through the batch, across every section and every grader.</div>
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; gap:18px; background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:20px 22px; min-height:112px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-2px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-            <span data-countup="2" data-suffix=" min" style="flex:0 0 96px; font-family:'Geist Mono', ui-monospace, monospace; font-size:32px; font-weight:700; letter-spacing:-0.04em; color:#E15A48;">2 min</span>
-            <div style="min-width:0;">
-              <div style="font-size:15.5px; font-weight:700; color:#111827; letter-spacing:-0.012em;">To close a grade appeal</div>
-              <div style="font-size:13.5px; color:#4B5563; line-height:1.5; margin-top:3px;">Every point cites the student&rsquo;s own words, so the answer is already written.</div>
-            </div>
-          </div>
-        </div>
-        <div style="position:relative;">
-          <div style="position:relative; border-radius:20px; overflow:hidden; border:1px solid #E9ECF3; aspect-ratio:4 / 3; background:#F4F6FA;">
-            <image-slot id="transformation-educator" src="assets/how-after.png" placeholder="Dashboard view of a graded assignment batch with confidence scores" style="width:100%; height:100%;"></image-slot>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="voices" data-screen-label="Educator voices" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FBFCFE;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
-      <div style="max-width:720px; margin:0 0 36px;">
-        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#1F3A72; background:#EEF2FB; padding:6px 12px; border-radius:999px;">From the faculty lounge</span>
-        <h2 style="margin-top:14px; font-size:clamp(28px, 3.2cqi, 40px); line-height:1.15; font-weight:700; letter-spacing:-0.02em; color:#1F3A72;">Educators who got their evenings back.</h2>
-      </div>
-      <div data-reveal-stagger style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:20px;">
-        <figure style="margin:0; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:26px 26px 22px; display:flex; flex-direction:column; gap:18px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-4px); box-shadow:0 16px 38px rgba(31,58,114,0.12); border-color:#D9E2F4;">
-          <blockquote style="margin:0; font-size:15.5px; line-height:1.6; color:#111827; letter-spacing:-0.008em; flex:1;">&ldquo;We reduced our grading time from two weeks to three days while improving feedback quality for every student.&rdquo;</blockquote>
-          <figcaption style="display:flex; align-items:center; gap:14px;">
-            <span style="width:48px; height:48px; flex:0 0 48px; border-radius:50%; overflow:hidden; background:#EEF2FB;"><image-slot id="voice-1" shape="circle" src="assets/stock-portrait-1.jpg" placeholder="Portrait" style="width:48px; height:48px;"></image-slot></span>
-            <span style="min-width:0;"><span style="display:block; font-size:14px; font-weight:700; color:#111827;">Professor of Strategy</span><span style="display:block; font-size:12.5px; color:#6B7280; margin-top:2px;">School of Business</span></span>
-          </figcaption>
-        </figure>
-        <figure style="margin:0; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:26px 26px 22px; display:flex; flex-direction:column; gap:18px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-4px); box-shadow:0 16px 38px rgba(31,58,114,0.12); border-color:#D9E2F4;">
-          <blockquote style="margin:0; font-size:15.5px; line-height:1.6; color:#111827; letter-spacing:-0.008em; flex:1;">&ldquo;The first thing I noticed wasn&rsquo;t the speed. It was that student #187 got feedback as thoughtful as student #1.&rdquo;</blockquote>
-          <figcaption style="display:flex; align-items:center; gap:14px;">
-            <span style="width:48px; height:48px; flex:0 0 48px; border-radius:50%; overflow:hidden; background:#E6FBFD;"><image-slot id="voice-2" shape="circle" src="assets/stock-portrait-2.jpg" placeholder="Portrait" style="width:48px; height:48px;"></image-slot></span>
-            <span style="min-width:0;"><span style="display:block; font-size:14px; font-weight:700; color:#111827;">Course Coordinator</span><span style="display:block; font-size:12.5px; color:#6B7280; margin-top:2px;">Computer Science, 300+ students</span></span>
-          </figcaption>
-        </figure>
-        <figure style="margin:0; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:18px; padding:26px 26px 22px; display:flex; flex-direction:column; gap:18px; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-4px); box-shadow:0 16px 38px rgba(31,58,114,0.12); border-color:#D9E2F4;">
-          <blockquote style="margin:0; font-size:15.5px; line-height:1.6; color:#111827; letter-spacing:-0.008em; flex:1;">&ldquo;Grade appeals used to eat my office hours. Now I open the citation, show the student, and we spend the time actually talking about the work.&rdquo;</blockquote>
-          <figcaption style="display:flex; align-items:center; gap:14px;">
-            <span style="width:48px; height:48px; flex:0 0 48px; border-radius:50%; overflow:hidden; background:#FEEDE9;"><image-slot id="voice-3" shape="circle" src="assets/stock-portrait-3.jpg" placeholder="Portrait" style="width:48px; height:48px;"></image-slot></span>
-            <span style="min-width:0;"><span style="display:block; font-size:14px; font-weight:700; color:#111827;">Senior Lecturer</span><span style="display:block; font-size:12.5px; color:#6B7280; margin-top:2px;">Department of Economics</span></span>
-          </figcaption>
-        </figure>
       </div>
     </div>
   </section>
@@ -589,24 +379,20 @@
       </div>
       <div data-reveal-stagger style="display:flex; flex-direction:column; gap:10px; max-width:820px; margin:0 auto;">
         <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
-          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Does Assisty replace my judgment as an examiner?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
-          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">No. Assisty is an assistant, not an autopilot. You retain 100% authority to review low-confidence cases, edit feedback, override points, and sign off before grades are released.</div>
-        </details>
-        <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
           <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">How does it grade subjective answers with no single right answer?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
-          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">It evaluates against 5-level behavioural rubrics calibrated on actual student response variations, assessing open-ended reasoning rather than exact string-matching.</div>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">It evaluates against rubrics calibrated on actual student response variations, assessing open-ended reasoning rather than exact string-matching.</div>
         </details>
         <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
-          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">How do I know the system isn&rsquo;t miscalculating or hallucinating marks?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
-          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Assisty mandates exact text citations for every point awarded (no evidence = zero score) and runs 3-pass consensus verification on every script.</div>
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Does Assisty replace my judgment as an examiner?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">No. Assisty is an assistant, not an autopilot. You retain 100% authority to review, edit feedback, override points, and sign off before grades are released.</div>
         </details>
         <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
-          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Is student data secure?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
-          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Yes. Data is encrypted in transit and at rest within institutional infrastructure and is never used to train public algorithms or shared externally.</div>
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">How do I know I can trust the marks the tool provided?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Assisty mandates exact text citations for every point awarded (no evidence = zero score).</div>
         </details>
         <details name="assisty-faq" style="background:#FFFFFF; border:1px solid #E5E7EB; border-radius:12px; overflow:hidden;">
-          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Can I control how strictly work is marked?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
-          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Yes. Every batch can be run at lenient, moderate or strict calibration, and re-run to compare grade curves before you release marks.</div>
+          <summary style="list-style:none; cursor:pointer; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-weight:600; color:#111827; font-size:15.5px;">Is shared confidential data kept secure?<svg class="chev" viewBox="0 0 12 8" fill="none" style="width:12px; height:8px; flex:0 0 12px; color:#6B7280; transition:transform 200ms ease;"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></summary>
+          <div style="padding:0 18px 16px; color:#4B5563; font-size:14.5px; line-height:1.65;">Yes. Data shared are processed only to produce the grades and feedback you request, within your institution&rsquo;s approved infrastructure, and are not used to train public models.</div>
         </details>
       </div>
     </div>
@@ -647,15 +433,13 @@
         </div>
         <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:14px; align-items:flex-start; position:relative; z-index:1;">
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <button onClick="{{ openAuth }}" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:15px; padding:14px 24px; border-radius:8px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Start Free</button>
+            <button onClick="{{ openRequestAccess }}" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:15px; padding:14px 24px; border-radius:8px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Request Access</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  
-  <div style="position:fixed; right:20px; bottom:76px; z-index:8000; display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.96); border:1px solid #E5E7EB; border-radius:999px; padding:4px; font-size:12.5px; font-family:'Geist', -apple-system, sans-serif; box-shadow:0 10px 30px rgba(31,58,114,0.18); backdrop-filter:blur(8px);"><span style="padding:0 6px 0 10px; color:#9CA3AF; font-weight:600; letter-spacing:0.04em; font-size:10.5px; text-transform:uppercase;">Version</span><span style="background:#1F3A72; color:#FFFFFF; padding:7px 14px; border-radius:999px; font-weight:700;">New</span><a href="index-old.html" style="color:#4B5563; padding:7px 14px; border-radius:999px; font-weight:600;">Old</a></div>
   <footer style="padding:32px 0; border-top:1px solid #E5E7EB;">
     <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); display:flex; flex-wrap:wrap; gap:20px 24px; align-items:center; justify-content:space-between;">
       <a href="#top" aria-label="Assisty home" style="display:inline-flex; align-items:center;">
@@ -680,8 +464,10 @@
 
         <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:24px; width:auto;">
 
+        <sc-if value="{{ showHeader }}" hint-placeholder-val="{{ true }}">
         <h3 style="margin-top:20px; font-size:22px; font-weight:800; letter-spacing:-0.025em; color:#1F3A72; line-height:1.2;">{{ modalTitle }}</h3>
         <p style="margin-top:6px; font-size:13.5px; color:#4B5563; line-height:1.5;">{{ modalSub }}</p>
+        </sc-if>
 
         <sc-if value="{{ stepChoose }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
@@ -694,10 +480,12 @@
             Continue with Microsoft
           </button>
           <div style="display:flex; align-items:center; gap:12px; margin:6px 0 2px; color:#9CA3AF; font-size:12px;"><span style="flex:1; height:1px; background:#E5E7EB;"></span>or<span style="flex:1; height:1px; background:#E5E7EB;"></span></div>
-          <label for="auth-email" style="font-size:12.5px; font-weight:600; color:#4B5563;">Work or school email</label>
+          <label for="auth-email" style="font-size:12.5px; font-weight:600; color:#4B5563;">Email</label>
           <input id="auth-email" type="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="you@university.edu" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
-          <button onClick="{{ submitEmail }}" disabled="{{ emailDisabled }}" style="{{ emailBtnStyle }}">Continue</button>
-          <p style="margin:2px 0 0; font-size:11.5px; color:#9CA3AF; text-align:center; line-height:1.5;">Existing accounts sign in directly. New ones take one short setup step.<br>Demo existing account: jane.mensah@gmail.com</p>
+          <label for="auth-password" style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Password</label>
+          <input id="auth-password" type="password" value="{{ password }}" onChange="{{ setPassword }}" placeholder="Enter your password" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          <button onClick="{{ submitLogin }}" disabled="{{ loginDisabled }}" style="{{ loginBtnStyle }}">Log in</button>
+          <p style="margin:2px 0 0; font-size:11.5px; color:#9CA3AF; text-align:center; line-height:1.5;">Demo account: jane.mensah@gmail.com (any password)</p>
         </div>
         </sc-if>
 
@@ -709,55 +497,33 @@
         </div>
         </sc-if>
 
-        <sc-if value="{{ stepDetails }}" hint-placeholder-val="{{ false }}">
+        <sc-if value="{{ stepRequest }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 14px; border-radius:10px; background:#F7F8FB; font-size:13px; color:#111827;">
-            <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ email }}</span>
-            <button onClick="{{ backStep }}" style="border:none; background:transparent; color:#1F3A72; font-family:inherit; font-size:12.5px; font-weight:600; cursor:pointer; padding:0;">Change</button>
+          <label for="request-fullname" style="font-size:12.5px; font-weight:600; color:#4B5563;">Full name</label>
+          <input id="request-fullname" type="text" value="{{ fullName }}" onChange="{{ setFullName }}" placeholder="Jane Mensah" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          <label for="request-email" style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Institutional email</label>
+          <input id="request-email" type="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="you@university.edu" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
+          <label for="request-role" style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Role</label>
+          <select id="request-role" value="{{ role }}" onChange="{{ setRole }}" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; background:#FFFFFF; outline:none;" style-focus="border-color:#1F3A72;">
+            <option value="">Select your role</option>
+            <option value="professor">Professor / Instructor</option>
+            <option value="coordinator">Course Coordinator</option>
+            <option value="ta">Teaching Assistant</option>
+            <option value="other">Others</option>
+          </select>
+          <button onClick="{{ submitRequest }}" style="width:100%; margin-top:12px; padding:14px 16px; border-radius:10px; border:none; background:#1F3A72; color:#FFFFFF; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer;" style-hover="background:#142551;">Request Access</button>
+          <p style="margin:2px 0 0; font-size:11.5px; color:#9CA3AF; text-align:center; line-height:1.5;">We will review your request and email you once your account is ready.</p>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ stepRequested }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:16px; margin-top:8px; text-align:center;">
+          <span style="width:60px; height:60px; flex:0 0 60px; border-radius:50%; background:#E7F8ED; color:#16A34A; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 0 0 7px rgba(22,163,74,0.10);"><svg viewBox="0 0 24 24" fill="none" style="width:28px; height:28px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <div>
+            <p style="font-size:19px; font-weight:800; color:#111827; margin:0; line-height:1.3; letter-spacing:-0.015em;">Request received</p>
+            <p style="font-size:14px; color:#4B5563; margin-top:8px; line-height:1.6; max-width:340px;">Thanks, {{ firstName }}! We&rsquo;re reviewing your request and will email <strong style="color:#111827;">{{ email }}</strong> as soon as your account is ready.</p>
           </div>
-          <sc-if value="{{ showProviderNote }}" hint-placeholder-val="{{ false }}">
-            <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; background:#E6FBFD; color:#0B7C88; font-size:12.5px; font-weight:600;">
-              <svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-              {{ providerNote }}
-            </div>
-          </sc-if>
-          <label for="auth-fullname" style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Full name</label>
-          <input id="auth-fullname" type="text" value="{{ fullName }}" onChange="{{ setFullName }}" placeholder="Jane Mensah" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
-          <label for="auth-mobile" style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Mobile number</label>
-          <div style="display:flex; gap:8px;">
-            <select value="{{ dialCode }}" onChange="{{ setDialCode }}" aria-label="Country code" style="flex:0 0 96px; padding:13px 8px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14px; color:#111827; background:#FFFFFF; outline:none;" style-focus="border-color:#1F3A72;">
-              <option value="+91">🇮🇳 +91</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+44">🇬🇧 +44</option>
-              <option value="+61">🇦🇺 +61</option>
-              <option value="+65">🇸🇬 +65</option>
-              <option value="+971">🇦🇪 +971</option>
-              <option value="+49">🇩🇪 +49</option>
-              <option value="+234">🇳🇬 +234</option>
-              <option value="+27">🇿🇦 +27</option>
-            </select>
-            <input id="auth-mobile" type="tel" value="{{ mobile }}" onChange="{{ setMobile }}" placeholder="98765 43210" style="flex:1 1 auto; min-width:0; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
-          </div>
-          <sc-if value="{{ needsPassword }}" hint-placeholder-val="{{ true }}">
-          <label for="auth-password" style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:4px;">Create a password</label>
-          <input id="auth-password" type="password" value="{{ password }}" onChange="{{ setPassword }}" placeholder="At least 8 characters" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
-          <div style="display:flex; gap:5px; margin-top:2px;">
-            <span style="{{ bar1Style }}"></span>
-            <span style="{{ bar2Style }}"></span>
-            <span style="{{ bar3Style }}"></span>
-            <span style="{{ bar4Style }}"></span>
-          </div>
-          <div style="font-size:11.5px; font-weight:600; color:{{ strengthColor }};">{{ strengthLabel }}</div>
-          <ul style="list-style:none; margin:8px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:6px 12px;">
-            <li style="{{ reqLenStyle }}">8+ characters</li>
-            <li style="{{ reqCaseStyle }}">Upper &amp; lowercase</li>
-            <li style="{{ reqNumStyle }}">A number</li>
-            <li style="{{ reqSymStyle }}">A symbol</li>
-          </ul>
-          <label for="auth-confirm-password" style="font-size:12.5px; font-weight:600; color:#4B5563; margin-top:8px;">Confirm password</label>
-          <input id="auth-confirm-password" type="password" value="{{ confirmPw }}" onChange="{{ setConfirmPw }}" placeholder="Re-enter password" style="width:100%; padding:13px 14px; border-radius:10px; border:1px solid #DCE4F5; font-family:inherit; font-size:14.5px; color:#111827; outline:none;" style-focus="border-color:#1F3A72;">
-          </sc-if>
-          <button onClick="{{ submitDetails }}" style="width:100%; margin-top:12px; padding:14px 16px; border-radius:10px; border:none; background:#1F3A72; color:#FFFFFF; font-family:inherit; font-size:15px; font-weight:700; cursor:pointer;" style-hover="background:#142551;">Create account</button>
+          <button onClick="{{ closeAuth }}" style="width:100%; margin-top:4px; padding:13px 16px; border-radius:10px; border:none; background:#16A34A; color:#FFFFFF; font-family:inherit; font-size:14.5px; font-weight:700; cursor:pointer;" style-hover="background:#128A3E;">Done</button>
         </div>
         </sc-if>
 
@@ -765,61 +531,9 @@
           <div style="margin-top:12px; font-size:12.5px; color:#DC2626; font-weight:600;">{{ errorMsg }}</div>
         </sc-if>
 
+        <sc-if value="{{ showTerms }}" hint-placeholder-val="{{ true }}">
         <p style="margin-top:16px; font-size:11.5px; color:#9CA3AF; line-height:1.5; text-align:center;">By continuing you agree to Assisty's Terms of Service and Privacy Policy.</p>
-      </div>
-    </div>
-  </sc-if>
-
-  <sc-if value="{{ stepAccount }}" hint-placeholder-val="{{ false }}">
-    <div style="position:fixed; inset:0; z-index:9500; background:rgba(10,20,40,0.35); display:flex; align-items:flex-start; justify-content:center; padding:24px; overflow:auto;">
-      <div style="{{ popupStyle }}">
-        <div style="display:flex; align-items:center; gap:10px; padding:0 12px; height:38px; background:#F1F3F4; border-bottom:1px solid #DADCE0; flex:0 0 auto;">
-          <button onClick="{{ backStep }}" aria-label="Close" style="width:22px; height:22px; border:none; border-radius:50%; background:#FF5F57; cursor:pointer; flex:0 0 22px; padding:0;"></button>
-          <span style="display:flex; align-items:center; gap:6px; margin:0 auto; padding:3px 12px; border-radius:999px; background:#FFFFFF; border:1px solid #DADCE0; font-size:12px; color:#5F6368;">
-            <svg viewBox="0 0 24 24" fill="none" style="width:11px; height:11px;"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"></rect><path d="M8 11V8a4 4 0 018 0v3" stroke="currentColor" stroke-width="2"></path></svg>
-            {{ popupHost }}
-          </span>
-        </div>
-
-        <sc-if value="{{ isGoogle }}" hint-placeholder-val="{{ true }}">
-          <div style="padding:36px 40px 28px; text-align:center;">
-            <svg viewBox="0 0 48 48" aria-hidden="true" style="width:26px; height:26px;"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24s.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
-            <h4 style="margin:16px 0 0; font-size:22px; font-weight:400; color:#202124; letter-spacing:0;">Choose an account</h4>
-            <p style="margin:8px 0 0; font-size:14px; color:#5F6368;">to continue to Assisty</p>
-          </div>
         </sc-if>
-        <sc-if value="{{ isMicrosoft }}" hint-placeholder-val="{{ false }}">
-          <div style="padding:32px 40px 20px;">
-            <div style="display:inline-flex; align-items:center; gap:8px;">
-              <span style="display:inline-grid; grid-template-columns:9px 9px; gap:2px;"><span style="width:9px; height:9px; background:#F25022;"></span><span style="width:9px; height:9px; background:#7FBA00;"></span><span style="width:9px; height:9px; background:#00A4EF;"></span><span style="width:9px; height:9px; background:#FFB900;"></span></span>
-              <span style="font-size:15px; color:#5E5E5E; font-weight:600;">Microsoft</span>
-            </div>
-            <h4 style="margin:22px 0 0; font-size:24px; font-weight:600; color:#1B1B1B;">Pick an account</h4>
-          </div>
-        </sc-if>
-
-        <div style="{{ popupListStyle }}">
-          <sc-for list="{{ pickerAccounts }}" as="acct" hint-placeholder-count="2">
-            <button onClick="{{ acct.pick }}" style="{{ popupRowStyle }}" style-hover="background:#F5F6F7;">
-              <span style="{{ acct.avatarStyle }}">{{ acct.initials }}</span>
-              <span style="display:flex; flex-direction:column; gap:2px; min-width:0; flex:1; text-align:left;">
-                <span style="font-size:14px; font-weight:500; color:#202124;">{{ acct.name }}</span>
-                <span style="font-size:13px; color:#5F6368; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ acct.email }}</span>
-              </span>
-              <span style="{{ acct.tagStyle }}">{{ acct.tag }}</span>
-            </button>
-          </sc-for>
-          <button onClick="{{ useAnother }}" style="{{ popupRowStyle }}" style-hover="background:#F5F6F7;">
-            <span style="flex:0 0 32px; width:32px; height:32px; border-radius:50%; background:#F1F3F4; color:#5F6368; display:inline-flex; align-items:center; justify-content:center;">
-              <svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
-            </span>
-            <span style="font-size:14px; color:#202124; text-align:left; flex:1;">Use another account</span>
-          </button>
-        </div>
-
-        <div style="padding:24px 40px 28px; font-size:12px; color:#5F6368; line-height:1.6;">
-          To continue, {{ popupBrand }} will share your name, email address and profile picture with Assisty.
-        </div>
       </div>
     </div>
   </sc-if>
@@ -974,18 +688,9 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;showUniversityStrip&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
 class Component extends DCLogic {
   state = { videoOpen: false, device: 'desktop', winWidth: typeof window !== 'undefined' ? window.innerWidth : 1200,
-    authOpen: false, step: 'choose', method: 'email', provider: 'google', email: '', password: '', confirmPw: '',
-    fullName: '', dialCode: '+91', mobile: '', error: '', signedIn: false, newAccount: false };
+    authOpen: false, step: 'choose', method: 'email', email: '', password: '',
+    fullName: '', role: '', error: '', signedIn: false, newAccount: false };
 
-  pw() {
-    const p = this.state.password;
-    return {
-      len: p.length >= 8,
-      cases: /[a-z]/.test(p) && /[A-Z]/.test(p),
-      num: /[0-9]/.test(p),
-      sym: /[^A-Za-z0-9]/.test(p)
-    };
-  }
   componentDidMount() {
     this._onResize = () => this.setState({ winWidth: window.innerWidth });
     window.addEventListener('resize', this._onResize);
@@ -1109,46 +814,22 @@ class Component extends DCLogic {
     }, 900);
     setTimeout(() => { clearInterval(this._failOpen); document.querySelectorAll('[data-reveal="0"]').forEach(n => show(n, 0)); }, 20000);
   }
-  pwScore() { const c = this.pw(); return [c.len, c.cases, c.num, c.sym].filter(Boolean).length; }
-  reqStyle(ok) {
-    return { display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11.5px', fontWeight: 600,
-      color: ok ? '#0B7C88' : '#9CA3AF' };
-  }
-  barStyle(i) {
-    const s = this.pwScore();
-    const colors = ['#E5E7EB', '#DC2626', '#F59E0B', '#0FA3B2', '#0B7C88'];
-    return { flex: 1, height: '4px', borderRadius: '999px', background: i <= s ? colors[s] : '#E5E7EB' };
-  }
-  go(step) { this.setState({ step, error: '' }); }
   known() {
     return {
-      'jane.mensah@gmail.com': { name: 'Jane Mensah', dial: '+91', mobile: '98765 43210' },
-      'j.mensah@university.edu': { name: 'Jane Mensah', dial: '+44', mobile: '7700 900318' },
-      'dr.rao@university.edu': { name: 'Ananya Rao', dial: '+91', mobile: '98111 20455' }
+      'jane.mensah@gmail.com': { name: 'Jane Mensah' },
+      'j.mensah@university.edu': { name: 'Jane Mensah' },
+      'dr.rao@university.edu': { name: 'Ananya Rao' }
     };
   }
   validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((v || '').trim()); }
-  accounts(p) {
-    return p === 'microsoft'
-      ? [{ name: 'Jane Mensah', email: 'j.mensah@university.edu', existing: true },
-         { name: 'Daniel Okoro', email: 'd.okoro@university.edu', existing: false }]
-      : [{ name: 'Jane Mensah', email: 'jane.mensah@gmail.com', existing: true },
-         { name: 'Priya Nair', email: 'priya.nair@gmail.com', existing: false }];
-  }
   signIn(email, method) {
     const u = this.known()[email.toLowerCase()];
     this.setState({ method, email, step: 'connecting', error: '' });
     setTimeout(() => this.setState({
       authOpen: false, signedIn: true, step: 'choose', newAccount: false,
-      fullName: u ? u.name : this.state.fullName || 'Jane Mensah',
-      dialCode: u ? u.dial : this.state.dialCode,
-      mobile: u ? u.mobile : this.state.mobile
+      fullName: u ? u.name : this.state.fullName || 'Jane Mensah'
     }), 1000);
   }
-  newUser(email, method, name) {
-    this.setState({ method, email, fullName: name || '', step: 'details', error: '' });
-  }
-  openPicker(provider) { this.setState({ provider, step: 'account', error: '' }); }
   componentWillUnmount() {
     window.removeEventListener('resize', this._onResize);
     if (this._io) this._io.disconnect();
@@ -1168,21 +849,18 @@ class Component extends DCLogic {
   renderVals() {
     const mobile = this.state.device === 'mobile';
     const compact = mobile || this.state.winWidth < 900;
-    const score = this.pwScore();
-    const checks = this.pw();
     const emailOk = this.validEmail(this.state.email);
-    const prov = this.state.provider === 'microsoft' ? 'Microsoft' : 'Google';
     const titles = {
-      choose: 'Welcome to Assisty',
-      account: 'Choose a ' + prov + ' account',
+      choose: 'Log in to Assisty',
       connecting: 'One moment',
-      details: 'Finish setting up'
+      request: 'Request access',
+      requested: 'Request received'
     };
     const subs = {
-      choose: 'Get started in under a minute.',
-      account: 'Pick the account you want to use.',
+      choose: 'Enter your email and password.',
       connecting: 'Signing you in.',
-      details: 'A few details and you are in.'
+      request: 'Tell us a bit about you and we will set up your account.',
+      requested: 'We will email you once your account is ready.'
     };
     const title = titles[this.state.step];
     const sub = subs[this.state.step];
@@ -1218,92 +896,49 @@ class Component extends DCLogic {
       stopClick: (e) => e.stopPropagation(),
 
       authOpen: this.state.authOpen,
-      openLogin: () => this.setState({ authOpen: true, step: 'choose', mode: 'login', email: 'jane.mensah@gmail.com', error: '' }),
-      openAuth: () => this.setState({ authOpen: true, mode: 'signup', step: 'choose', error: '' }),
+      openLogin: () => this.setState({ authOpen: true, step: 'choose', mode: 'login', email: 'jane.mensah@gmail.com', password: '', error: '' }),
+      openRequestAccess: () => this.setState({ authOpen: true, mode: 'request', step: 'request', fullName: '', email: '', role: '', error: '' }),
       closeAuth: () => this.setState({ authOpen: false }),
       stepChoose: this.state.step === 'choose',
-      stepAccount: this.state.step === 'account',
       stepConnecting: this.state.step === 'connecting',
-      stepDetails: this.state.step === 'details',
+      stepRequest: this.state.step === 'request',
+      stepRequested: this.state.step === 'requested',
+      showHeader: this.state.step !== 'requested',
+      showTerms: this.state.step !== 'request' && this.state.step !== 'requested',
       modalTitle: title, modalSub: sub,
       connectingLabel: this.state.method === 'google' ? 'Signing in with Google…' : this.state.method === 'microsoft' ? 'Signing in with Microsoft…' : 'Signing you in…',
-      needsPassword: this.state.method === 'email',
-      emailDisabled: !emailOk,
-      emailBtnStyle: { width: '100%', marginTop: '4px', padding: '14px 16px', borderRadius: '10px', border: 'none',
-        background: emailOk ? '#1F3A72' : '#DCE4F5', color: emailOk ? '#FFFFFF' : '#9CA3AF',
-        fontFamily: 'inherit', fontSize: '15px', fontWeight: 700, cursor: emailOk ? 'pointer' : 'not-allowed',
-        boxShadow: emailOk ? '0 8px 20px rgba(31,58,114,0.24)' : 'none', transition: 'background 150ms ease, color 150ms ease' },
-      isGoogle: this.state.provider !== 'microsoft',
-      isMicrosoft: this.state.provider === 'microsoft',
-      popupHost: this.state.provider === 'microsoft' ? 'login.microsoftonline.com' : 'accounts.google.com',
-      popupBrand: this.state.provider === 'microsoft' ? 'Microsoft' : 'Google',
-      popupStyle: { width: 'min(440px, 100%)', margin: 'auto', background: '#FFFFFF', borderRadius: '12px',
-        overflow: 'hidden', boxShadow: '0 30px 80px rgba(15,27,54,0.45)', display: 'flex', flexDirection: 'column',
-        fontFamily: this.state.provider === 'microsoft'
-          ? '"Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif'
-          : 'Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif' },
-      popupListStyle: { display: 'flex', flexDirection: 'column', borderTop: '1px solid #E8EAED' },
-      popupRowStyle: { display: 'flex', alignItems: 'center', gap: '14px', width: '100%', padding: '14px 40px',
-        border: 'none', borderBottom: '1px solid #E8EAED', background: '#FFFFFF', cursor: 'pointer',
-        fontFamily: 'inherit', textAlign: 'left' },
-      pickerAccounts: this.accounts(this.state.provider).map(a => ({
-        name: a.name, email: a.email,
-        initials: a.name.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(),
-        tag: a.existing ? 'Signed up' : 'New',
-        tagStyle: { flex: '0 0 auto', fontSize: '10.5px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
-          padding: '4px 8px', borderRadius: '999px',
-          background: a.existing ? '#E6F4EA' : '#F1F3F4', color: a.existing ? '#137333' : '#5F6368' },
-        avatarStyle: { flex: '0 0 32px', width: '32px', height: '32px', borderRadius: '50%',
-          background: a.existing ? '#1A73E8' : '#8430CE', color: '#FFFFFF',
-          display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', fontWeight: 500 },
-        pick: () => a.existing ? this.signIn(a.email, this.state.provider) : this.newUser(a.email, this.state.provider, a.name)
-      })),
-      useAnother: () => this.setState({ step: 'choose', method: 'email', email: '', fullName: '', error: '' }),
+      loginDisabled: !emailOk || !this.state.password,
+      loginBtnStyle: { width: '100%', marginTop: '4px', padding: '14px 16px', borderRadius: '10px', border: 'none',
+        background: (emailOk && this.state.password) ? '#1F3A72' : '#DCE4F5', color: (emailOk && this.state.password) ? '#FFFFFF' : '#9CA3AF',
+        fontFamily: 'inherit', fontSize: '15px', fontWeight: 700, cursor: (emailOk && this.state.password) ? 'pointer' : 'not-allowed',
+        boxShadow: (emailOk && this.state.password) ? '0 8px 20px rgba(31,58,114,0.24)' : 'none', transition: 'background 150ms ease, color 150ms ease' },
 
       email: this.state.email,
       setEmail: (e) => this.setState({ email: e.target.value, error: '' }),
       password: this.state.password,
       setPassword: (e) => this.setState({ password: e.target.value, error: '' }),
-      confirmPw: this.state.confirmPw,
-      setConfirmPw: (e) => this.setState({ confirmPw: e.target.value, error: '' }),
       fullName: this.state.fullName,
       setFullName: (e) => this.setState({ fullName: e.target.value, error: '' }),
-      dialCode: this.state.dialCode,
-      setDialCode: (e) => this.setState({ dialCode: e.target.value }),
-      mobile: this.state.mobile,
-      setMobile: (e) => this.setState({ mobile: e.target.value, error: '' }),
-
-      chooseGoogle: () => this.openPicker('google'),
-      chooseMicrosoft: () => this.openPicker('microsoft'),
-      submitEmail: () => {
-        if (!emailOk) return this.setState({ error: 'Enter a valid email address.' });
-        const e = this.state.email.trim().toLowerCase();
-        if (this.known()[e]) this.signIn(e, 'email');
-        else this.newUser(e, 'email', '');
-      },
-      submitDetails: () => {
+      role: this.state.role,
+      setRole: (e) => this.setState({ role: e.target.value, error: '' }),
+      submitRequest: () => {
         if (this.state.fullName.trim().length < 2)
           return this.setState({ error: 'Enter your full name.' });
-        if (this.state.mobile.replace(/\D/g, '').length < 7)
-          return this.setState({ error: 'Enter a valid mobile number.' });
-        if (this.state.method === 'email') {
-          if (this.pwScore() < 4)
-            return this.setState({ error: 'Password must meet all four requirements.' });
-          if (this.state.password !== this.state.confirmPw)
-            return this.setState({ error: 'Passwords do not match.' });
-        }
-        this.setState({ authOpen: false, signedIn: true, step: 'choose', newAccount: true, error: '' });
+        if (!this.validEmail(this.state.email))
+          return this.setState({ error: 'Enter a valid institutional email address.' });
+        if (!this.state.role)
+          return this.setState({ error: 'Select your role.' });
+        this.setState({ step: 'requested', error: '' });
       },
-      backStep: () => this.go('choose'),
 
-      bar1Style: this.barStyle(1), bar2Style: this.barStyle(2), bar3Style: this.barStyle(3), bar4Style: this.barStyle(4),
-      strengthLabel: ['', 'Weak', 'Fair', 'Good', 'Strong'][score] || '',
-      strengthColor: ['#9CA3AF', '#DC2626', '#F59E0B', '#0FA3B2', '#0B7C88'][score],
-      reqLenStyle: this.reqStyle(checks.len), reqCaseStyle: this.reqStyle(checks.cases),
-      reqNumStyle: this.reqStyle(checks.num), reqSymStyle: this.reqStyle(checks.sym),
+      chooseGoogle: () => this.signIn('jane.mensah@gmail.com', 'google'),
+      chooseMicrosoft: () => this.signIn('j.mensah@university.edu', 'microsoft'),
+      submitLogin: () => {
+        if (!emailOk) return this.setState({ error: 'Enter a valid email address.' });
+        if (!this.state.password) return this.setState({ error: 'Enter your password.' });
+        this.signIn(this.state.email.trim().toLowerCase(), 'email');
+      },
 
-      showProviderNote: this.state.method !== 'email',
-      providerNote: this.state.method === 'google' ? 'Google account connected' : 'Microsoft account connected',
       hasError: !!this.state.error,
       errorMsg: this.state.error,
 
@@ -1332,11 +967,9 @@ class Component extends DCLogic {
             icon: svg(p('M3 9l3.5 3.5L13 6', 1), p('M15 6l5 5M20 6l-5 5', 2), p('M10 13v6.5l2-1.6 1.4 2.6 1.8-1-1.4-2.6 2.4-.4z', 3)) }
         ];
       })(),
-      signOut: () => this.setState({ signedIn: false, newAccount: false, step: 'choose', email: '', password: '', confirmPw: '', fullName: '', mobile: '', method: 'email' }),
+      signOut: () => this.setState({ signedIn: false, newAccount: false, step: 'choose', email: '', password: '', fullName: '', method: 'email' }),
       firstName: (this.state.fullName || '').trim().split(/\s+/)[0] || 'there',
-      userInitials: (this.state.fullName || 'A').trim().split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase(),
-      fullMobile: this.state.dialCode + ' ' + this.state.mobile,
-      methodLabel: this.state.method === 'google' ? 'Google' : this.state.method === 'microsoft' ? 'Microsoft' : 'Email & password'
+      userInitials: (this.state.fullName || 'A').trim().split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase()
     };
   }
 }
