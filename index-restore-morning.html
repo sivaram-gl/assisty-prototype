@@ -61,22 +61,6 @@
     .hero-text-wrap { order:1; }
     .hero-text-col { max-width:100%; }
   }
-  @media (max-width: 520px) {
-    .hero-cta-row { flex-direction:column; align-items:stretch; }
-    .hero-cta-btn { width:100%; height:52px; font-size:14.5px !important; padding-left:14px !important; padding-right:14px !important; white-space:nowrap; }
-  }
-  @container (max-width: 520px) {
-    .hero-cta-row { flex-direction:column; align-items:stretch; }
-    .hero-cta-btn { width:100%; height:52px; font-size:14.5px !important; padding-left:14px !important; padding-right:14px !important; white-space:nowrap; }
-  }
-  @media (max-width: 640px) {
-    .principle-card { flex-direction:column; }
-    .principle-card > div { width:100%; }
-  }
-  @container (max-width: 640px) {
-    .principle-card { flex-direction:column; }
-    .principle-card > div { width:100%; }
-  }
 </style>
 </helmet>
 
@@ -98,6 +82,27 @@
 
   <section id="top" data-screen-label="Hero" class="hero-shell" style="position:relative; overflow:hidden; padding:clamp(28px, 4cqi, 44px) 0 clamp(48px, 6cqi, 76px); background:#FFFFFF;">
     <div data-hseq="7" class="hero-media" role="img" aria-label="Educator at a campus office desk with a coffee mug, university quad visible through the window">
+      <div data-float style="position:absolute; right:24px; top:44px; display:flex; align-items:center; gap:10px; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:12px; padding:11px 15px; box-shadow:0 14px 34px rgba(31,58,114,0.14); animation:assistyFloat 5.2s ease-in-out infinite; z-index:2;">
+        <span style="width:28px; height:28px; border-radius:8px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <div>
+          <div style="font-size:13.5px; font-weight:700; color:#111827; line-height:1.1; letter-spacing:-0.01em;">200 submissions graded</div>
+          <div style="font-size:11px; font-weight:600; color:#6B7280; margin-top:3px;">Feedback attached</div>
+        </div>
+      </div>
+      <div data-float style="position:absolute; left:100px; top:38%; display:flex; align-items:center; gap:10px; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:12px; padding:11px 15px; box-shadow:0 14px 34px rgba(31,58,114,0.14); animation:assistyFloatSoft 6.4s ease-in-out 0.8s infinite; z-index:2;">
+        <span style="width:28px; height:28px; border-radius:8px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+        <div>
+          <div style="font-size:13.5px; font-weight:700; color:#111827; line-height:1.1; letter-spacing:-0.01em;">18 min saved</div>
+          <div style="font-size:11px; font-weight:600; color:#6B7280; margin-top:3px;">This afternoon</div>
+        </div>
+      </div>
+      <div data-float style="position:absolute; right:24px; bottom:96px; display:flex; align-items:center; gap:10px; background:#FFFFFF; border:1px solid #E9EDF6; border-radius:12px; padding:11px 15px; box-shadow:0 20px 44px rgba(31,58,114,0.16); animation:assistyFloat 6s ease-in-out 1.6s infinite; z-index:2;">
+        <span style="width:28px; height:28px; border-radius:8px; background:#F1EEFE; color:#7C5CFC; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:15px; height:15px;"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg></span>
+        <div>
+          <div style="font-size:13.5px; font-weight:700; color:#111827; line-height:1.1; letter-spacing:-0.01em;">92 / 100</div>
+          <div style="font-size:11px; font-weight:600; color:#6B7280; margin-top:3px;">Strong thesis &middot; Clear argument</div>
+        </div>
+      </div>
     </div>
 
     <div class="hero-text-wrap" style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); position:relative; z-index:2; width:100%;">
@@ -112,12 +117,12 @@
         <p data-hseq="4" style="margin-top:18px; font-size:17px; line-height:1.6; max-width:540px; color:#4B5563;">
           Assisty helps educators grade essays, case analyses and exam scripts faster and more consistently, so you can focus on what matters most.
         </p>
-        <div data-hseq="5" class="hero-cta-row" style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button onClick="{{ openRequestAccess }}" class="hero-cta-btn" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:16px; padding:16px 30px; border-radius:10px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit; box-sizing:border-box;" style-hover="background:#142551;">Request Access</button>
-          <a href="#how" class="hero-cta-btn" style="display:inline-flex; align-items:center; justify-content:center; gap:9px; font-weight:600; font-size:16px; padding:16px 30px; border-radius:10px; background:#FFFFFF; color:#1F3A72; line-height:1; border:1px solid #DCE4F5; cursor:pointer; font-family:inherit; box-sizing:border-box;" style-hover="background:#F7F8FB; border-color:#C3D0EA;">
+        <div data-hseq="5" style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+          <button onClick="{{ openRequestAccess }}" style="display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:16px; padding:16px 30px; border-radius:10px; background:#1F3A72; color:#FFFFFF; line-height:1; border:none; cursor:pointer; font-family:inherit;" style-hover="background:#142551;">Request Access</button>
+          <button onClick="{{ openVideo }}" style="display:inline-flex; align-items:center; justify-content:center; gap:9px; font-weight:600; font-size:16px; padding:16px 26px; border-radius:10px; background:#FFFFFF; color:#1F3A72; line-height:1; border:1px solid #DCE4F5; cursor:pointer; font-family:inherit;" style-hover="background:#F7F8FB; border-color:#C3D0EA;">
             <span style="width:20px; height:20px; border-radius:50%; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center; flex:0 0 20px;"><svg viewBox="0 0 24 24" fill="none" style="width:10px; height:10px; margin-left:1px;"><polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polygon></svg></span>
             Watch how it works
-          </a>
+          </button>
         </div>
         <div data-hseq="6" style="margin-top:20px; display:flex; align-items:center; flex-wrap:wrap; gap:18px 22px; color:#374151; font-size:13px; font-weight:600;">
           <span style="display:inline-flex; align-items:center; gap:6px;"><svg viewBox="0 0 24 24" fill="none" style="width:14px; height:14px; flex:0 0 14px;"><path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path></svg>Secure &amp; Private</span>
@@ -165,42 +170,31 @@
   </section>
   </sc-if>
 
-  <section id="problem" data-screen-label="The problem" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FFFFFF;">
+  <section id="verifiability" data-screen-label="Designed for verifiability" style="padding:clamp(56px, 8cqi, 96px) 0; background:#FFFFFF;">
     <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:clamp(32px, 5cqi, 64px); align-items:start;">
-        <div>
-          <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">Designed For Verifiability</span>
-          <h2 style="margin-top:18px; font-size:clamp(28px, 3.4cqi, 40px); line-height:1.15; font-weight:800; letter-spacing:-0.03em; color:#1F3A72;">Three principles are central to the product design.</h2>
-          <div style="position:relative; border-radius:20px; overflow:hidden; border:1px solid #E9ECF3; aspect-ratio:4 / 3; background:#F4F6FA; margin-top:24px;">
-            <image-slot id="problem-educator" src="assets/the-grading-problem.png" placeholder="Educator buried in papers, late at night" style="width:100%; height:100%;"></image-slot>
-          </div>
-        </div>
-        <div data-reveal-stagger style="display:flex; flex-direction:column; gap:14px;">
-          <article class="principle-card" style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:22px 22px 20px; display:flex; gap:18px; align-items:flex-start; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-            <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M11.5 12.5l5-5 1.5 1.5-5 5H11v-1.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path></svg></span>
-            <div style="min-width:0;">
-              <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; margin-top:0; line-height:1.25;">Provenance</h3>
-              <p style="font-size:14.5px; font-weight:600; color:#1F3A72; margin-top:6px;">Trace any mark back to the line that earned it.</p>
-              <p style="font-size:15px; color:#4B5563; margin-top:7px; line-height:1.6;">Every claim, remark, and point assignment can be traced back to specific sections of the student submission. The interface makes this verification process clear, intuitive, and transparent.</p>
-            </div>
-          </article>
-          <article class="principle-card" style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:22px 22px 20px; display:flex; gap:18px; align-items:flex-start; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-            <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><rect x="4" y="10.5" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="2"></rect><path d="M8 10.5V7.5a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
-            <div style="min-width:0;">
-              <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; margin-top:0; line-height:1.25;">Scope determinism</h3>
-              <p style="font-size:14.5px; font-weight:600; color:#0B7C88; margin-top:6px;">Grading uses only what you provide.</p>
-              <p style="font-size:15px; color:#4B5563; margin-top:7px; line-height:1.6;">All context used for grading comes exclusively from user-provided inputs. The system does not rely on hidden or external data sources.</p>
-            </div>
-          </article>
-          <article class="principle-card" style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:22px 22px 20px; display:flex; gap:18px; align-items:flex-start; transition:transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(31,58,114,0.10); border-color:#D9E2F4;">
-            <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M3 13l9 5 9-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-            <div style="min-width:0;">
-              <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; margin-top:0; line-height:1.25;">Progressive disclosure</h3>
-              <p style="font-size:14.5px; font-weight:600; color:#E15A48; margin-top:6px;">Headline first, detail on demand.</p>
-              <p style="font-size:15px; color:#4B5563; margin-top:7px; line-height:1.6;">Results are presented in layers. Users can see the most important information at a glance, while detailed supporting information remains available for each submission whenever deeper review is required.</p>
-            </div>
-          </article>
-        </div>
+      <div style="max-width:720px; margin:0 auto 40px; text-align:center;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px;">Designed For Verifiability</span>
+        <h2 style="margin-top:18px; font-size:clamp(30px, 3.6cqi, 44px); line-height:1.1; font-weight:800; letter-spacing:-0.03em; color:#1F3A72;">Three principles are central to the product design.</h2>
+      </div>
+      <div data-reveal-stagger style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:20px;">
+        <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:12px;">
+          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#EEF2FB; color:#1F3A72; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M8 4h9l4 4v12H8V4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M11.5 12.5l5-5 1.5 1.5-5 5H11v-1.5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path></svg></span>
+          <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; line-height:1.25;">Provenance</h3>
+          <p style="font-size:14.5px; font-weight:600; color:#1F3A72; margin:0;">Trace any mark back to the line that earned it.</p>
+          <p style="font-size:15px; color:#4B5563; margin:0; line-height:1.6;">Every claim, remark, and point assignment can be traced back to specific sections of the student submission. The interface makes this verification process clear, intuitive, and transparent.</p>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:12px;">
+          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#E6FBFD; color:#0B7C88; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><rect x="4" y="10.5" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="2"></rect><path d="M8 10.5V7.5a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></span>
+          <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; line-height:1.25;">Scope determinism</h3>
+          <p style="font-size:14.5px; font-weight:600; color:#0B7C88; margin:0;">Grading uses only what you provide.</p>
+          <p style="font-size:15px; color:#4B5563; margin:0; line-height:1.6;">All context used for grading comes exclusively from user-provided inputs. The system does not rely on hidden or external data sources.</p>
+        </article>
+        <article style="background:#FFFFFF; border:1px solid #E7EBF3; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:12px;">
+          <span style="width:42px; height:42px; flex:0 0 42px; border-radius:11px; background:#FEEDE9; color:#E15A48; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:21px; height:21px;"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"></path><path d="M3 13l9 5 9-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <h3 style="font-size:19px; font-weight:700; color:#111827; letter-spacing:-0.018em; line-height:1.25;">Progressive disclosure</h3>
+          <p style="font-size:14.5px; font-weight:600; color:#E15A48; margin:0;">Headline first, detail on demand.</p>
+          <p style="font-size:15px; color:#4B5563; margin:0; line-height:1.6;">Results are presented in layers. Users can see the most important information at a glance, while detailed supporting information remains available for each submission whenever deeper review is required.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -209,45 +203,52 @@
     <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px);">
       <div style="position:relative; overflow:hidden; border-radius:26px; background:#1F3A72; padding:clamp(28px, 4cqi, 52px) clamp(22px, 3.4cqi, 44px);">
         <div style="position:absolute; inset:0; pointer-events:none; background:radial-gradient(620px 320px at 88% -10%, rgba(22,198,216,0.20), transparent 62%), radial-gradient(520px 280px at 6% 108%, rgba(249,115,96,0.12), transparent 62%);"></div>
-        <div style="position:relative; display:grid; grid-template-columns:{{ howCols }}; gap:clamp(32px, 4.5cqi, 56px); align-items:stretch;">
-          <div style="min-width:0; display:flex; flex-direction:column;">
-            <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#7FE9F4;">How it works</span>
-            <div style="position:relative; display:flex; flex-direction:column; gap:24px; margin-top:22px;">
-              <div style="position:absolute; left:13px; top:14px; bottom:14px; width:2px; background:repeating-linear-gradient(to bottom, rgba(127,233,244,0.4) 0 4px, transparent 4px 8px); z-index:0;"></div>
-              <div style="position:relative; z-index:1; display:flex; gap:16px; align-items:flex-start;">
-                <span style="width:28px; height:28px; flex:0 0 28px; border-radius:50%; background:#1F3A72; border:2px solid #7FE9F4; color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;">1</span>
-                <div style="min-width:0;">
-                  <div style="font-size:16px; font-weight:700; color:#FFFFFF; letter-spacing:-0.014em; line-height:1.3;">Add Your Assessment</div>
-                  <p style="font-size:14px; line-height:1.55; color:rgba(255,255,255,0.74); margin-top:4px;">Connect your LMS or upload the assessment, submissions, and supporting materials.</p>
-                </div>
-              </div>
-              <div style="position:relative; z-index:1; display:flex; gap:16px; align-items:flex-start;">
-                <span style="width:28px; height:28px; flex:0 0 28px; border-radius:50%; background:#1F3A72; border:2px solid #7FE9F4; color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;">2</span>
-                <div style="min-width:0;">
-                  <div style="font-size:16px; font-weight:700; color:#FFFFFF; letter-spacing:-0.014em; line-height:1.3;">Define the Rubric</div>
-                  <p style="font-size:14px; line-height:1.55; color:rgba(255,255,255,0.74); margin-top:4px;">Share your marking criteria and Assisty builds a structured rubric for grading.</p>
-                </div>
-              </div>
-              <div style="position:relative; z-index:1; display:flex; gap:16px; align-items:flex-start;">
-                <span style="width:28px; height:28px; flex:0 0 28px; border-radius:50%; background:#1F3A72; border:2px solid #7FE9F4; color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;">3</span>
-                <div style="min-width:0;">
-                  <div style="font-size:16px; font-weight:700; color:#FFFFFF; letter-spacing:-0.014em; line-height:1.3;">Grade Automatically</div>
-                  <p style="font-size:14px; line-height:1.55; color:rgba(255,255,255,0.74); margin-top:4px;">Assisty grades your submissions consistently against your rubric and generates scores and feedback.</p>
-                </div>
-              </div>
-              <div style="position:relative; z-index:1; display:flex; gap:16px; align-items:flex-start;">
-                <span style="width:28px; height:28px; flex:0 0 28px; border-radius:50%; background:#1F3A72; border:2px solid #7FE9F4; color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;">4</span>
-                <div style="min-width:0;">
-                  <div style="font-size:16px; font-weight:700; color:#FFFFFF; letter-spacing:-0.014em; line-height:1.3;">Review &amp; Publish</div>
-                  <p style="font-size:14px; line-height:1.55; color:rgba(255,255,255,0.74); margin-top:4px;">Edit scores and feedback if required, approve the results, and send grades to your LMS or export them.</p>
-                </div>
-              </div>
-            </div>
+        <div style="position:relative; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 40px;">
+          <div style="flex:1 1 460px; min-width:0;">
+            <h2 style="margin-top:0; font-size:clamp(28px, 3.4cqi, 42px); line-height:1.14; font-weight:800; letter-spacing:-0.03em; color:#FFFFFF;">How it works</h2>
+            <p style="margin-top:14px; font-size:16.5px; line-height:1.6; color:rgba(255,255,255,0.74); max-width:520px;">Assisty simplifies your grading workflow in four simple steps.</p>
           </div>
-          <div style="min-width:0; display:flex;">
-            <div style="position:relative; flex:1 1 auto; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.14); box-shadow:0 20px 50px rgba(8,18,40,0.35); background:#0F1B36; min-height:280px;">
-              <video src="assets/how-it-works.mp4" controls="{{ true }}" preload="metadata" playsInline="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:cover; background:#0F1B36;"></video>
+          <button onClick="{{ openVideo }}" style="flex:0 0 auto; display:inline-flex; align-items:center; gap:12px; border:none; cursor:pointer; font-family:inherit; background:#FFFFFF; color:#1F3A72; font-size:15px; font-weight:700; padding:14px 26px; border-radius:999px;" style-hover="background:#E6FBFD;">
+            <span style="width:24px; height:24px; border-radius:50%; background:#0B7C88; color:#FFFFFF; display:inline-flex; align-items:center; justify-content:center; animation:assistyHalo 1.8s ease-out infinite;"><svg viewBox="0 0 24 24" fill="none" style="width:13px; height:13px; margin-left:2px;"><polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polygon></svg></span>
+            See how it works
+          </button>
+        </div>
+        <div style="position:relative; margin-top:clamp(34px, 4.4cqi, 56px); padding-top:clamp(28px, 3.4cqi, 40px); border-top:1px solid rgba(255,255,255,0.12); display:grid; grid-template-columns:{{ stepCols }}; gap:clamp(24px, 2.8cqi, 38px);">
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">01</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M6 3h9l4 4v14H6V3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M14 3v5h5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
             </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Add Your Assessment</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Connect your LMS or upload the assessment, submissions, and supporting materials.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">02</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M12 16V8m0 0l-3 3m3-3l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 18a4.5 4.5 0 0 1-.5-8.97A6 6 0 0 1 17.7 9.2 3.9 3.9 0 0 1 18 18h-1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Define the Rubric</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Share your marking criteria and Assisty builds a structured rubric for grading.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">03</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"></circle><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Grade Automatically</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Assisty grades your submissions consistently against your rubric and generates scores and feedback.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:0;">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:'Geist Mono', ui-monospace, monospace; font-size:clamp(36px, 3.6cqi, 50px); font-weight:700; letter-spacing:-0.05em; line-height:0.9; color:#7FE9F4;">04</span>
+              <span style="flex:1 1 auto; height:1px; background:rgba(255,255,255,0.18);"></span>
+              <span style="width:36px; height:36px; flex:0 0 36px; border-radius:10px; background:rgba(127,233,244,0.14); color:#7FE9F4; display:inline-flex; align-items:center; justify-content:center;"><svg viewBox="0 0 24 24" fill="none" style="width:19px; height:19px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg></span>
+            </div>
+            <div style="font-size:17px; font-weight:700; color:#FFFFFF; letter-spacing:-0.016em; line-height:1.25;">Review &amp; Publish</div>
+            <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.74); margin:0; text-wrap:pretty;">Edit scores and feedback if required, approve the results, and send grades to your LMS or export them.</p>
           </div>
         </div>
       </div>
@@ -361,9 +362,27 @@
         <div style="position:absolute; right:-80px; top:-80px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle, rgba(22,198,216,0.16), transparent 65%);"></div>
         <div style="position:absolute; right:24px; bottom:20px; width:90px; height:60px; opacity:0.35; background-image:radial-gradient(circle 2px, #16C6D8 100%, transparent 101%); background-size:12px 12px;"></div>
         <div style="flex:0 1 200px; min-width:150px; position:relative; z-index:1;">
-          <div style="border-radius:14px; overflow:hidden; aspect-ratio:4 / 3; box-shadow:0 8px 20px rgba(31,58,114,0.18);">
-            <image-slot id="cta-get-started" src="assets/get-started.jpg" placeholder="Educator getting started with Assisty" style="width:100%; height:100%;"></image-slot>
-          </div>
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%; height:auto; filter:drop-shadow(0 8px 20px rgba(31,58,114,0.12));">
+            <path d="M40 34l24-12 24 12-24 12-24-12z" fill="#1F3A72"></path>
+            <path d="M52 40v10c0 3 6 6 12 6s12-3 12-6V40" stroke="#1F3A72" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+            <line x1="88" y1="34" x2="88" y2="50" stroke="#1F3A72" stroke-width="2" stroke-linecap="round"></line>
+            <circle cx="88" cy="53" r="2.5" fill="#16C6D8"></circle>
+            <rect x="22" y="130" width="90" height="12" rx="2" fill="#0FA3B2"></rect>
+            <rect x="28" y="118" width="80" height="12" rx="2" fill="#16C6D8"></rect>
+            <rect x="22" y="106" width="90" height="12" rx="2" fill="#1F3A72"></rect>
+            <rect x="80" y="60" width="100" height="60" rx="6" fill="#fff" stroke="#DCE4F5" stroke-width="1.5"></rect>
+            <rect x="85" y="65" width="90" height="42" rx="2" fill="#E6FBFD"></rect>
+            <rect x="90" y="72" width="24" height="5" rx="1" fill="#1F3A72"></rect>
+            <rect x="90" y="82" width="60" height="4" rx="1" fill="#16C6D8"></rect>
+            <rect x="90" y="90" width="46" height="4" rx="1" fill="#DCE4F5"></rect>
+            <rect x="90" y="98" width="36" height="4" rx="1" fill="#0FA3B2"></rect>
+            <rect x="75" y="120" width="110" height="4" rx="2" fill="#DCE4F5"></rect>
+            <circle cx="18" cy="22" r="3" fill="#16C6D8"></circle>
+            <circle cx="188" cy="14" r="3" fill="#1F3A72"></circle>
+            <circle cx="196" cy="70" r="3" fill="#16C6D8"></circle>
+            <circle cx="8" cy="80" r="2" fill="#0FA3B2"></circle>
+            <circle cx="192" cy="140" r="2.5" fill="#F97360"></circle>
+          </svg>
         </div>
         <div style="flex:1 1 260px; position:relative; z-index:1;">
           <span style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E15A48; background:#FEEDE9; padding:6px 12px; border-radius:999px; margin-bottom:12px;">Get started</span>
@@ -379,7 +398,7 @@
     </div>
   </section>
 
-  <div style="position:fixed; right:20px; bottom:76px; z-index:8000; display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.96); border:1px solid #E5E7EB; border-radius:999px; padding:4px; font-size:12.5px; font-family:'Geist', -apple-system, sans-serif; box-shadow:0 10px 30px rgba(31,58,114,0.18); backdrop-filter:blur(8px);"><span style="padding:0 6px 0 10px; color:#9CA3AF; font-weight:600; letter-spacing:0.04em; font-size:10.5px; text-transform:uppercase;">Version</span><span style="background:#1F3A72; color:#FFFFFF; padding:7px 14px; border-radius:999px; font-weight:700;">Revised</span><a href="index-restore-morning.html" style="color:#4B5563; padding:7px 14px; border-radius:999px; font-weight:600;">Original</a></div>
+  <div style="position:fixed; right:20px; bottom:76px; z-index:8000; display:inline-flex; align-items:center; gap:2px; background:rgba(255,255,255,0.96); border:1px solid #E5E7EB; border-radius:999px; padding:4px; font-size:12.5px; font-family:'Geist', -apple-system, sans-serif; box-shadow:0 10px 30px rgba(31,58,114,0.18); backdrop-filter:blur(8px);"><span style="padding:0 6px 0 10px; color:#9CA3AF; font-weight:600; letter-spacing:0.04em; font-size:10.5px; text-transform:uppercase;">Version</span><a href="index.html" style="color:#4B5563; padding:7px 14px; border-radius:999px; font-weight:600;">Revised</a><span style="background:#1F3A72; color:#FFFFFF; padding:7px 14px; border-radius:999px; font-weight:700;">Original</span></div>
   <footer style="padding:32px 0; border-top:1px solid #E5E7EB;">
     <div style="max-width:1200px; margin:0 auto; padding:0 clamp(16px, 3cqi, 24px); display:flex; flex-wrap:wrap; gap:20px 24px; align-items:center; justify-content:space-between;">
       <a href="#top" aria-label="Assisty home" style="display:inline-flex; align-items:center;">
@@ -811,7 +830,7 @@ class Component extends DCLogic {
       strict: { avg: '69%', flagged: '31', note: 'Every point requires an explicit, citable statement in the submission. Implied understanding scores zero.' }
     };
     return {
-      howCols: compact ? '1fr' : 'minmax(0, 1.05fr) minmax(0, 0.95fr)',
+      stepCols: compact ? '1fr' : 'repeat(4, minmax(0, 1fr))',
       campusStyle: compact
         ? { position: 'relative', width: '100%', height: '170px', marginBottom: '26px', borderRadius: '16px', overflow: 'hidden' }
         : { position: 'absolute', top: 0, right: 0, width: 'min(58%, 700px)', height: 'min(58%, 380px)',
