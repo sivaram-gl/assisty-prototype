@@ -32,7 +32,7 @@
     border-bottom: 1px solid #E5E7EB;
   }
   .site-header .row {
-    max-width: 1200px; margin: 0 auto;
+    max-width: var(--page-max); margin: 0 auto;
     padding: 8px clamp(16px, 3vw, 24px);
     display: flex; align-items: center; justify-content: space-between;
     min-height: 72px; gap: 16px;
@@ -58,10 +58,17 @@
   }
   .site-header .nav .signup:hover { background: #142551; }
 
-  main { max-width: 1200px; margin: 0 auto; padding: clamp(28px, 5vw, 56px) clamp(16px, 3vw, 24px) clamp(60px, 8vw, 100px); }
+  /* The contents rail needs its own column, so the page widens to 1440px to
+     make room — but only once the rail is actually in play. Holding the cap at
+     1200px below the breakpoint keeps the jump in screenshot size small. */
+  :root { --page-max: 1200px; --toc-w: 240px; }
+  @media (min-width: 1240px) { :root { --page-max: 1440px; } }
+  main { max-width: var(--page-max); margin: 0 auto; padding: clamp(28px, 5vw, 56px) clamp(16px, 3vw, 24px) clamp(60px, 8vw, 100px); }
 
   /* Hero --------------------------------------------------------------- */
-  .hero { padding: clamp(24px, 4vw, 40px) 0 clamp(28px, 4vw, 48px); }
+  /* Capped well under --page-max: the hero is prose, and a 1440px measure
+     would be unreadable. The steps below it use the full width. */
+  .hero { max-width: 900px; padding: clamp(24px, 4vw, 40px) 0 clamp(28px, 4vw, 48px); }
   .hero .eyebrow {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
@@ -79,22 +86,81 @@
     text-wrap: pretty;
   }
 
-  /* Step-number rail (jump nav) ---------------------------------------- */
-  .jump-nav {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    margin: 28px 0 8px;
+  /* Contents rail ------------------------------------------------------ */
+  /* Two-column doc layout: steps on the left, sticky contents rail right.
+     The rail comes FIRST in the DOM (so it reads before the content, and so it
+     stacks above it on narrow screens) but is placed into column 2 explicitly.
+     Relying on source order here put the steps in the 240px track. */
+  .doc-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--toc-w);
+    gap: clamp(24px, 3vw, 40px);
+    align-items: start;
   }
-  .jump-nav a {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 13px; font-weight: 500; color: #374151;
-    padding: 7px 12px; border: 1px solid #E5E7EB; border-radius: 999px;
-    background: #FFFFFF; transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+  .doc-content { grid-column: 1; grid-row: 1; min-width: 0; }
+  .toc-rail {
+    grid-column: 2; grid-row: 1;
+    position: sticky; top: 88px;
+    max-height: calc(100vh - 108px); overflow-y: auto;
+    padding-top: 28px;
   }
-  .jump-nav a:hover { border-color: #0B7C88; color: #0B7C88; background: #F2FBFC; }
-  .jump-nav a .num {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 22px; height: 22px; border-radius: 50%;
-    background: #EEF2FB; color: #1F3A72; font-size: 11.5px; font-weight: 700;
+  .toc-label {
+    margin: 0 0 10px; padding-left: 14px;
+    font-size: 11.5px; font-weight: 700;
+    letter-spacing: 0.11em; text-transform: uppercase; color: #6B7280;
+  }
+  .toc ol {
+    list-style: none; margin: 0; padding: 0;
+    border-left: 1px solid #E5E7EB;
+  }
+  .toc li { margin: 0; }
+  .toc a {
+    display: flex; gap: 9px; align-items: baseline;
+    margin-left: -1px; padding: 8px 0 8px 13px;
+    border-left: 2px solid transparent;
+    font-size: 14px; line-height: 1.45; font-weight: 500; color: #4B5563;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+  .toc a:hover { color: #0B7C88; border-left-color: #D4E9EC; }
+  .toc a .num {
+    flex: 0 0 auto; font-size: 12px; font-weight: 700; color: #9CA3AF;
+    font-variant-numeric: tabular-nums; transition: color 150ms ease;
+  }
+  .toc a.active { color: #0B7C88; font-weight: 700; border-left-color: #0B7C88; }
+  .toc a.active .num { color: #0B7C88; }
+
+  /* Below the rail breakpoint the contents move above the steps as a block. */
+  @media (max-width: 1239px) {
+    .doc-layout { grid-template-columns: 1fr; gap: 0; }
+    /* Single column: reset the explicit placement and let DOM order rule, so
+       the contents sit above the steps. */
+    .doc-content { grid-column: 1; grid-row: auto; }
+    .toc-rail {
+      grid-column: 1; grid-row: auto;
+      position: static; max-height: none; overflow: visible;
+      padding-top: 24px;
+    }
+    /* Card treatment, not the rail's left-rule one: in a 2-column grid the
+       rule would only run down the first column, leaving active items on the
+       right with a floating accent bar and nothing behind it. */
+    .toc {
+      background: #FFFFFF; border: 1px solid #E9EDF6; border-radius: 16px;
+      padding: 18px clamp(14px, 2.5vw, 22px);
+    }
+    .toc-label { padding-left: 0; }
+    .toc ol {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 20px; border-left: 0;
+    }
+    .toc a {
+      margin-left: 0; padding: 10px; min-height: 44px;
+      border-left: 0; border-radius: 8px;
+    }
+    .toc a:hover,
+    .toc a.active { background: #F2FBFC; }
+  }
+  @media (max-width: 640px) {
+    .toc ol { grid-template-columns: 1fr; }
   }
 
   /* Step blocks -------------------------------------------------------- */
@@ -134,9 +200,9 @@
     margin-top: 22px; font-size: 13.5px; font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase; color: #0B7C88;
   }
-  .step-body ul { margin: 6px 0 12px; padding-left: 20px; }
-  .step-body ul li { margin: 4px 0; font-size: 15px; line-height: 1.6; color: #374151; }
-  .step-body ul li code {
+  .step-body ul, .step-body ol { margin: 6px 0 12px; padding-left: 20px; }
+  .step-body li { margin: 4px 0; font-size: 15px; line-height: 1.6; color: #374151; }
+  .step-body li code {
     font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 13.5px; padding: 1px 6px; border-radius: 5px;
     background: #F3F4F6; color: #1F3A72;
@@ -188,16 +254,6 @@
     background: #FFFFFF;
   }
 
-  /* Footer ------------------------------------------------------------- */
-  footer {
-    max-width: 1200px; margin: 0 auto;
-    padding: 28px clamp(16px, 3vw, 24px) 60px;
-    border-top: 1px solid #E5E7EB;
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-    gap: 12px; font-size: 13.5px; color: #6B7280;
-  }
-  footer .links { display: flex; gap: 14px; }
-
   /* Lightbox ----------------------------------------------------------- */
   .lightbox {
     position: fixed; inset: 0; z-index: 200;
@@ -222,8 +278,7 @@
     .step { padding: 18px 16px; }
     .step-head { gap: 10px; }
     .step-head .step-num { width: 34px; height: 34px; border-radius: 10px; font-size: 14px; }
-    .jump-nav a { font-size: 12px; padding: 6px 10px; }
-    .jump-nav a .num { width: 18px; height: 18px; font-size: 10.5px; }
+    .toc a { font-size: 13.5px; padding: 10px 8px; }
   }
 </style>
 </head>
@@ -235,8 +290,8 @@
       <img src="assets/assisty-logo-navy.svg" alt="Assisty" style="height:28px; width:auto;">
     </a>
     <nav class="nav" aria-label="Primary">
-      <a class="link active" href="how-it-works.html" aria-current="page">How it works</a>
-      <a class="signup" href="index.html#top">Sign up</a>
+      <a class="link" href="index.html#top">Log in</a>
+      <a class="signup" href="index.html#top">Request Access</a>
     </nav>
   </div>
 </header>
@@ -244,23 +299,32 @@
 <main>
 
   <section class="hero">
-    <span class="eyebrow">Assisty V3: a step-by-step guide</span>
+    <span class="eyebrow">Assisty: a step-by-step guide</span>
     <h1>How Assisty works, end to end.</h1>
     <p class="lede">A ten-step walkthrough of the Grading Assistant: from logging in and uploading assignments to generating rubrics, grading submissions, reviewing analytics and exporting results.</p>
 
-    <nav class="jump-nav" aria-label="Jump to a step">
-      <a href="#step-1"><span class="num">1</span>Access the platform</a>
-      <a href="#step-2"><span class="num">2</span>Manual upload</a>
-      <a href="#step-3"><span class="num">3</span>Assignment details</a>
-      <a href="#step-4"><span class="num">4</span>Questions &amp; marking</a>
-      <a href="#step-5"><span class="num">5</span>Review &amp; initiate</a>
-      <a href="#step-6"><span class="num">6</span>Upload submissions</a>
-      <a href="#step-7"><span class="num">7</span>Generate rubrics</a>
-      <a href="#step-8"><span class="num">8</span>Review rubric</a>
-      <a href="#step-9"><span class="num">9</span>Finalise grading</a>
-      <a href="#step-10"><span class="num">10</span>Analytics &amp; export</a>
-    </nav>
   </section>
+
+  <div class="doc-layout">
+    <aside class="toc-rail">
+    <nav class="toc" aria-labelledby="toc-label">
+      <p class="toc-label" id="toc-label">Contents</p>
+      <ol>
+        <li><a href="#step-1"><span class="num">1</span>Access the platform</a></li>
+        <li><a href="#step-2"><span class="num">2</span>Connect Canvas or import manually</a></li>
+        <li><a href="#step-3"><span class="num">3</span>Upload assignment details</a></li>
+        <li><a href="#step-4"><span class="num">4</span>Add questions and the marking scheme</a></li>
+        <li><a href="#step-5"><span class="num">5</span>Review assignment details and initiate grading</a></li>
+        <li><a href="#step-6"><span class="num">6</span>Upload learner submissions</a></li>
+        <li><a href="#step-7"><span class="num">7</span>Generate rubrics</a></li>
+        <li><a href="#step-8"><span class="num">8</span>Review, modify and approve the rubric</a></li>
+        <li><a href="#step-9"><span class="num">9</span>Review and finalise grading</a></li>
+        <li><a href="#step-10"><span class="num">10</span>Analytics and download results</a></li>
+      </ol>
+    </nav>
+    </aside>
+
+    <div class="doc-content">
 
   <!-- STEP 1 -->
   <section id="step-1" class="step">
@@ -281,9 +345,34 @@
   <section id="step-2" class="step">
     <header class="step-head">
       <div class="step-num">2</div>
-      <h2>Use the Manual Upload feature</h2>
+      <h2>Connect Canvas or import manually</h2>
     </header>
     <div class="step-body">
+      <p>You can either connect your Canvas account to fetch all your courses and assessments, or add a manual assignment.</p>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/21.png" alt="Welcome to Assisty screen with two cards: Add a manual assignment, and Connect Canvas.">
+        <div class="caption">Choose how to bring your first assignment in.</div>
+      </div>
+
+      <p class="sub">Option 1: integrate your Canvas account</p>
+      <ol>
+        <li>After logging in, click <strong>Connect Canvas</strong>.</li>
+        <li>Follow the instructions to generate your access token. You can also refer to the video guide included in the instructions.</li>
+      </ol>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/22.png" alt="Settings screen on the Integrations tab: a Canvas LMS panel with Canvas base URL and Access token fields and a Connect Canvas button, beside a five-point How to get your access token guide.">
+        <div class="caption">Settings &rsaquo; Integrations: the Canvas LMS panel and token instructions.</div>
+      </div>
+      <ol start="3">
+        <li>Copy the URL of your Canvas instance into <strong>Canvas base URL</strong>, insert your generated access token, and click <strong>Connect Canvas</strong>.</li>
+        <li>You will be able to see the courses where you are added as a teacher. Click <strong>View Assignments</strong> to start.</li>
+      </ol>
+      <div class="shot-wide">
+        <img src="assets/how-it-works/23.png" alt="Your Courses grid showing seven course cards imported from Canvas, each with a View Assignments link.">
+        <div class="caption">Courses imported from Canvas, ready to open.</div>
+      </div>
+
+      <p class="sub">Option 2: use the Manual Upload feature</p>
       <p>Open <strong>Manual Imports</strong> from the left sidebar to import assignment specifications and student submissions.</p>
       <p class="sub">Prepare beforehand</p>
       <ul>
@@ -316,7 +405,7 @@
       <p class="sub">Option 1: you already have a question file</p>
       <p>Upload the question file in <strong>Assignment source</strong> to auto-prefill the assignment details.</p>
       <div class="note">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.615 3.892 2.39 18.098c-.456.788-.684 1.182-.65 1.506a1 1 0 0 0 .406.705c.263.191.718.191 1.629.191h16.45c.91 0 1.365 0 1.628-.191a1 1 0 0 0 .407-.705c.034-.324-.195-.718-.65-1.506L13.383 3.892c-.454-.785-.681-1.178-.978-1.31a1 1 0 0 0-.813 0c-.296.132-.523.525-.978 1.31Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span><strong>Note:</strong> Assisty auto-extracts assignment details, questions and marking criteria from this file. Review the auto-generated content before finalising. Corrections may be needed.</span>
       </div>
       <div class="shot-wide">
@@ -342,7 +431,7 @@
     <div class="step-body">
       <p>Under <strong>Questions and marking</strong>, define what to grade students on. Enter each question, the points it's worth, and the marking scheme if you have one.</p>
       <div class="note">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.615 3.892 2.39 18.098c-.456.788-.684 1.182-.65 1.506a1 1 0 0 0 .406.705c.263.191.718.191 1.629.191h16.45c.91 0 1.365 0 1.628-.191a1 1 0 0 0 .407-.705c.034-.324-.195-.718-.65-1.506L13.383 3.892c-.454-.785-.681-1.178-.978-1.31a1 1 0 0 0-.813 0c-.296.132-.523.525-.978 1.31Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>A <strong>marking scheme</strong> is a structured grading guide that breaks down an assessment into specific <strong>categories (criteria)</strong> and assigns fixed <strong>point values</strong> to the required elements within each category.</span>
       </div>
       <div class="shot-wide">
@@ -493,20 +582,15 @@
     </div>
   </section>
 
-</main>
-
-<footer>
-  <div>© Assisty. Grading Assistant.</div>
-  <div class="links">
-    <a href="index.html">Landing</a>
-    <a href="#step-1">Back to top</a>
+    </div>
   </div>
-</footer>
+
+</main>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview">
   <button class="lb-close" id="lbClose" aria-label="Close preview">
-    <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:16px;height:16px;"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
   <img id="lbImg" alt="">
 </div>
@@ -525,6 +609,26 @@
     lb.addEventListener('click', function(e) { if (e.target === lb || e.target === lbImg) close(); });
     lbClose.addEventListener('click', close);
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
+  })();
+
+  // Scroll-spy: highlight the table-of-contents link for the step in view
+  (function() {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+    var steps = links.map(function(link) { return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
+    if (!steps.length) return;
+    function setActive(id) {
+      links.forEach(function(link) {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+    var observer = new IntersectionObserver(function(entries) {
+      var visible = entries.filter(function(e) { return e.isIntersecting; });
+      if (visible.length) {
+        visible.sort(function(a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+        setActive(visible[0].target.id);
+      }
+    }, { rootMargin: '-140px 0px -70% 0px', threshold: 0 });
+    steps.forEach(function(step) { observer.observe(step); });
   })();
 </script>
 
